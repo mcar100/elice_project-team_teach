@@ -1,9 +1,23 @@
+/**======================
+ *         MAIN
+ *========================**/
+main {
+  width: 1240px;
+  margin: 0 auto;
+}
+
+/**======================
+ *        BANNER
+ *========================**/
+
 /* 바깥쪽 */
 .main-wide-billboard {
   width: 100%;
   height: 400px;
-  background-color: #0f1021;
-  transition: backgroudColor 0.15s ease-in-out;
+  background-color: #586471;
+  transition: background-color 300ms ease-in-out 0s;
+  margin-top: 186px;
+  margin-bottom: 80px;
 }
 
 /* 안쪽 */
@@ -17,5 +31,43 @@
 .main-narrow-billboard > img {
   width: 100%;
   opacity: 1;
-  transition: opacity 0.15s ease-in-out;
+  transition: all 100ms ease-in-out 0s;
+}
+
+/**====================================
+ *        RECOMMENDED PRODUCTS
+ *======================================**/
+
+.recommended-products-outer-container {
+  margin-bottom: 30vh;
+}
+
+.recommended-products-letter {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.recommended-products-inner-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.recommended-products-inner-container img {
+  width: 100%;
+}
+
+.recommended-product-1,
+.recommended-product-6 {
+  width: 608px;
+  height: 310px;
+}
+
+.recommended-product-2,
+.recommended-product-3,
+.recommended-product-4,
+.recommended-product-5 {
+  width: 292px;
+  height: 310px;
 }
