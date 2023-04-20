@@ -11,13 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
     "babel-node": "^0.0.1-security",
     "express": "^4.18.2"
-=======
-    "express": "^4.18.2",
-    "mongoose": "^7.0.4"
->>>>>>> 19e5d73 (Feat:Add nonuser schema)
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
