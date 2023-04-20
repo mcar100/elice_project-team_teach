@@ -4,11 +4,53 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 승섭 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <!-- 지성 -->
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/style.css" />
-    <title>banner</title>
+    <title>main page</title>
   </head>
   <body>
+    <!-- 헤더 영역 -->
+    <header>
+      <div class="header-container">
+        <button id="category-btn">
+          <img src="../icon/menu.png" alt="category icon" />
+        </button>
+        <span class="header-logo">TechMate</span>
+        <div class="search-container">
+          <input class="input" type="text" placeholder="상품을 검색하세요" />
+          <div class="search-btn">
+            <img
+              src="../icon/free-icon-magnifier-2866321.png"
+              alt="search icon"
+            />
+          </div>
+        </div>
+        <div class="button-container">
+          <button class="user-btn">
+            <img src="../icon/free-icon-user-747376.png" alt="user icon" />
+          </button>
+          <button class="cart-btn">
+            <img src="../icon/free-icon-add-cart-8122483.png" alt="cart icon" />
+          </button>
+        </div>
+        <div></div>
+      </div>
+    </header>
+
+    <!-- header navbar 영역 -->
+    <nav>
+      <div class="nav-container">
+        <div>Hello Techmate</div>
+        <div>로그인/회원가입</div>
+      </div>
+    </nav>
+
     <!-- 배너 -->
     <div class="main-billboard">
       <!-- 바깥쪽 베너 -->
@@ -19,7 +61,13 @@
         </div>
       </div>
     </div>
+
+    <!-- 메인 -->
     <main>
+      <!--main category영역-->
+      <div class="body-container">
+        <div id="main-category-container"></div>
+      </div>
       <!-- 추천 상품 -->
       <div class="recommended-products-outer-container">
         <div class="recommended-products">
@@ -48,6 +96,81 @@
         </div>
       </div>
     </main>
-    <script src="../js/index.js"></script>
+
+    <!-- 푸터 -->
+    <footer id="footer">
+      <!-- 맨 위에 일직선 타이틀 부분 -->
+      <div id="footer-title-container">
+        <div>
+          <p>15팀 소개</p>
+        </div>
+        <div>
+          <p>채용정보</p>
+        </div>
+        <div>
+          <p>이용약관</p>
+        </div>
+        <div>
+          <p>전자금융거래약관</p>
+        </div>
+        <div>
+          <p>개인정보처리방침</p>
+        </div>
+        <div>
+          <p>광고안내</p>
+        </div>
+      </div>
+
+      <!-- 밑의 2개로 나눠진 부분의 총합 -->
+      <div id="site-description" class="sites">
+        <!-- 왼쪽 설명 칸 -->
+        <div id="footer-main">
+          <p style="font-size: 14px">15팀(주)</p>
+          <br />
+          <p>
+            대표직원 : ***, ***, ***, ***, ***, 주소 : 대한민국 엘리스
+            Tel:2627-4744
+          </p>
+          <p>
+            사업자등록번호 : 337-37-374854, 통신판매업신고 : 2023-엘리스-2342
+            사업자정보확인
+          </p>
+          <p>
+            엘리스 15팀(주)은 통신판매중개자로서 엘리스 15팀의 거래당사자가
+            아니며, 입점판매자가 등록한 상품정보 및 거래에 대해 엘리스(주)는
+            일체 책임을 지지 않습니다.
+          </p>
+          <br />
+          <p>Copyright © 2018 15팀 Co.,Ltd. All Rights Reserved.</p>
+
+          <div id="footer-image-container">
+            <div class="footer-image">
+              <img src="../icon/elice.png" width="116px" alt="엘리스" />
+            </div>
+          </div>
+        </div>
+        <!-- 오른쪽 설명칸 -->
+        <div id="footer-sub">
+          <p style="font-size: 14px">
+            고객센터 <span style="color: red">1599-1234</span> (유료)
+          </p>
+          <br />
+          <p>08378) 서울특별시 엘리스 성수동</p>
+          <p>Fax : 013-262-1234 / E-mail : customerservice@15st.co.kr</p>
+          <br />
+          <p style="font-size: 14px">전자금융거래분쟁담당</p>
+          <br />
+          <p>Tel : 1599-1234 / Fax : 031-441-1234</p>
+          <p>E-mail : customerservice@15st.co.kr</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 지성 -->
+    <script src="../js/banner.js"></script>
+    <!-- 승섭 -->
+    <script src="../js/main.js" type="module"></script>
+    <script src="../header/categoryList/categoryBar.js" type="module"></script>
+    <script src="../header/categoryList/categoryBtn.js" type="module"></script>
   </body>
 </html>

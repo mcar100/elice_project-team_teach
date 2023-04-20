@@ -1,4 +1,5 @@
 const images = [
+  // 신기방기
   '../images/001.jpg',
   '../images/002.jpg',
   '../images/003.jpg',
@@ -19,7 +20,9 @@ const wideBillboardColor = [
 
 const mainBillboard = document.querySelector('.main-billboard');
 const mainWideBillboard = document.querySelector('.main-wide-billboard');
-const mainNarrowBillboard = document.querySelector('.main-narrow-billboard > img');
+const mainNarrowBillboard = document.querySelector(
+  '.main-narrow-billboard > img'
+);
 let imagesIdx = 1;
 
 /**
