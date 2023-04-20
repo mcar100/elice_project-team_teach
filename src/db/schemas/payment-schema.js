@@ -1,7 +1,7 @@
 import { Schema } from "mongoose";
 
 const PaymentSchema = new Schema({
-    priceMonth: {
+  priceMonth: {
     type: Number,
     requried: true,
   },
@@ -11,7 +11,7 @@ const PaymentSchema = new Schema({
   },
   paymentOption: {
     type: String,
-    enum: ['preparing', 'onTheWay', 'arrived'],
+    enum: ['creditCard', 'naverPay', 'kakaoPay'],
     required: true,
   },
   createdAt: new Date.now()

@@ -5,22 +5,32 @@ const OrderSchema = new Schema({
     type: Number,
     requried: true,
   },
-  username: {
-    type: String,
-    required: true,
-  },
+  
+  username: [
+    {
+      type: Schema.Types.ObejctId,
+      ref : ['Nonuser','User'],
+      required: true,
+    }
+  ],
+
   mobileNumber: {
-    type: String,
-    required: true,
+      type: Schema.Types.ObejctId,
+      ref : ['Nonuser','User'],
+      required: true, 
   },
+
   rentalPeriod: {
-    type: Number,
+    type: Schema.Types.ObjectId,
+    ref : 'Product',
     required: true,
   },
+
   deliveryFee: {
     type: Number,
     required: true,
   },
+
 }, {timestamps: true} );
 
 
