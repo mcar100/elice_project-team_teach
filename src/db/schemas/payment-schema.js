@@ -6,6 +6,10 @@ const PaymentSchema = new Schema({
     requried: true,
   },
   totalPrice: {
+    /*
+    type : Schemas.Types.ObjectId,
+    ref : 'Cart',
+    */
     type: String,
     required: true,
   },

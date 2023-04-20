@@ -13,6 +13,11 @@ const NonuserSchema = new Schema({
         type : String,
         required : true,
     },
+    
+    orderNumber : {
+        type : Schema.Types.ObjectId,
+        ref : 'Order',
+    }
 }, {timestamps : true });
 
 export default NonuserSchema;
