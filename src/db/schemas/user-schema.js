@@ -33,6 +33,11 @@ const UserSchema = new Schema({
         default : 'user',
     },
 
+    orderNumber : {
+        type : Schema.Types.ObjectId,
+        ref : 'Order',
+    }
+
     
 }, {timestamps : true});
 
