@@ -1,9 +1,9 @@
 import { Schema } from 'mongoose';
 
 const ProductSchema = new Schema({
-    _id : {
-        type : Object.Types.Schema,
-        //ref : 'Category'
+    category : {
+        type : Schema.Types.ObjectId,
+        ref : 'Category',
         required : true,
     },
 
@@ -23,6 +23,31 @@ const ProductSchema = new Schema({
 
     images : {
         type : [ String ],
+        required : true,
+    },
+
+    rentalPeriod : {
+        type : Number,
+        required : true,
+    },
+
+    color : {
+        type : [String],
+        required : true,
+    },
+
+    seller : {
+        type : String,
+        required : true,
+    },
+
+    quantity : {
+        type : Number,
+        required : true,
+    },
+
+    productDetailImages : {
+        type : [String],
         required : true,
     },
 

@@ -26,6 +26,13 @@ const UserSchema = new Schema({
         required : true,
     },
 
+    identity :{ 
+        type : String,
+        enum : ['user','admin'],
+        required : true,
+        default : 'user',
+    },
+
     
 }, {timestamps : true});
 
