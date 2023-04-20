@@ -1,5 +1,13 @@
+import cors from 'cors';
 import express from 'express';
 const app = express();
+
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+
+//api 라우팅
 
 app.get('/', (req, res) => {
   const data = {
