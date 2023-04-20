@@ -1,6 +1,6 @@
 import { Schema } from 'mongoose';
 
-const nonuserSchema = new Schema({
+const NonuserSchema = new Schema({
     username : {
         type : String,
         required : true,
@@ -15,4 +15,4 @@ const nonuserSchema = new Schema({
     },
 }, {timestamps : true });
 
-export default nonuserSchema;
+export default NonuserSchema;

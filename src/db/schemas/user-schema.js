@@ -1,6 +1,6 @@
-const { Schema } = require('mongoose'); 
+import { Schema } from 'mongoose'; 
 
-const userSchema = new Schema({
+const UserSchema = new Schema({
     username : {
         type : String,
         required: true,
@@ -29,4 +29,4 @@ const userSchema = new Schema({
     
 }, {timestamps : true});
 
-export default userSchema;
+export default UserSchema;

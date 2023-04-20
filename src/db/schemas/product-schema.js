@@ -1,6 +1,6 @@
-const { Schema } = require('mongoose');
+import { Schema } from 'mongoose';
 
-const productSchema = new Schema({
+const ProductSchema = new Schema({
     _id : {
         type : Object.Types.Schema,
         //ref : 'Category'
@@ -44,4 +44,4 @@ const productSchema = new Schema({
     },
 }, {timestamps : true });
 
-export default productSchema;
+export default ProductSchema;
