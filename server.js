@@ -1,7 +1,13 @@
-import { app } from "./src/app"
+import dotenv from 'dotenv';
+// import mongoose from 'mongoose';
+import { app }  from './src/app';
 
-app.listen(8080, () => {
+dotenv.config({ path : './config/.env'});
+
+const port = process.env.PORT || '3000';
+
+app.listen(port, () => {
   console.log(
-    `서버가 정상적으로 시작되었습니다.`
+    `서버가 정상적으로 시작되었습니다. http://localhost:${port}`
   );
 });
