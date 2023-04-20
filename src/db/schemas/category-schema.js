@@ -1,6 +1,6 @@
-const { Schema } = require('mongoose');
+import { Schema } from "mongoose";
 
-const categorySchema = new Schema({
+const CategorySchema = new Schema({
     category : {
         type : String,
         required : true,
@@ -13,4 +13,4 @@ const categorySchema = new Schema({
     
 }, {timestamps : true });
 
-export default categorySchema;
+export default CategorySchema;
