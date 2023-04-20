@@ -289,6 +289,7 @@ header p {
 .cart-product-price-info-outer {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 30px;
 }
 .cart-product-price-info-left {
@@ -312,18 +313,23 @@ header p {
   text-align: center;
   line-height: 1.5;
 }
+.cart-product-price-info-left-1 {
+  padding-top: 9px;
+}
 .discounted-price {
   color: #ff0456;
 }
 .plus-minus {
   display: flex;
-  font-size: 16px;
+  font-size: 20px;
   align-items: center;
   text-align: center;
+  padding-top: 7px;
 }
 .cart-product-final-price {
   display: flex;
   gap: 10px;
+  padding-top: 2px;
 }
 .final-price-text {
   font-size: 18px;
