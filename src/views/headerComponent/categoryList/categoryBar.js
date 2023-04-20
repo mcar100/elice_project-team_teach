@@ -1,15 +1,17 @@
 import { categories } from "./categories.js";
-const categoryBtn = document.getElementById("category-btn");
 
-export async function addCategoryBar(){
+async function addCategoryBar(){
     await makeCategoryBar();
 
+    const categoryBtn = document.getElementById("category-btn");
     const categoryContainer = document.querySelector('.category-container');
     const closeBtn = document.getElementById("category-close-btn");
+
     categoryBtn.addEventListener("click", ()=>{
         const className = 'category-container-clicked';
         categoryContainer.classList.toggle(className);
     });
+
     closeBtn.addEventListener("click", ()=>{
         const className = 'category-container-clicked';
         categoryContainer.classList.toggle(className);
@@ -17,10 +19,17 @@ export async function addCategoryBar(){
 
 }
 
-async function makeCategoryBar() {
-    const headerContainer = document.querySelector("header");
+function makeCategoryBar() {
+    const headerContainer = document.getElementById("header-container");
     const container = document.createElement('div');
     container.classList.add('category-container');
+
+    headerContainer.insertAdjacentHTML('beforebegin',`
+    <button id="category-btn">
+        <img src="../../mainPage/icon/menu.png" alt="category icon" />
+    </button>
+    `);
+
     container.insertAdjacentHTML(`beforeend`,`
         <div class="category-title">
             <span>Category</span>
@@ -45,7 +54,5 @@ async function makeCategoryBar() {
     headerContainer.appendChild(container);
 }
 
-
-
-
+export { addCategoryBar };
 
