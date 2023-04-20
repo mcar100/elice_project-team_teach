@@ -26,6 +26,10 @@ const DeliverySchema = new Schema({
   },
 
   deliveryFee : {
+    /*
+    type : Schema.Types.ObjectId,
+    ref : 'Cart',
+    */
     type : Number,
     required : true,
   },
