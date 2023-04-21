@@ -22,12 +22,13 @@ app.get('/', (req, res) => {
   res.json(data);
 });
 
-
-//app.use('/api', userRouter); /api/user
-app.use('/api', categoryRouter); // /api/catgories
-//app.use('/api', productRouter); /api/product
-//app.use('/api', orderRouter); /api/order
-//app.use('/api, mypageRouter); 아직 구성 안함 필요 시 추가 /api/mypage
+//app.use 최상단
+//app.use('/user', userRouter); /user
+app.use('/categories', categoryRouter); // /api/catgories
+//app.use('/product', productRouter);
+//app.use('/order', orderRouter);
+//app.use('/mypage, mypageRouter); 아직 구성 안함 필요 시 추가 근데 필요해보임/mypage
+//app.use('/finshOrder, finshOrderRouter); 이름 새로 짓기
 
 
 export { app }

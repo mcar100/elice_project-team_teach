@@ -1,12 +1,12 @@
 import { Router } from 'express';
-import { Order } from '../db/models/order-model.js';
+import { orderModel } from '../db/models/order-model.js';
 
 const orderRouter = Router();
 
 //사용자 주문정보 리스트 조회(주문 내역 조회 - 내 페이지에서) 
 orderRouter.get('/order', async(req, res, next) => {
     try{
-        const userOrderList = await Order.find({});
+        const userOrderList = await orderModel.findAll(); // service로 넘어가야 함
         res.status(200).json(userOrderList);
 
     }catch(err){
