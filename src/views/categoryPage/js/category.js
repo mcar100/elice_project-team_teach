@@ -20,6 +20,10 @@ async function addProduct(){
         <div class="product-brand">
             <span>${productSpecification.brand}</span>
         </div>
+        <div class="product-button">
+            <button class="cart-button">장바구니 담기</button>
+            <button class="order-button">주문하기</button>
+        </div>
     </div>
         `;
     });
