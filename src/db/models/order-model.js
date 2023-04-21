@@ -1,22 +1,22 @@
 import {model} from 'mongoose';
 import OrderSchema from "../schemas/order-schema.js";
 
-const Order = model('Category', CategorySchema);
+const Order = model('Order', OrderSchema);
 
 export class OrderModel{
     async findAll() {
-        const categorys = await Order.find({});
-        return categorys;
+        const orders = await Order.find({});
+        return orders;
     }
 
-    async findById(categoryId) {
-        const category = await Order.findOne({ _id: categoryId });
-        return category;
+    async findById(orderId) {
+        const order = await Order.findOne({ _id: orderId });
+        return order;
     }
 
-    async create(categoryInfo) {
-        const createdNewCategory = await Order.create(categoryInfo);
-        return createdNewCategory;
+    async create(orderInfo) {
+        const createdNewOrder = await Order.create(orderInfo);
+        return createdNewOrder;
     }
     
 }

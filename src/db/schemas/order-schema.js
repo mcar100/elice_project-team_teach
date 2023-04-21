@@ -1,41 +1,42 @@
-import { Schema } from "mongoose";
+import { Schema } from 'mongoose';
 
-const OrderSchema = new Schema({
-  orderNumber: {
-    type: Number,
-    requried: true,
-  },
-  
-  username: [
-    {
-      type: Schema.Types.ObejctId,
-      ref : ['Nonuser','User'],
+const OrderSchema = new Schema(
+  {
+    orderNumber: {
+      type: Number,
+      requried: true,
+    },
+
+    username: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true,
+      },
+    ],
+
+    mobileNumber: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
       required: true,
-    }
-  ],
+    },
 
-  mobileNumber: {
-      type: Schema.Types.ObejctId,
-      ref : ['Nonuser','User'],
-      required: true, 
-  },
+    rentalPeriod: {
+      type: Schema.Types.ObjectId,
+      ref: 'Product',
+      required: true,
+    },
 
-  rentalPeriod: {
-    type: Schema.Types.ObjectId,
-    ref : 'Product',
-    required: true,
-  },
-
-  deliveryFee: {
-    /*
+    deliveryFee: {
+      /*
     type : Schema.Types.ObjectId,
     ref : 'Cart',
     */
-    type: Number,
-    required: true,
+      type: Number,
+      required: true,
+    },
   },
-
-}, {timestamps: true} );
-
+  { timestamps: true }
+);
 
 export default OrderSchema;

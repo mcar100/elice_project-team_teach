@@ -3,21 +3,9 @@ import { orderModel } from '../db/models/order-model.js';
 
 const orderRouter = Router();
 
-//사용자 주문정보 리스트 조회(주문 내역 조회 - 내 페이지에서) 
-orderRouter.get('/order', async(req, res, next) => {
-    try{
-        const userOrderList = await orderModel.findAll(); // service로 넘어가야 함
-        res.status(200).json(userOrderList);
 
-    }catch(err){
-        next(err);
-    }
-});
-
-/*
-// 이 부분부터 mypage로 넘어가야 하는게 아닌가 생각
 //사용자 주문 추가(장바구니 상품 주문 진행)
-orderRouter.post('/orders', async(req, res, next) => {
+orderRouter.post('/', async(req, res, next) => {
     try{
         const userId = req.body.userId;
         const address = req.body.address;
@@ -25,7 +13,7 @@ orderRouter.post('/orders', async(req, res, next) => {
         const productName = req.body.productName;
         // 필요 정보 있으면 이어서 작성 후, create 안에 넣기
 
-        const order = await Order.create({
+        const order = await orderModel.create({
             userId, 
             address,
             totalPrice,
@@ -39,6 +27,19 @@ orderRouter.post('/orders', async(req, res, next) => {
     }
 });
 
+/*
+// 이 부분부터 mypage로 넘어가야 하는게 아닌가 생각
+
+//사용자 주문정보 리스트 조회(주문 내역 조회 - 내 페이지에서) 
+orderRouter.get('/', async(req, res, next) => {
+    try{
+        const userOrderList = await orderModel.findAll(); // service로 넘어가야 함
+        res.status(200).json(userOrderList);
+
+    }catch(err){
+        next(err);
+    }
+});
 
 
 //사용자 특정 주문정보 조회/

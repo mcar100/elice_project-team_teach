@@ -1,15 +1,15 @@
 import { Schema } from "mongoose";
 
 const CategorySchema = new Schema({
-    category : {
+    categoryName : {
         type : String,
         required : true,
     },
 
-    subCategory : {
+    categoryIcon : {
         type : String,
         required : true,
-    },
+    }
     
 }, {timestamps : true });
 
