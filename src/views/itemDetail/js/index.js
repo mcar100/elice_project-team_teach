@@ -1,3 +1,5 @@
+import { header } from "../../headerComponent/header.js";
+
 const itemNumber = document.getElementById('item-number');
 const upButton = document.getElementById('up-button');
 const downButton = document.getElementById('down-button');
@@ -12,6 +14,7 @@ const itemName = document.getElementById('item-name');
 const itemMonthRentalfee = document.getElementById('item-month-rental-fee');
 const itemIsFree = document.getElementById('is-free');
 
+header();
 upButton.addEventListener('click', (err) => {
   itemNumber.value = Number(itemNumber.value) + 1;
 });
