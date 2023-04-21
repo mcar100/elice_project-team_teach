@@ -1,18 +1,17 @@
 import { Router } from 'express';
-import { Product } from '../db/models/product-model';
+import { productModel } from '../db/models/product-model.js';
 
 const productRouter = Router();
 
-productRouter.get('/products/:productId', async(req, res, next) => {
-    try{
-        const productId = req.params.productId;
-        const productInfo = await Product.findById({productId});
+productRouter.get('/:productId', async (req, res, next) => {
+  try {
+    const productId = req.params.productId;
+    const productInfo = await productModel.findById({ productId });
 
-        res.status(200).json(productInfo);
-    }catch(err){
-        next(err);
-    }
-    
+    res.status(200).json(productInfo);
+  } catch (err) {
+    next(err);
+  }
 });
 
 // 관리자 기능 ========
