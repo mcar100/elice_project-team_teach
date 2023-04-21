@@ -9,7 +9,7 @@
  }
  #profile-container{
     display: grid;
-    grid-template-rows: 70px auto 40px;
+    grid-template-rows: 70px auto;
     width: 900px;
     height: 500px;
     font-weight: 600;
@@ -26,7 +26,7 @@
  .profile-container-body{
     display: grid;
     height: 80%;
-    grid-template-columns: 15% 20% 40% 15%;
+    grid-template-columns: 15% 20% 40% 15% 10%;
     margin-top: 10px;
     margin-left: 20px;
    }
@@ -86,8 +86,14 @@
    border: 1px solid #969696;
 }
 
-#profile-container > div:last-child{
-   display: flex;
+.profile-container-body > div:last-child{
+   grid-template-rows: repeat(6, 16%);
+   display: grid;
    align-items: end;
    justify-content: end;
+}
+
+.profile-container-body > div:last-child > .is-danger {
+   grid-row-end: 7;
+   align-self: center;
 }
