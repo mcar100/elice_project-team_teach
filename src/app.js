@@ -1,8 +1,18 @@
 import cors from 'cors';
 import express from 'express';
-import categoryRouter from './routers/category-router.js';
-import orderRouter from './routers/order-router.js';
-import productRouter from './routers/product-router.js';
+//import categoryRouter from './routers/category-router.js';
+//import orderRouter from './routers/order-router.js';
+//import productRouter from './routers/product-router.js';
+
+import {
+  viewsRouter,
+  userRouter,
+  categoryRouter,
+  productRouter,
+  orderRouter,
+  orderItemRouter,
+} from './routers';
+
 const app = express();
 
 app.use(cors());
