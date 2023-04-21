@@ -21,15 +21,16 @@ async function addCategoryBar(){
 
 function makeCategoryBar() {
     const headerContainer = document.getElementById("header-container");
+    const headerLogo = document.querySelector(".header-logo");
     const container = document.createElement('div');
     container.classList.add('category-container');
 
-    headerContainer.insertAdjacentHTML('beforebegin',`
+    headerLogo.insertAdjacentHTML('beforebegin',`
     <button id="category-btn">
         <img src="../../mainPage/icon/menu.png" alt="category icon" />
     </button>
     `);
-
+    
     container.insertAdjacentHTML(`beforeend`,`
         <div class="category-title">
             <span>Category</span>
