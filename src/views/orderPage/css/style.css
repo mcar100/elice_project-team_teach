@@ -1,0 +1,364 @@
+/**======================
+*         COMMON
+*========================**/
+body {
+  background-color: #f4f4f4;
+}
+
+/**======================
+*         HEADER
+*========================**/
+header {
+  height: 102px;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: #ffc9db;
+  text-align: center;
+}
+header p {
+  padding-top: 36px;
+}
+
+/**======================
+*      ORDER HEADER
+*========================**/
+/* 아우터 */
+.order-header-container {
+  padding-top: 30px;
+  background-color: #fff;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+/* 왼쪽 */
+.order-header {
+  display: flex;
+  width: 1240px;
+  margin: 0 auto;
+  height: 30px;
+  padding: 31px 0 24px 0;
+  justify-content: space-between;
+  align-items: center;
+}
+.order-header-title {
+  font-size: 32px;
+  font-weight: bold;
+}
+.bi-apple {
+  margin-left: 5px;
+}
+.order-header-title h1 span {
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: -5px;
+}
+/* 오른쪽 */
+.order-process {
+  display: flex;
+  gap: 8px;
+  color: #777;
+  font-size: 14px;
+  font-weight: bold;
+}
+.order-process-order {
+  color: black;
+}
+
+/**======================
+ *      ADDRESS INFO
+ *========================**/
+.address-info-outer {
+  width: 1240px;
+  margin: 0 auto;
+  border-radius: 18px;
+  background-color: #fff;
+  margin-bottom: 60px;
+}
+.address-info {
+  width: 1160px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+.address-info-header {
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 24px;
+  margin-bottom: 36px;
+  border-bottom: 1px solid black;
+}
+.address-info-header-text {
+  padding-top: 1px;
+  margin-right: 10px;
+}
+.address-info-header-text + svg {
+  color: #892222;
+}
+.address-info-choice {
+  display: flex;
+  font-size: 17px;
+  gap: 30px;
+}
+.address-info-choice-radio {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 50px;
+}
+input[type='radio'] {
+  appearance: none;
+  width: 1.15em;
+  height: 1.15em;
+  border: max(2px, 0.1em) solid #ddd;
+  border-radius: 50%;
+  transition: border 0.1s ease-in-out;
+}
+input[type='radio']:checked {
+  border: 0.4em solid #ff0456;
+}
+input[type='radio']:hover,
+label:hover {
+  cursor: pointer;
+}
+label {
+  padding-top: 3px;
+}
+.address-info-user {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+.address-info-user-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+.address-info-user-address {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+.address-info-user-phone-number {
+  font-size: 17px;
+  color: #777;
+  margin-bottom: 10px;
+}
+.address-info-user-require > input {
+  width: 500px;
+  height: 20px;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/**======================
+ *         MAIN
+ *========================**/
+.main {
+  width: 1240px;
+  margin: 0 auto;
+  border-radius: 18px;
+  background-color: #fff;
+  margin-bottom: 30px;
+}
+
+/**======================
+*      ORDER ITEMS
+*========================**/
+/* 상품 셀러 */
+.order-products-container {
+  width: 1160px;
+  margin: 0 auto;
+}
+.order-product-seller {
+  display: flex;
+  height: 27px;
+  padding-top: 30px;
+  padding-bottom: 18px;
+}
+.order-product-seller > p {
+  padding-top: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.order-product-seller > .bi-house-door-fill {
+  padding-left: 10px;
+  color: #c014ff;
+}
+
+/* 중간선 */
+.product-line {
+  width: 100%;
+  border: 1px solid #aaa;
+}
+
+/* 상품 내용 */
+.order-product-info-container {
+  display: grid;
+  grid-template-columns: 170px 450px 180px 180px 180px;
+  grid-template-rows: 200px;
+  justify-items: center;
+  align-items: center;
+  padding-bottom: 40px;
+}
+.order-product-image {
+  width: 170px;
+  height: 160px;
+  padding-top: 40px;
+  padding-bottom: 2px;
+  text-align: center;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.order-product-image img {
+  width: 105px;
+  height: 105px;
+  border-radius: 6px;
+}
+.order-product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 390px;
+  height: 160px;
+  padding: 40px 30px 2px 30px;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.order-product-name {
+  padding-top: 2px;
+  font-size: 15px;
+  /* 2줄일때 36px이 자연스러웠음 */
+  /* height: 36px; */
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+.order-product-options {
+  font-size: 12px;
+  color: #777777;
+  margin-bottom: 15px;
+}
+.order-product-quantity-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.order-product-quantity-minus {
+  font-size: 18px;
+}
+.order-product-quantity-plus {
+  font-size: 16px;
+}
+.order-product-quantity {
+  font-size: 18px;
+}
+.order-product-rental-period {
+  width: 180px;
+  height: 120px;
+  padding-top: 80px;
+  padding-bottom: 2px;
+  text-align: center;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.order-product-rental-period-1 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.order-product-rental-period-2 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+.order-product-price {
+  width: 180px;
+  height: 120px;
+  padding-top: 80px;
+  padding-bottom: 2px;
+  text-align: center;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.order-product-price-1 {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.order-product-price-2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+.order-product-delivery-fee {
+  width: 182px;
+  height: 122px;
+  padding-top: 80px;
+  text-align: center;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.order-product-delivery-fee-1 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.order-product-delivery-fee-2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/**======================
+ *   FINAL CONFIRMATION
+ *========================**/
+.final-confirmation-outer-container {
+  width: 100%;
+  height: 76px;
+  position: fixed;
+  bottom: 0;
+  background-color: #ff1e69;
+}
+.final-confirmation-inner-container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: end;
+  width: 1240px;
+  height: 100%;
+  margin: 0 auto;
+  color: #fff;
+}
+.final-confirmation-price-outer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-top: 3px;
+}
+.final-confirmation-price-1 {
+  font-size: 18px;
+}
+.final-confirmation-price-2 {
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 2px;
+}
+.final-confirmation-quantity-outer {
+  display: flex;
+  gap: 10px;
+  padding: 10px 30px;
+  background-color: #fff;
+  border-radius: 6px;
+}
+.final-confirmation-quantity-2-circle {
+  display: inline-block;
+}
+.final-confirmation-quantity-2 {
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 3px;
+  text-align: center;
+  color: black;
+}
+
+/**======================
+ *         FOOTER
+ *========================**/
+footer {
+  margin-bottom: 30vh;
+}
