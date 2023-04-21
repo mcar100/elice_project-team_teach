@@ -122,6 +122,37 @@ label:hover {
 label {
   padding-top: 3px;
 }
+/* display: none */
+.address-info-direct-none {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+}
+.direct-input-box {
+  height: 30px;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #ccc;
+}
+.address-info-direct-none-user-name,
+.address-info-direct-none-user-zip-code {
+  width: 300px;
+}
+.address-info-direct-none-user-address-default,
+.address-info-direct-none-user-address-detail,
+.address-info-direct-none-user-phone-number,
+.address-info-direct-none-delivery-require {
+  width: 608px;
+}
+.address-info-direct-none-delivery-require {
+  margin-bottom: 15px;
+}
+
+/* default */
+.address-info-default-display {
+  display: block;
+}
 .address-info-user {
   display: flex;
   flex-direction: column;
@@ -139,15 +170,16 @@ label {
 .address-info-user-phone-number {
   font-size: 17px;
   color: #777;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .address-info-user-require > input {
-  width: 500px;
-  height: 20px;
-  padding: 5px 10px;
-  font-size: 14px;
+  width: 600px;
+  height: 30px;
+  padding: 10px 15px;
+  font-size: 16px;
   color: #333;
-  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
 }
 
 /**======================
