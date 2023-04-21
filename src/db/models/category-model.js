@@ -9,6 +9,11 @@ export class CategoryModel {
     return categorys;
   }
 
+  async findByCategoryName(categoryName) {
+    const category = await Category.findOne({ categoryName });
+    return category;
+  }
+
   async findById(categoryId) {
     const category = await Category.findOne({ _id: categoryId });
     return category;
@@ -30,6 +35,7 @@ export class CategoryModel {
       updateData,
       { new: true }
     );
+
     return updateCategory;
   }
 }
