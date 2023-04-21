@@ -30,7 +30,6 @@ export class CategoryModel {
       updateData,
       { new: true }
     );
-
     return updateCategory;
   }
 }
