@@ -15,7 +15,7 @@ productRouter.get('/products/:productId', async(req, res, next) => {
     
 });
 
-// 관리자 기능
+// 관리자 기능 ========
 
 //카테고리 추가
 
