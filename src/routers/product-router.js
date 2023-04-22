@@ -22,4 +22,4 @@ productRouter.get('/:productId', async (req, res, next) => {
 
 //카테고리 삭제
 
-export default productRouter;
+export { productRouter };

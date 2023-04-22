@@ -1,22 +1,14 @@
 import cors from 'cors';
 import express from 'express';
-//import categoryRouter from './routers/category-router.js';
-//import orderRouter from './routers/order-router.js';
-//import productRouter from './routers/product-router.js';
-
-import {
-  viewsRouter,
-  userRouter,
-  categoryRouter,
-  productRouter,
-  orderRouter,
-  orderItemRouter,
-} from './routers';
+import { categoryRouter, productRouter, orderRouter } from './routers/index.js';
 
 const app = express();
 
+//CORS 에러 방지
 app.use(cors());
+
 app.use(express.json());
+
 app.use(express.urlencoded({ extended: false }));
 
 //api 라우팅
