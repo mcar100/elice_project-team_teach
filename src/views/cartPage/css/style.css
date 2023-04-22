@@ -362,6 +362,9 @@ main {
   border-radius: 6px;
   cursor: pointer;
 }
+.each-order-a:hover {
+  border-radius: 6px;
+}
 
 /**======================
  *   FINAL CONFIRMATION
