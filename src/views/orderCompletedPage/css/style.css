@@ -66,6 +66,7 @@ header p {
 main {
   width: 1240px;
   margin: 0 auto;
+  margin-bottom: 100px;
 }
 .order-completed-top {
   display: flex;
@@ -95,6 +96,13 @@ main {
   margin-right: 20px;
 }
 
+.order-completed-mypage-a:hover {
+  background-color: #fff;
+}
+.order-completed-payment-a:hover {
+  background-color: #ff1e69;
+  border-radius: 6px;
+}
 .order-completed-buttons {
   display: flex;
   gap: 48px;
