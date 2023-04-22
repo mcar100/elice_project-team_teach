@@ -1,5 +1,4 @@
-import { categoryModel } from '../db/models/category-model.js';
-import { productModel } from '../db/models/product-model.js';
+import { categoryModel, productModel } from '../db/index.js';
 
 class CategoryService {
   constructor(categoryModel, productModel) {
@@ -14,10 +13,11 @@ class CategoryService {
     return categories;
   }
 
-  //특정 카테고리 가져오기
+  //선택한 카테고리의 정보 가져오기
   async getProductListByCategoryId(categoryId) {
-    const productListByCategory = await this.categoryModel.findById(categoryId);
-
+    //const productListByCategory = await this.categoryModel.findById(categoryId);
+    const productListByCategory =
+      await this.productModel.findProductByCategoryId(categoryId);
     if (!productListByCategory) {
       throw new Error(
         '해당 id의 카테고리는 없습니다. 다시 한 번 확인해 주세요.'
