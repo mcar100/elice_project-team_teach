@@ -1,3 +1,5 @@
+@import url('../../commonCss/reset.css');
+
 /**======================
 *         COMMON
 *========================**/
@@ -42,7 +44,7 @@ body {
   font-size: 14px;
   font-weight: bold;
 }
-.cart-process-cart {
+.cart-process-now {
   color: black;
 }
 
@@ -400,7 +402,7 @@ body {
  *     FOOTER
  *========================**/
 
- footer {
+footer {
   width: 100%;
 }
 
