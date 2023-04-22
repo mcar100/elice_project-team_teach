@@ -4,7 +4,6 @@ async function addCategoryBar() {
   await makeCategoryBar();
 
   const categoryBtn = document.getElementById('category-btn');
-  const categoryContainer = document.querySelector('.category-container');
   const closeBtn = document.getElementById('category-close-btn');
 
   categoryBtn.addEventListener('click', toggleCategoryContainer);
@@ -12,6 +11,8 @@ async function addCategoryBar() {
 }
 
 function toggleCategoryContainer() {
+  const categoryContainer = document.querySelector('.category-container');
+
   const className = 'category-container-clicked';
   categoryContainer.classList.toggle(className);
 }
