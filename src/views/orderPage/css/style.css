@@ -1,3 +1,5 @@
+@import url('../../commonCss/reset.css');
+
 /**======================
 *         COMMON
 *========================**/
@@ -59,7 +61,7 @@ header p {
   font-size: 14px;
   font-weight: bold;
 }
-.order-process-order {
+.order-process-now {
   color: black;
 }
 
