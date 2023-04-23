@@ -86,8 +86,7 @@
       <div class="select-all-outer-container">
         <div class="select-all-left-container">
           <input type="checkbox" name="select-all" id="select-all" />
-          <label for="cart-checkbox"></label>
-          <p>전체 선택</p>
+          <label for="select-all">전체 선택</label>
         </div>
         <div class="select-all-right-container">
           <svg
@@ -109,14 +108,20 @@
 
     <main>
       <!-- component possible -->
+      <!-- product -->
       <div class="main-container">
+        <p class="product-id" style="display: none"></p>
         <!-- cart items -->
         <div class="cart-products-container">
           <!-- product name -->
           <div class="cart-product-seller">
-            <input type="checkbox" name="cart-product" id="cart-checkbox" />
-            <label for="cart-checkbox"></label>
-            <p>LG 전자</p>
+            <input
+              type="checkbox"
+              name="cart-product"
+              id="60ff9826591d828bf80577dc"
+              class="cart-checkbox-part"
+            />
+            <label for="60ff9826591d828bf80577dc">LG 전자</label>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -203,14 +208,20 @@
       </div>
 
       <!-- component possible -->
+      <!-- product -->
       <div class="main-container">
+        <p class="product-id" style="display: none">61ca9826591d828bf80577ac</p>
         <!-- cart items -->
         <div class="cart-products-container">
           <!-- product name -->
           <div class="cart-product-seller">
-            <input type="checkbox" name="cart-product" id="cart-checkbox" />
-            <label for="cart-checkbox"></label>
-            <p>Winnia</p>
+            <input
+              type="checkbox"
+              name="cart-product"
+              id="61ca9826591d828bf80577ac"
+              class="cart-checkbox-part"
+            />
+            <label for="61ca9826591d828bf80577ac">Winnia</label>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -297,14 +308,20 @@
       </div>
 
       <!-- component possible -->
+      <!-- product -->
       <div class="main-container">
+        <p class="product-id" style="display: none">62ca9826591d828bf80577ac</p>
         <!-- cart items -->
         <div class="cart-products-container">
           <!-- product name -->
           <div class="cart-product-seller">
-            <input type="checkbox" name="cart-product" id="cart-checkbox" />
-            <label for="cart-checkbox"></label>
-            <p>삼정전자</p>
+            <input
+              type="checkbox"
+              name="cart-product"
+              id="62ca9826591d828bf80577ac"
+              class="cart-checkbox-part"
+            />
+            <label for="62ca9826591d828bf80577ac">삼정전자</label>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -411,6 +428,7 @@
     </div>
 
     <!-- scripts -->
-    <script src="../js/index.js" type="module"></script>
+    <script src="../js/getProductsInfoFromServer.js" type="module"></script>
+    <script src="../js/deleteLocalStorage.js" type="module"></script>
   </body>
 </html>

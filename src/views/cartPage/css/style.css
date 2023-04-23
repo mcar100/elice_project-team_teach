@@ -127,13 +127,23 @@ body {
   border: 1px solid #444444;
   border-radius: 4px;
 }
-.select-all-left-container > p {
+.select-all-right-container:hover {
+  cursor: pointer;
+}
+label[for='select-all'] {
   padding-left: 14px;
   padding-top: 4px;
   color: #222222;
   font-size: 18px;
   font-weight: bold;
 }
+/* .select-all-left-container > p {
+  padding-left: 14px;
+  padding-top: 4px;
+  color: #222222;
+  font-size: 18px;
+  font-weight: bold;
+} */
 .select-all-right-container > p {
   padding: 2px 7px 0 2px;
 }
@@ -166,7 +176,7 @@ main {
   padding-top: 30px;
   padding-bottom: 18px;
 }
-.cart-product-seller > p {
+.cart-product-seller > label {
   padding-left: 14px;
   padding-top: 5px;
   font-size: 20px;
