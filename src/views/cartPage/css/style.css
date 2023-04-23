@@ -137,6 +137,13 @@ label[for='select-all'] {
   font-size: 18px;
   font-weight: bold;
 }
+/* .select-all-left-container > p {
+  padding-left: 14px;
+  padding-top: 4px;
+  color: #222222;
+  font-size: 18px;
+  font-weight: bold;
+} */
 .select-all-right-container > p {
   padding: 2px 7px 0 2px;
 }
