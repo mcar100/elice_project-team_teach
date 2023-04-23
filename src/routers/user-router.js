@@ -1,30 +1,26 @@
 import { Router } from 'express';
+import { userService } from '../services/user-service';
 
 const userRouter = Router();
-/*
-import { productModel } from '../db/models/product-model';
 
-
-
-// 사용자 정보 조회s
-mypageRouter.get('/', async (req, res, next) => {
+// 회원가입
+userRouter.post('/signup', async (req, res, next) => {
   try {
-    const userId = req.query.userId;
-    const mypageInfo = await Mypage.find(userId);
-
-    res.status(200).json(mypageInfo);
   } catch (err) {
     next(err);
   }
 });
 
-//사용자 정보 수정
-mypageRouter.patch('/', async (req, res, next) => {
+// 로그인
+userRouter.post('/signin', async (req, res, next) => {});
+
+//특정 사용자 정보 수정
+userRouter.patch('/', async (req, res, next) => {
   try {
     // /:userId라면 req.params.userId
     const userId = req.query.userId;
 
-    const user = await Mypage.findById(userId);
+    const user = await userService.findById(userId);
 
     const username = req.body.username;
     const email = req.body.email;
@@ -43,7 +39,7 @@ mypageRouter.patch('/', async (req, res, next) => {
 //사용자 회원 탈퇴
 
 //사용자 모든 주문 정보 조회
-mypageRouter.get('/orderList', async (req, res, next) => {
+userRouter.get('/orderList', async (req, res, next) => {
   try {
     const userId = req.query.userId;
     const orderLists = await Mypage.findOrderListAll(userId);
@@ -55,7 +51,7 @@ mypageRouter.get('/orderList', async (req, res, next) => {
 });
 
 //사용자 주문 취소
-mypageRouter.delete('/orderList/:orderNumber', async (req, res, next) => {
+userRouter.delete('/orderList/:orderNumber', async (req, res, next) => {
   try {
     const orderNumber = req.params.orderNumber;
     const userDeleteOrder = await Mypage.deleteById(orderNumber);
@@ -67,5 +63,15 @@ mypageRouter.delete('/orderList/:orderNumber', async (req, res, next) => {
 });
 
 // 관리자 기능 ========
-*/
+// 모든 사용자 정보 조회
+userRouter.get('/', async (req, res, next) => {
+  try {
+    const userId = req.query.userId;
+    const mypageInfo = await Mypage.find(userId);
+
+    res.status(200).json(mypageInfo);
+  } catch (err) {
+    next(err);
+  }
+});
 export { userRouter };
