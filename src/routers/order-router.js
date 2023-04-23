@@ -41,8 +41,53 @@ orderRouter.post('/', async (req, res, next) => {
   }
 });
 
-//특정 주문 정보 상세 조회
+// ========= 관리자 기능
+// 사용자 전체 주문 목록 조회
+orderRouter.get('/admin', async (req, res, next) => {
+  try {
+    const orders = await orderService.getAllOrders();
+    res.status(200).json(orders);
+  } catch (err) {
+    next(err);
+  }
+});
 
+//사용자의 배송 상태 수정
+orderRouter.patch('/admin/:orderId', async (req, res, next) => {
+  try {
+    const orderId = req.params.orderId;
+    const { deliveryStatus } = req.body;
+
+    console.log(deliveryStatus);
+
+    const toUpdate = {
+      ...(deliveryStatus && { deliveryStatus }),
+    };
+
+    const updateDeliveryStatus = await orderService.updateOrderByOrderId(
+      orderId,
+      toUpdate
+    );
+
+    res.status(200).json(updateDeliveryStatus);
+  } catch (err) {
+    next(err);
+  }
+});
+
+// 사용자 주문 내역 삭제
+orderRouter.delete('/admin/:orderId', async (req, res, next) => {
+  try {
+    const orderId = req.params.orderId;
+    const deleteOrder = await orderService.deleteOrderByOrderId(orderId);
+
+    res.status(200).json(deleteOrder);
+  } catch (err) {
+    next(err);
+  }
+});
+
+//특정 주문 정보 상세 조회
 orderRouter.get('/:orderId', async (req, res, next) => {
   try {
     const orderId = req.params.orderId;
@@ -55,6 +100,7 @@ orderRouter.get('/:orderId', async (req, res, next) => {
   }
 });
 
+//======= 사용자 기능
 //사용자의 전체 주문정보 리스트 조회(주문 내역 조회 - 내 페이지에서)
 //사용자가 구매한 상품 전체 조회
 orderRouter.get('/user/:userId', async (req, res, next) => {
@@ -92,23 +138,13 @@ orderRouter.patch('/user/:orderId', async (req, res, next) => {
   }
 });
 
+//사용자의 특정 주문 내역 취소
 orderRouter.delete('/user/:orderId', async (req, res, next) => {
   try {
     const orderId = req.params.orderId;
     const deleteOrder = await orderService.deleteOrderByOrderId(orderId);
 
     res.status(200).json(deleteOrder);
-  } catch (err) {
-    next(err);
-  }
-});
-
-// ========= 관리자 기능
-// 사용자 전체 주문 목록 조회
-orderRouter.get('/', async (req, res, next) => {
-  try {
-    const orders = await orderService.getAllOrders();
-    res.status(200).json(orders);
   } catch (err) {
     next(err);
   }

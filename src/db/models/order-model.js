@@ -34,7 +34,20 @@ export class OrderModel {
 
   async deleteOrderInfo(orderId) {
     const deleteOrder = await Order.deleteOne({ _id: orderId });
+
+    console.log('Model delete Order', deleteOrder);
+
     return deleteOrder;
+  }
+
+  async updateDeliveryStatusInfo(orderId, updateDate) {
+    const updateDeliveryStatus = await Order.findByIdAndUpdate(
+      orderId,
+      updateDate,
+      { new: true }
+    );
+
+    return updateDeliveryStatus;
   }
 }
 

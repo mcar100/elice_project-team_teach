@@ -34,16 +34,36 @@ class OrderService {
       orderId,
       toUpdate
     );
+
+    return updateOrder;
   }
 
   async deleteOrderByOrderId(orderId) {
-    const { deleteOrder } = await this.orderModel.deleteOrderInfo(orderId);
+    const order = await this.orderModel.findOrderDataByOrderId(orderId);
 
-    if (deleteOrder === 0) {
+    if (order.deliveryStatus !== 'preparing') {
+      throw new Error(
+        '해당 주문은 이미 배송이 시작되었거나 도착이 완료된 상품입니다. 주문 취소가 불가능합니다.'
+      );
+    }
+    const deleteOrder = await this.orderModel.deleteOrderInfo(orderId);
+
+    console.log('deleteOrder', deleteOrder);
+
+    if (deleteOrder.deletedCount === 0) {
       throw new Error(`${orderId} 주문의 삭제에 실패하였습니다`);
     }
 
     return { result: 'success' };
+  }
+
+  async updateDeliveryStatusByOrderId(orderId, toUpdate) {
+    const updateDeliveryStatus = await this.orderModel.updateDeliveryStatusInfo(
+      orderId,
+      toUpdate
+    );
+
+    return updateDeliveryStatus;
   }
 }
 
