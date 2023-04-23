@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-const mypageRouter = Router();
+const userRouter = Router();
 /*
 import { productModel } from '../db/models/product-model';
 
@@ -68,4 +68,4 @@ mypageRouter.delete('/orderList/:orderNumber', async (req, res, next) => {
 
 // 관리자 기능 ========
 */
-export { mypageRouter };
+export { userRouter };
