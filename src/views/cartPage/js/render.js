@@ -1,9 +1,9 @@
 import addMainContents from './replaceProductComponent.js';
-import aa from './setSessionStorage.js';
+import setProductIdToSessionStorage from './setSessionStorage.js';
 
 const render = async () => {
   await addMainContents();
-  aa();
+  setProductIdToSessionStorage();
 };
 
 render();
