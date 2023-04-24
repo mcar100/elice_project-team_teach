@@ -1,4 +1,10 @@
 {
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
   "extends": ["airbnb", "prettier", "plugin:node/recommended"],
   "plugins": ["prettier"],
   "rules": {
@@ -14,6 +20,15 @@
     "no-underscore-dangle": "off",
     "class-methods-use-this": "off",
     "no-plusplus": "off",
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        "js": "always",
+        "mjs": "always",
+        "jsx": "always"
+      }
+    ],
     "prefer-destructuring": ["error", { "object": true, "array": false }],
     "no-unused-vars": ["error"]
   }

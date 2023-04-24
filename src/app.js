@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 //app.use('/user', userRouter); /user
 //app.use('/', indexRouter);
 app.use('/categories', categoryRouter); // /api/catgories
-//app.use('/product', productRouter);
+app.use('/products', productRouter);
 //app.use('/order', orderRouter);
 //app.use('/mypage, mypageRouter); 아직 구성 안함 필요 시 추가 근데 필요해보임/mypage
 //app.use('/finshOrder, finshOrderRouter); 이름 새로 짓기
