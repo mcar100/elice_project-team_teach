@@ -1,5 +1,5 @@
 import { header } from '../../headerComponent/header.js';
-import { addOrderCheck } from './orderCheckComponent.js';
+// import { addOrderCheck } from './orderCheckComponent.js';
 
 header();
-addOrderCheck();
+// addOrderCheck();
