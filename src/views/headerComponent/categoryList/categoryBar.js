@@ -1,21 +1,10 @@
 import { categories } from './categories.js';
 
-async function addCategoryBar() {
-  await makeCategoryBar();
-
-  const categoryBtn = document.getElementById('category-btn');
+function toggleCategoryContainer() {
   const categoryContainer = document.querySelector('.category-container');
-  const closeBtn = document.getElementById('category-close-btn');
 
-  categoryBtn.addEventListener('click', () => {
-    const className = 'category-container-clicked';
-    categoryContainer.classList.toggle(className);
-  });
-
-  closeBtn.addEventListener('click', () => {
-    const className = 'category-container-clicked';
-    categoryContainer.classList.toggle(className);
-  });
+  const className = 'category-container-clicked';
+  categoryContainer.classList.toggle(className);
 }
 
 function makeCategoryBar() {
@@ -45,7 +34,7 @@ function makeCategoryBar() {
     `
   );
 
-  categories.map(({ type, iconSrc }) => {
+  categories.forEach(({ type, iconSrc }) => {
     container.insertAdjacentHTML(
       `beforeend`,
       `<div class="category-item">
@@ -62,4 +51,14 @@ function makeCategoryBar() {
   headerContainer.appendChild(container);
 }
 
-export { addCategoryBar };
+async function addCategoryBar() {
+  await makeCategoryBar();
+
+  const categoryBtn = document.getElementById('category-btn');
+  const closeBtn = document.getElementById('category-close-btn');
+
+  categoryBtn.addEventListener('click', toggleCategoryContainer);
+  closeBtn.addEventListener('click', toggleCategoryContainer);
+}
+
+export default { addCategoryBar };

@@ -57,4 +57,4 @@ const productArray = [
   },
 ];
 
-export { productArray };
+export default { productArray };
