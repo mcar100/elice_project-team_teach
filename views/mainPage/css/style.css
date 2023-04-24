@@ -1,3 +1,5 @@
+@import url('../../commonCss/reset.css');
+
 /**======================
  *    HEADER
  *========================**/
@@ -45,45 +47,43 @@ header {
  *========================**/
 .category-container {
   position: fixed;
-  top:0;
+  top: 0;
   left: -300px;
   z-index: 300;
   width: 300px;
   height: 100%;
   background-color: #f5f5f5;
   font-size: 20px;
-  transition: left .5s;
+  transition: left 0.5s;
 }
 
-.category-container-clicked{
-  left:0;
+.category-container-clicked {
+  left: 0;
 }
 
-.category-container > .category-title{
+.category-container > .category-title {
   display: grid;
   grid-template-columns: 80% 20%;
-  
+
   height: 80px;
   width: 100%;
-  
+
   font-size: 30px;
   font-weight: 500;
   color: black;
   background-color: #fff;
-
 }
 
-.category-container > .category-title > span{
+.category-container > .category-title > span {
   margin: 20px 20px;
-
 }
-.category-container > .category-title > button{
+.category-container > .category-title > button {
   cursor: pointer;
   border-style: none;
   background-color: #fff;
 }
 
-.category-container > .category-item{
+.category-container > .category-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -99,7 +99,7 @@ header {
   background-color: #fff;
 }
 
-.category-container > .category-item > a{
+.category-container > .category-item > a {
   display: grid;
   grid-template-columns: 20% 60% 20%;
   text-decoration: none;
@@ -108,19 +108,19 @@ header {
   color: black;
 }
 
-.category-container > .category-item > a > img:first-child{
+.category-container > .category-item > a > img:first-child {
   width: 30px;
   height: 30px;
   margin-top: 10px;
 }
 
-.category-container > .category-item > a > img:last-child{
+.category-container > .category-item > a > img:last-child {
   width: 30px;
   height: 30px;
   margin-top: 10px;
 }
 
-.category-container > .category-item:hover{
+.category-container > .category-item:hover {
   background-color: #f5f5f5;
 }
 
@@ -212,7 +212,7 @@ nav {
   height: 100vh;
   max-width: 1240px;
   max-height: 60px;
-  
+
   border-top: 1px solid #f5f5f5;
   box-shadow: 0 3px 3px -3px #bebebe;
   font-size: 15px;
