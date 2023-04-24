@@ -1,12 +1,19 @@
-import { header } from "../../headerComponent/header.js";
-import { productArray } from "./product.js";
+import { header } from '../../headerComponent/header.js';
+import { productArray } from './product.js';
 
 const productList = document.querySelector('.product-list');
 header();
-addProduct();
-async function addProduct(){
-    productArray.forEach(({productNumber,productName, pricePerMonth, productSpecification, images})=>{
-        productList.innerHTML += `
+
+async function addProduct() {
+  productArray.forEach(
+    ({
+      productNumber,
+      productName,
+      pricePerMonth,
+      productSpecification,
+      images,
+    }) => {
+      productList.innerHTML += `
     <div class="product-container">
         <div class="product-image">
             <img src="${images[0]}" alt="${productNumber} image"/>
@@ -26,13 +33,7 @@ async function addProduct(){
         </div>
     </div>
         `;
-    });
-
+    }
+  );
 }
-
-
-
-
-
-
-
+addProduct();
