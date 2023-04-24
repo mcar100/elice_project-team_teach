@@ -14,7 +14,7 @@ async function addOrderCheck() {
       </div>
       <div class="order-check-item-body">
         <img
-          src="${images}"
+          src="${images[0]}"
           alt="${productNumber} image"
         />
         <div class="order-check-item-info">
