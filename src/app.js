@@ -41,4 +41,4 @@ app.use('/categories', categoryRouter); // /api/catgories
 //app.use('/mypage, mypageRouter); 아직 구성 안함 필요 시 추가 근데 필요해보임/mypage
 //app.use('/finshOrder, finshOrderRouter); 이름 새로 짓기
 
-export default { app };
+export { app };

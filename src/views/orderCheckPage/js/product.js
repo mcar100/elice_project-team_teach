@@ -13,6 +13,25 @@ const productArray = [
       energyEfficiencyRating: '미적용',
     },
     images: [
+      `${imgRoute}/tv01.wepb`,
+      `${imgRoute}/tv01_1.wepb`,
+      `${imgRoute}/tv01_2.wepb`,
+      `${imgRoute}/tv01_3.wepb`,
+    ],
+  },
+  {
+    produtNumber: 'tv01',
+    productName: '[LG] 스탠바이미 TV 27인치 (빠른배송) 렌탈',
+    pricePerMonth: ['41,900(23,900)', '32,900(14,900)', '27,900(9,900)'],
+    category: 'TV',
+    color: '화이트',
+    productSpecification: {
+      model: '27ART10AKPL',
+      brand: 'LG',
+      size: '27인치',
+      energyEfficiencyRating: '미적용',
+    },
+    images: [
       `${imgRoute}/tv01.webp`,
       `${imgRoute}/tv01_1.webp`,
       `${imgRoute}/tv01_2.webp`,
@@ -38,6 +57,44 @@ const productArray = [
     ],
   },
   {
+    produtNumber: 'tv01',
+    productName: '[LG] 스탠바이미 TV 27인치 (빠른배송) 렌탈',
+    pricePerMonth: ['41,900(23,900)', '32,900(14,900)', '27,900(9,900)'],
+    category: 'TV',
+    color: '화이트',
+    productSpecification: {
+      model: '27ART10AKPL',
+      brand: 'LG',
+      size: '27인치',
+      energyEfficiencyRating: '미적용',
+    },
+    images: [
+      `${imgRoute}/tv01.webp`,
+      `${imgRoute}/tv01_1.webp`,
+      `${imgRoute}/tv01_2.webp`,
+      `${imgRoute}/tv01_3.webp`,
+    ],
+  },
+  {
+    produtNumber: 'tv01',
+    productName: '[LG] 스탠바이미 TV 27인치 (빠른배송) 렌탈',
+    pricePerMonth: ['41,900(23,900)', '32,900(14,900)', '27,900(9,900)'],
+    category: 'TV',
+    color: '화이트',
+    productSpecification: {
+      model: '27ART10AKPL',
+      brand: 'LG',
+      size: '27인치',
+      energyEfficiencyRating: '미적용',
+    },
+    images: [
+      `${imgRoute}/tv01.webp`,
+      `${imgRoute}/tv01_1.webp`,
+      `${imgRoute}/tv01_2.webp`,
+      `${imgRoute}/tv01_3.webp`,
+    ],
+  },
+  {
     productNumber: 'tv03',
     productName: '[삼성] QLED 4K 스마트 TV 55인치 렌탈',
     pricePerMonth: ['34,900(16,900)', '27,900(9,900)', '24,900(6,900)'],
@@ -57,4 +114,8 @@ const productArray = [
   },
 ];
 
-export default { productArray };
+function getProduct() {
+  return productArray;
+}
+
+export { getProduct };

@@ -1,4 +1,4 @@
-import { categories } from './categories.js';
+import { getCategory } from './categories.js';
 
 function toggleCategoryContainer() {
   const categoryContainer = document.querySelector('.category-container');
@@ -12,6 +12,8 @@ function makeCategoryBar() {
   const headerLogo = document.querySelector('.header-logo');
   const container = document.createElement('div');
   container.classList.add('category-container');
+
+  const categories = getCategory();
 
   headerLogo.insertAdjacentHTML(
     'beforebegin',
@@ -61,4 +63,4 @@ async function addCategoryBar() {
   closeBtn.addEventListener('click', toggleCategoryContainer);
 }
 
-export default { addCategoryBar };
+export { addCategoryBar };

@@ -33,6 +33,12 @@ categoryRouter.get('/:categoryId', async (req, res, next) => {
 //카테고리 추가
 categoryRouter.post('/', async (req, res, next) => {
   try {
+    // if (is.emptyObject(req.body)) {
+    //   throw new Error(
+    //     'headers의 Content-Type을 application/json으로 설정해주세요'
+    //   );
+    // }
+
     const { categoryName, categoryIcon } = req.body;
 
     console.log(categoryName, categoryIcon);
@@ -51,6 +57,12 @@ categoryRouter.post('/', async (req, res, next) => {
 //카테고리 수정
 categoryRouter.put('/:categoryId', async (req, res, next) => {
   try {
+    // if (is.emptyObject(req.body)) {
+    //   throw new Error(
+    //     'headers의 Content-Type을 application/json으로 설정해주세요'
+    //   );
+    // }
+
     const categoryId = req.params.categoryId;
     const { categoryName, categoryIcon } = req.body;
 
@@ -69,7 +81,6 @@ categoryRouter.put('/:categoryId', async (req, res, next) => {
 categoryRouter.delete('/:categoryId', async (req, res, next) => {
   try {
     const categoryId = req.params.categoryId;
-
     const deleteCategory = await categoryService.deleteCategoryByCategoryId(
       categoryId
     );
@@ -81,4 +92,4 @@ categoryRouter.delete('/:categoryId', async (req, res, next) => {
 });
 // ========
 
-export default categoryRouter;
+export { categoryRouter };

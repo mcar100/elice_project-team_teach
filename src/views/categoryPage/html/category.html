@@ -8,8 +8,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
     />
-    <link rel="stylesheet" href="../../mainPage/css/reset.css" />
-    <link rel="stylesheet" href="../../mainPage/css/style.css" />
     <link rel="stylesheet" href="../css/category.css" />
     <title>category page</title>
   </head>
@@ -31,17 +29,20 @@
       </div>
     </nav>
 
-    <!-- 메인 -->
     <main>
       <div id="main-container">
+        <!--카테고리 선택-->
         <div class="category-selector">
           <span class="icon-text">
             <span class="home-icon">
-              <img src="../../mainPage/icon/home.png" alt="home icon"/>
+              <img src="../../mainPage/icon/home.png" alt="home icon" />
             </span>
             <span>Home</span>
           </span>
-          <img src="../../mainPage/icon/free-icon-arrow-right-6423875.png" alt="arrow icon"/>
+          <img
+            src="../../mainPage/icon/free-icon-arrow-right-6423875.png"
+            alt="arrow icon"
+          />
           <div class="category-selectBox">
             <select>
               <option>세탁/건조기</option>
@@ -52,23 +53,25 @@
               <option>에어콘</option>
             </select>
           </div>
-          <img src="../../mainPage/icon/free-icon-arrow-right-6423875.png" alt="arrow icon"/>
+          <img
+            src="../../mainPage/icon/free-icon-arrow-right-6423875.png"
+            alt="arrow icon"
+          />
           <div class="category-selectBox">
             <select>
               <option>옵션2</option>
             </select>
           </div>
         </div>
+
+        <!-- 카테고리별 상품 목록-->
         <div class="product-list-container">
           <div class="product-list-top">
             <span>상품 목록</span>
           </div>
-          <div class="product-list">
-
-          </div>
+          <div class="product-list"></div>
         </div>
       </div>
-
     </main>
 
     <!-- 푸터 -->
@@ -119,7 +122,11 @@
 
           <div id="footer-image-container">
             <div class="footer-image">
-              <img src="../../mainPage/icon/elice.png" width="116px" alt="엘리스" />
+              <img
+                src="../../mainPage/icon/elice.png"
+                width="116px"
+                alt="엘리스"
+              />
             </div>
           </div>
         </div>
@@ -139,7 +146,6 @@
         </div>
       </div>
     </footer>
-
 
     <!-- 승섭 -->
     <script src="../js/category.js" type="module"></script>
