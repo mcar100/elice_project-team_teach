@@ -9,6 +9,7 @@ const passwordConfirmBox = document.getElementById("player-password-confirm");
 const phoneNumberBox = document.getElementById("player-phone-number");
 const addressBox = document.getElementById("player-address");
 const agreeBox = document.getElementById("player-agree");
+const identityBox = document.getElementById("identity");
 
 header();
 footer();
@@ -94,6 +95,10 @@ registerButton.addEventListener("click", (err) =>{
   const phoneNumber = document.getElementById("player-phone-number").value;
   const address = document.getElementById("player-address").value;
   const playerAgree = document.getElementById("player-agree").checked;
+  const identity = (identityBox.options[identityBox.selectedIndex].value);;
+
+  console.log(identity);
+
   let isFlag = 0;
 
   if(id.length <= 0){
