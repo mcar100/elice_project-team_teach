@@ -57,4 +57,7 @@ const productArray = [
   },
 ];
 
-export default { productArray };
+export function getProduct() {
+  console.log('get product');
+  return productArray;
+}
