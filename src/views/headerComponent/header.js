@@ -8,4 +8,4 @@ const header = async function () {
   addButtonBar();
 };
 
-export { header };
+export default { header };

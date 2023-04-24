@@ -3,7 +3,7 @@ import { productArray } from './product.js';
 
 const productList = document.querySelector('.product-list');
 header();
-addProduct();
+
 async function addProduct() {
   productArray.forEach(
     ({
@@ -36,3 +36,4 @@ async function addProduct() {
     }
   );
 }
+addProduct();

@@ -15,11 +15,6 @@ const itemData = {
   deliveryfee: 30000,
 };
 
-window.onload = () => {
-  // 해당코드는 서버로부터 데이터를 전달 받은 직후 실행시킨다.
-  initSetting();
-};
-
 function initSetting() {
   let mainImage = document.createElement('img');
   mainImage.src = itemData.images[0];
@@ -79,3 +74,8 @@ function initSetting() {
       .concat('원');
   }
 }
+
+window.onload = () => {
+  // 해당코드는 서버로부터 데이터를 전달 받은 직후 실행시킨다.
+  initSetting();
+};
