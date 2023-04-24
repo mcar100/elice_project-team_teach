@@ -6,8 +6,8 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
+    <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
-    <link rel="stylesheet" type="text/css" href="../../commonCss/footer.css" />
   </head>
   <body>
     <header>
@@ -47,7 +47,7 @@
             </div>
             <div id="item-color-div">
               <span style="font-weight: bold">색상선택</span>
-              <span id="item-selected-color">화이트</span>
+              <span id="item-selected-color" style="font-size:16px; font-weight:bold;"></span>
             </div>
             <div id="item-name-div">
               <span style="font-weight: bold">상품명</span>
@@ -69,15 +69,15 @@
             <div class="item-delivery-div">
               <p id="is-free"></p>
               <p id="item-delivery-description">
-                내일 (목) 4/20 새벽 7시 전 도착 보장 (밤 12시 전 주문시)
+                2일 후 <span id = "item-delivery-day">4/20</span> 새벽 7시 전 도착 보장 (밤 12시 전 주문시)
               </p>
             </div>
             <div class="rental-range-div">
               <p style="font-weight: bold">렌탈 기간</p>
               <div class="rental-range-button-div">
-                <button class="button is-rounded">36개월</button>
-                <button class="button is-rounded">48개월</button>
-                <button class="button is-rounded">60개월</button>
+                <button id = "rental36month" class="button is-rounded">36개월</button>
+                <button id = "rental48month" class="button is-rounded">48개월</button>
+                <button id = "rental60month" class="button is-rounded">60개월</button>
               </div>
             </div>
             <div class="benefits-div">
@@ -109,10 +109,10 @@
             </div>
 
             <div class="item-spec-div">
-              <p>상품명 <span>[삼성] 건조기 9kg (빠른배송) 렌탈</span></p>
-              <p>모델명 <span>DV90TA040KE</span></p>
-              <p>브랜드 <span>삼성</span></p>
-              <p>에너지효율등급 <span>2등급</span></p>
+              <p>상품명 :<span id = "item-spec-div-name"></span></p>
+              <p>모델명 :<span id = "item-spec-div-model"></span></p>
+              <p>브랜드 :<span id = "item-spec-div-brand"></span></p>
+              <p>에너지효율등급 : <span id = "item-spec-div-energy"></span></p>
             </div>
           </div>
         </div>
@@ -122,32 +122,33 @@
             <th style="font-size: 18px">상품 세부 정보</th>
             <tr>
               <td style="font-weight: bold">상품명</td>
-              <td>상품명입력</td>
+              <td id = "item-table-item-name"></td>
               <td style="font-weight: bold">색상</td>
-              <td>상품명입력</td>
+              <td id = "item-table-item-color"></td>
             </tr>
             <tr>
               <td style="font-weight: bold">모델명</td>
-              <td>상품명입력</td>
+              <td id = "item-table-item-model"></td>
               <td style="font-weight: bold">판매자</td>
-              <td>상품명입력</td>
+              <td id = "item-table-item-seller"></td>
             </tr>
             <tr>
               <td style="font-weight: bold">브랜드</td>
-              <td>상품명입력</td>
+              <td id = "item-table-item-brand"></td>
               <td style="font-weight: bold">사이즈</td>
-              <td>사이즈</td>
+              <td id = "item-table-item-size"></td>
             </tr>
             <tr>
               <td style="font-weight: bold">카테고리</td>
-              <td>categorie</td>
+              <td id = "item-table-item-categorie"></td>
               <td style="font-weight: bold">에너지효율등급</td>
-              <td>2등급</td>
+              <td id = "item-table-item-energy"></td>
             </tr>
           </table>
         </div>
       </section>
     </main>
+
     <footer id="footer-container">
     </footer>
     <script src="../js/index.js" type="module"></script>
