@@ -1,9 +1,10 @@
 import addMainContents from './replaceProductComponent.js';
-import setProductIdToSessionStorage from './setSessionStorage.js';
+import * as setSession from './setSessionStorage.js';
 
 const render = async () => {
   await addMainContents();
-  setProductIdToSessionStorage();
+  setSession.setSessionOne();
+  setSession.setSessionChecked();
 };
 
 render();
