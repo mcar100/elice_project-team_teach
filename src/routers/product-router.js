@@ -33,6 +33,21 @@ productRouter.get('/:productId', async (req, res, next) => {
   }
 });
 
+productRouter.get('/user/:userId', async (req, res, next) => {
+  try {
+    const product = {
+      _id: '128789471',
+      username: '임지성',
+      address: '서울시 강남구 역삼동 123-45 101호',
+      mobileNumber: '010-1234-5678',
+    };
+
+    res.status(200).json(product);
+  } catch (err) {
+    next(err);
+  }
+});
+
 // 저장된 모든 상품 정보 확인
 productRouter.get('/', async (req, res, next) => {
   const product = {
