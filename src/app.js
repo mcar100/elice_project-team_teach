@@ -2,6 +2,7 @@ import cors from 'cors';
 import express from 'express';
 import {
   viewRouter,
+  userRouter,
   categoryRouter,
   productRouter,
   orderRouter,
@@ -19,7 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 //api 라우팅
 
 app.use(viewRouter);
-//app.use('/users, mypageRouter); 아직 구성 안함 필요 시 추가 근데 필요해보임/mypage
+app.use('/users', userRouter);
 app.use('/categories', categoryRouter); // /api/catgories
 app.use('/products', productRouter);
 app.use('/orders', orderRouter);

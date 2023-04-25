@@ -17,7 +17,7 @@ const UserSchema = new Schema(
       required: true,
     },
 
-    moblieNumber: {
+    mobileNumber: {
       type: String,
       required: true,
     },
@@ -29,7 +29,7 @@ const UserSchema = new Schema(
 
     role: {
       type: String,
-      enum: ['nonUser', 'user', 'admin'],
+      enum: ['nonuser', 'user', 'admin'],
       required: true,
       default: 'user',
     },
