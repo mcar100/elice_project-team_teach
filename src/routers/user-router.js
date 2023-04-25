@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import { userService } from '../services/user-service';
+import { userService } from '../services/user-service.js';
 
 const userRouter = Router();
 
-// 회원가입
+// 회원가입 - 민우님 코드 합칠 예정
 userRouter.post('/signup', async (req, res, next) => {
   try {
   } catch (err) {
@@ -11,25 +11,37 @@ userRouter.post('/signup', async (req, res, next) => {
   }
 });
 
-// 로그인
+// 로그인 - 민우님 코드 합칠 예정
 userRouter.post('/signin', async (req, res, next) => {});
 
 //특정 사용자 정보 수정
-userRouter.patch('/', async (req, res, next) => {
+userRouter.put('/:userId', async (req, res, next) => {
   try {
     // /:userId라면 req.params.userId
+    // if (is.emptyObject(req.body)) {
+    //   throw new Error(
+    //     'headers의 Content-Type을 application/json으로 설정해주세요'
+    //   );
+    // }
+
     const userId = req.query.userId;
 
-    const user = await userService.findById(userId);
+    const { username, email, password, moblieNumber, address } = req.body;
 
-    const username = req.body.username;
-    const email = req.body.email;
-    const password = req.body.password;
-    const moblieNumber = req.body.moblieNumber;
-    const address = req.body.address;
+    const toUpdate = {
+      ...(username && { username }),
+      ...(email && { email }),
+      ...(password && { password }),
+      ...(moblieNumber && { moblieNumber }),
+      ...(address && { address }),
+    };
 
-    console.log(user);
+    const updateUserInfo = await userService.updateUserByUserId(
+      userId,
+      toUpdate
+    );
 
+    res.status(200).json(updateUserInfo);
     // 수정코드 이어서
   } catch (err) {
     next(err);

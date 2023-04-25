@@ -1,3 +1,5 @@
+@import url('../../commonCss/reset.css');
+
 /**======================
 *         COMMON
 *========================**/
@@ -59,7 +61,7 @@ header p {
   font-size: 14px;
   font-weight: bold;
 }
-.order-process-order {
+.order-process-now {
   color: black;
 }
 
@@ -185,7 +187,10 @@ label {
 /**======================
  *         MAIN
  *========================**/
-.main {
+main {
+  margin-bottom: 200px;
+}
+.main-container {
   width: 1240px;
   margin: 0 auto;
   border-radius: 18px;
@@ -386,11 +391,4 @@ label {
   padding-top: 3px;
   text-align: center;
   color: black;
-}
-
-/**======================
- *         FOOTER
- *========================**/
-footer {
-  margin-bottom: 30vh;
 }
