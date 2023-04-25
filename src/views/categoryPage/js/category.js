@@ -1,10 +1,10 @@
 import { header } from '../../headerComponent/header.js';
 import { getProduct } from './product.js';
+import { moveToOtherByHeader } from '../../headerComponent/moveEventCommon.js';
 
 const productList = document.querySelector('.product-list');
-header();
 
-async function addProduct() {
+function addProduct() {
   const productArray = getProduct();
   productArray.forEach(
     ({
@@ -36,4 +36,14 @@ async function addProduct() {
     }
   );
 }
-addProduct();
+
+async function renderPage() {
+  await header();
+  setTimeout(() => {
+    moveToOtherByHeader();
+  }, 1000);
+  setTimeout(() => {
+    addProduct();
+  }, 1000);
+}
+renderPage();

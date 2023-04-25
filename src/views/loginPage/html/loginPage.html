@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/loginPage/css/index.css" />
+  </head>
+  <body>
+    <header>
+      <div id="login-header-div">
+        <img
+          src="/loginPage/icon/elice.png"
+          alt="엘리스"
+          width="100px"
+          height="123"
+        />
+      </div>
+    </header>
+    <main class="main">
+      <div class="field">
+        <div class="select">
+          <p class="control has-icons-left">
+            <select id="identity">
+              <option>admin</option>
+              <option>user</option>
+              <option>non-user</option>
+            </select>
+          </p>
+        </div>
+      </div>
+
+      <div class="field">
+        <p class="control has-icons-left has-icons-right">
+          <input class="input" type="text" placeholder="아이디" />
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control has-icons-left">
+          <input
+            class="input"
+            type="password"
+            placeholder="비밀번호는 8~20자"
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control">
+          <button class="button is-success" style="width: 100%">Login</button>
+        </p>
+      </div>
+      <div id="login-option">
+        <label class="checkbox">
+          <input type="checkbox" />
+          <span style="font-size: 13px">로그인 상태 유지하기</span>
+        </label>
+        <div style="margin-left: auto">
+          <span style="font-size: 13px; margin-right: 17px"
+            ><a href="/">아이디찾기</a></span
+          ><span style="font-size: 13px"><a href="/">비밀번호찾기</a></span>
+        </div>
+      </div>
+      <div class="login-social-div">
+        <p>sns 계정으로 로그인 할 수 있어요</p>
+        <div class="login-social-div-images">
+          <img
+            src="/loginPage/icon/kakaotalk_sharing_btn_small.png"
+            width="40px"
+            height="40px"
+          />
+          <img src="/loginPage/icon/btn_naver.png" width="40px" height="40px" />
+        </div>
+      </div>
+      <div>
+        <div id="login-guest-div">
+          <p style="font-size: 14px"><a href="/">회원가입</a></p>
+          <div style="margin-top: 18px">
+            <button id="guest-check" class="button" style="font-size: 14px">
+              비회원 주문조회
+            </button>
+          </div>
+        </div>
+      </div>
+      <p id="login-copyrights">
+        Copyright © 2023 엘리스 15팀 Co.,Ltd. All Rights Reserved.
+      </p>
+    </main>
+    <script src="/loginPage/js/index.js"></script>
+  </body>
+</html>
