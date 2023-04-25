@@ -40,7 +40,7 @@ function makeCategoryBar() {
     container.insertAdjacentHTML(
       `beforeend`,
       `<div class="category-item">
-              <a ref="/">
+              <a ref="/category">
               <img src="${iconSrc}" alt="${type} icon"/>
               <span>${type}</span>
               <img src="../../mainPage/icon/free-icon-arrow-right-6423875.png" alt="arrow icon"/> 
