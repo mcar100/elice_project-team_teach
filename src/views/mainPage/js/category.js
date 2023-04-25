@@ -9,7 +9,7 @@ function getMainCategoryData() {
     mainCategoryList.insertAdjacentHTML(
       'beforeend',
       `<div class="main-category">
-            <a ref="/">
+            <a ref="/category">
             <img src="${item.iconSrc}" alt="${item.type} icon"/>
             ${item.type}
             </a>

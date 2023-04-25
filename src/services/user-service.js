@@ -1,10 +1,14 @@
-// import { userModel } from '../db/index.js';
+import { userModel } from '../db/index.js';
 
-// export class UserService {
-//   constructor(userModel) {
-//     this.userModel = userModel;
-//   }
-// }
+export class userService {
+  constructor(userModel) {
+    this.userModel = userModel;
+  }
 
-// const userService = new UserService(userModel);
-// export { userService };
+  async updateUserByUserId(userId, updateData) {
+    const updateUser = await userModel.updateUserInfo();
+  }
+}
+
+const userService = new userService(userModel);
+export { userService };
