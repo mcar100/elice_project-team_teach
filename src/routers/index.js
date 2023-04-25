@@ -1,4 +1,4 @@
-//export * from './views-router';
+export * from './view-router.js';
 //export * from './user-router';
 export * from './category-router.js';
 export * from './product-router.js';

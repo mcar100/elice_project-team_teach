@@ -8,10 +8,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
     />
-    <link rel="stylesheet" href="../../mainPage/css/reset.css" />
-    <link rel="stylesheet" href="../../mainPage/css/style.css" />
-    <link rel="stylesheet" href="../css/myPage.css" />
-    <title>my page</title>
+    <link rel="stylesheet" href="/mainPage/css/reset.css" />
+    <link rel="stylesheet" href="/mainPage/css/style.css" />
+    <link rel="stylesheet" href="/categoryPage/css/category.css" />
+    <title>category page</title>
   </head>
   <body>
     <!-- 헤더 영역 -->
@@ -33,44 +33,45 @@
 
     <!-- 메인 -->
     <main>
-        <div id="profile-container">
-            <div class="profile-container-head">
-                <span>내 정보</span>
-            </div>
-            <div class="profile-container-body">
-                <div>
-                    <span>내 프로필</span>
-                </div>
-                <div class="profile-input-info">
-                    <span>이름</span>
-                    <span>이메일</span>
-                    <span>전화번호</span>
-                    <span>주소</span>
-                    <span>비밀번호</span>
-                    <span>비밀번호 확인</span>
-                </div>
-                <div class="profile-input-container">
-                    <input class="input-name" type="text" placeholder="이름"/>
-                    <input class="input-email" type="email" placeholder="이메일"/>
-                    <input class="input-phonenumber" type="text" placeholder="전화번호"/>
-                    <input class="input-address" type="text" placeholder="주소"/>
-                    <input class="input-password" type="password" placeholder="비밀번호"/>
-                    <input class="input-passwordConfirm" type="password" placeholder="비밀번호 확인"/>
-                </div>
-                <div class="profile-button-container">
-                    <button class="change-btn">수정</button>
-                    <button class="change-btn">수정</button>
-                    <button class="change-btn">수정</button>
-                    <button class="change-btn">수정</button>
-                    <button class="change-btn">변경</button>
-                </div>
-                <div>
-                  <button class="button is-danger is-small">회원탈퇴</button>
-                </div>
-            </div>
-
-
+      <div id="main-container">
+        <div class="category-selector">
+          <span class="icon-text">
+            <span class="home-icon">
+              <img src="../../mainPage/icon/home.png" alt="home icon" />
+            </span>
+            <span>Home</span>
+          </span>
+          <img
+            src="../../mainPage/icon/free-icon-arrow-right-6423875.png"
+            alt="arrow icon"
+          />
+          <div class="category-selectBox">
+            <select>
+              <option>세탁/건조기</option>
+              <option>TV</option>
+              <option>냉장고</option>
+              <option>청소기</option>
+              <option>세탁/건조기</option>
+              <option>에어콘</option>
+            </select>
+          </div>
+          <img
+            src="../../mainPage/icon/free-icon-arrow-right-6423875.png"
+            alt="arrow icon"
+          />
+          <div class="category-selectBox">
+            <select>
+              <option>옵션2</option>
+            </select>
+          </div>
         </div>
+        <div class="product-list-container">
+          <div class="product-list-top">
+            <span>상품 목록</span>
+          </div>
+          <div class="product-list"></div>
+        </div>
+      </div>
     </main>
 
     <!-- 푸터 -->
@@ -121,7 +122,11 @@
 
           <div id="footer-image-container">
             <div class="footer-image">
-              <img src="../../mainPage/icon/elice.png" width="116px" alt="엘리스" />
+              <img
+                src="../../mainPage/icon/elice.png"
+                width="116px"
+                alt="엘리스"
+              />
             </div>
           </div>
         </div>
@@ -142,8 +147,7 @@
       </div>
     </footer>
 
-
     <!-- 승섭 -->
-    <script src="../js/myPage.js" type="module"></script>
+    <script src="../js/category.js" type="module"></script>
   </body>
 </html>
