@@ -1,0 +1,159 @@
+@import url('../../commonCss/reset.css');
+
+/**======================
+*         HEADER
+*========================**/
+header {
+  height: 102px;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: #ffc9db;
+  text-align: center;
+}
+header p {
+  padding-top: 36px;
+}
+
+/**======================
+*  ORDER COMPLETED HEADER
+*========================**/
+/* 아우터 */
+.order-completed-header-container {
+  padding-top: 30px;
+  background-color: #fff;
+  padding-bottom: 10px;
+  margin-bottom: 50px;
+}
+/* 왼쪽 */
+.order-completed-header {
+  display: flex;
+  width: 1240px;
+  margin: 0 auto;
+  height: 30px;
+  padding: 31px 0 24px 0;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ff1e69;
+}
+.order-completed-header-title {
+  font-size: 32px;
+  font-weight: bold;
+}
+.bi-apple {
+  margin-left: 5px;
+}
+.order-completed-header-title h1 span {
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: -5px;
+}
+/* 오른쪽 */
+.order-completed-process {
+  display: flex;
+  gap: 8px;
+  color: #777;
+  font-size: 14px;
+  font-weight: bold;
+}
+.order-completed-process-now {
+  color: black;
+  padding-bottom: 2px;
+}
+
+/**======================
+ *       MAIN HEADER
+ *========================**/
+main {
+  width: 1240px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+.order-completed-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  margin-bottom: 180px;
+}
+.order-completed-text-outer {
+  display: flex;
+  margin-bottom: 20px;
+}
+.order-completed-text.text-emphasize {
+  color: #ff1e69;
+}
+.order-completed-text {
+  font-size: 32px;
+}
+
+.order-completed-date-number {
+  display: flex;
+  gap: 4px;
+  font-size: 14px;
+  margin-bottom: 48px;
+}
+.order-completed-date {
+  margin-right: 20px;
+}
+
+.order-completed-mypage-a:hover {
+  background-color: #fff;
+}
+.order-completed-payment-a:hover {
+  background-color: #ff1e69;
+  border-radius: 6px;
+}
+.order-completed-buttons {
+  display: flex;
+  gap: 48px;
+}
+.order-completed-mypage {
+  border: 0.5px solid #aaa;
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 14px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.order-completed-continue-shopping {
+  border: none;
+  border-radius: 4px;
+  background-color: #ff1e69;
+  color: #fff;
+  padding: 16px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.order-completed-info {
+  display: flex;
+  gap: 150px;
+  justify-content: center;
+  padding: 50px 100px;
+  border-top: 1px solid #ccc;
+}
+.order-completed-user-info-text,
+.order-completed-payment-info-text {
+  font-size: 24px;
+  color: #555;
+  margin-bottom: 48px;
+}
+.order-completed-info table {
+  border-spacing: 14px;
+  border-collapse: separate;
+  margin-left: 24px;
+}
+.order-completed-info td:nth-child(1) {
+  color: #888;
+  width: 100px;
+}
+.order-completed-info td:nth-child(2) {
+  color: #333;
+}
+.order-completed-payment-info tfoot td:nth-child(1),
+.order-completed-payment-info tfoot td:nth-child(2) {
+  font-size: 18px;
+  font-weight: 550;
+  color: black;
+  padding-top: 10px;
+}

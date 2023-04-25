@@ -1,6 +1,6 @@
 const buttonContainer = document.getElementById('button-container');
-function addButtonBar(){
-    buttonContainer.innerHTML = `
+function addButtonBar() {
+  buttonContainer.innerHTML = `
     <button class="user-btn">
         <img src="../../mainPage/icon/free-icon-user-747376.png" alt="user icon" />
     </button>
@@ -9,4 +9,5 @@ function addButtonBar(){
     </button>
     `;
 }
+
 export { addButtonBar };

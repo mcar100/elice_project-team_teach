@@ -1,3 +1,19 @@
+@import url('../../commonCss/reset.css');
+
+/**======================
+*         HEADER
+*========================**/
+header {
+  height: 102px;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: #ffc9db;
+  text-align: center;
+}
+header p {
+  padding-top: 36px;
+}
+
 /**======================
 *         COMMON
 *========================**/
@@ -42,7 +58,7 @@ body {
   font-size: 14px;
   font-weight: bold;
 }
-.cart-process-cart {
+.cart-process-now {
   color: black;
 }
 
@@ -111,13 +127,23 @@ body {
   border: 1px solid #444444;
   border-radius: 4px;
 }
-.select-all-left-container > p {
+.select-all-right-container:hover {
+  cursor: pointer;
+}
+label[for='select-all'] {
   padding-left: 14px;
   padding-top: 4px;
   color: #222222;
   font-size: 18px;
   font-weight: bold;
 }
+/* .select-all-left-container > p {
+  padding-left: 14px;
+  padding-top: 4px;
+  color: #222222;
+  font-size: 18px;
+  font-weight: bold;
+} */
 .select-all-right-container > p {
   padding: 2px 7px 0 2px;
 }
@@ -125,7 +151,10 @@ body {
 /**======================
  *         MAIN
  *========================**/
-.main {
+main {
+  margin-bottom: 200px;
+}
+.main-container {
   width: 1240px;
   margin: 0 auto;
   border-radius: 18px;
@@ -147,7 +176,7 @@ body {
   padding-top: 30px;
   padding-bottom: 18px;
 }
-.cart-product-seller > p {
+.cart-product-seller > label {
   padding-left: 14px;
   padding-top: 5px;
   font-size: 20px;
@@ -211,12 +240,6 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-}
-.cart-product-quantity-minus {
-  font-size: 18px;
-}
-.cart-product-quantity-plus {
-  font-size: 16px;
 }
 .cart-product-quantity {
   font-size: 18px;
@@ -305,13 +328,6 @@ body {
 .discounted-price {
   color: #ff0456;
 }
-.plus-minus {
-  display: flex;
-  font-size: 20px;
-  align-items: center;
-  text-align: center;
-  padding-top: 7px;
-}
 .cart-product-final-price {
   display: flex;
   gap: 10px;
@@ -326,13 +342,22 @@ body {
   font-weight: bold;
   color: #ff0456;
 }
-.order-button {
+.each-order-button {
   font-size: 18px;
   font-weight: bold;
   padding: 15px 30px;
+  padding-top: 17px;
   border-radius: 6px;
   color: #fff;
   background-color: #ff0456;
+  border: none;
+}
+.each-order-button:hover {
+  border-radius: 6px;
+  cursor: pointer;
+}
+.each-order-a:hover {
+  border-radius: 6px;
 }
 
 /**======================
@@ -394,85 +419,4 @@ body {
   padding-top: 5.5px;
   text-align: center;
   color: #fff;
-}
-
-/**======================
- *     FOOTER
- *========================**/
-
- footer {
-  width: 100%;
-}
-
-.sites {
-  width: 1240px;
-  margin: 0 auto;
-}
-
-/**======================
- *    FOOTER
- *========================**/
-
-#footer-title-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-}
-
-#footer-title-container > div > p {
-  font-size: 14px;
-  font-family: 'Noto Sans KR', 'Helvetica Neue', 'Apple SD Gothic Neo',
-    '맑은 고딕', 'Malgun Gothic', 돋움, dotum, sans-serif;
-}
-
-#site-description {
-  padding: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/**======================
- *    FOOTER - 왼쪽 칸
- *========================**/
-
-#footer-main {
-  padding: 0 50px;
-}
-
-#footer-main > p {
-  font-size: 12px;
-  font-family: 'Noto Sans KR', 'Helvetica Neue', 'Apple SD Gothic Neo',
-    '맑은 고딕', 'Malgun Gothic', 돋움, dotum, sans-serif;
-}
-
-#footer-image-container {
-  display: flex;
-  align-items: center;
-}
-
-/**======================
- *    FOOTER - 오른쪽 칸
- *========================**/
-
-#footer-sub {
-  padding: 0 50px;
-}
-
-#footer-sub > p {
-  font-size: 12px;
-  font-family: 'Noto Sans KR', 'Helvetica Neue', 'Apple SD Gothic Neo',
-    '맑은 고딕', 'Malgun Gothic', 돋움, dotum, sans-serif;
-}
-
-/**======================
- *    FOOTER - 로고 이미지
- *========================**/
-
-.footer-image {
-  padding-top: 20px;
 }
