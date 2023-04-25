@@ -10,12 +10,12 @@ const lengthProducts = () => localStorage.length;
 /**
  * localStorage에 productId를 저장하는 함수.
  * key값은 lengthProducts() + 1로 설정
- * @param {string} productId
+ * @param {object} product
  */
-const setProduct = (productId) => {
-  const productKey = `product${lengthProducts() + 1}`;
+const setProduct = (product) => {
+  const productKey = product._id;
 
-  localStorage.setItem(productKey, productId);
+  localStorage.setItem(productKey, product);
 };
 
 /**
