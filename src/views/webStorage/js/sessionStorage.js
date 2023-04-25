@@ -19,6 +19,15 @@ const setProduct = (productId) => {
 };
 
 /**
+ *
+ * @param {string} keyName
+ * @param {object} userProductData
+ */
+const setUserProduct = (keyName, userProductData) => {
+  sessionStorage.setItem(keyName, JSON.stringify(userProductData));
+};
+
+/**
  * sessionStorage에 저장된 productId를 가져오는 함수.
  *     - productId가 없으면 null을 반환
  * @param {string} productId
@@ -59,6 +68,7 @@ const getNameByKey = (index) => sessionStorage.key(index);
 
 export {
   setProduct,
+  setUserProduct,
   getProduct,
   deleteProduct,
   clearProducts,
