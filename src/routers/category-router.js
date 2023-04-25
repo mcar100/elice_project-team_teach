@@ -1,14 +1,19 @@
 import { Router } from 'express';
 import { categoryService } from '../services/category-services.js';
+import path from 'path';
 
 const categoryRouter = Router();
+const __dirname = path.resolve();
 
 //카테고리 전체 조회
 categoryRouter.get('/', async (req, res, next) => {
   try {
-    const categories = await categoryService.getAllCategoryName();
-    console.log(categories);
-    res.status(200).json(categories);
+    // const categories = await categoryService.getAllCategoryName();
+    res.sendFile(
+      path.join(__dirname, '/src/views/categoryPage/html/category.html')
+    );
+    // console.log(categories);
+    // res.status(200).json(categories);
   } catch (err) {
     next(err);
   }
