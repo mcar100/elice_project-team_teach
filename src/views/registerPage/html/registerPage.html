@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/registerPage/css/style.css" />
+  </head>
+  <header>
+    <div id="header-container">
+      <span class="header-logo">TechMate</span>
+      <div id="search-container"></div>
+      <div id="button-container"></div>
+    </div>
+  </header>
+
+  <!-- header navbar 영역 -->
+  <nav>
+    <div class="nav-container">
+      <div>Hello Techmate</div>
+      <div>로그인/회원가입</div>
+    </div>
+  </nav>
+  <body>
+    <main id="main">
+      <div class="main-div">
+        <img
+          src="/registerPage/icon/elice.png"
+          alt="엘리스"
+          width="250px"
+        /><span>회원가입</span>
+      </div>
+      <div id="register-main-div">
+        <div>
+          <p id="register-main-title-p">회원정보입력</p>
+        </div>
+        <div id="register-description-div">
+          <form method="post" action="/">
+            <div class="field">
+              <label class="label" style="font-size: 12px">아이디</label>
+              <div class="register-id-div">
+                <p class="control has-icons-left" style="flex-grow: 1">
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="사용자 아이디"
+                    id="player-id"
+                  />
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </p>
+                <button id="duplicate-check" type="button" class="button">
+                  중복체크
+                </button>
+              </div>
+              <p class="help is-danger" style="display: none" id="id-error">
+                아이디를 입력해주세요.
+              </p>
+            </div>
+            <div class="field">
+              <label class="label" style="font-size: 12px">이메일</label>
+              <p class="control has-icons-left">
+                <input
+                  class="input"
+                  type="email"
+                  placeholder="이메일"
+                  id="player-email"
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                  <p
+                    class="help is-danger"
+                    style="display: none"
+                    id="email-error"
+                  >
+                    이메일을 다시 확인해주세요.
+                  </p>
+                </span>
+              </p>
+            </div>
+            <div class="field">
+              <label class="label" style="font-size: 12px">비밀번호</label>
+              <p class="control has-icons-left">
+                <input
+                  class="input"
+                  type="password"
+                  placeholder="비밀번호는 8~20자"
+                  id="player-password"
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                  <p
+                    class="help is-danger"
+                    style="display: none"
+                    id="password-error"
+                  >
+                    비밀번호를 다시 확인해주세요.
+                  </p>
+                </span>
+              </p>
+            </div>
+            <div class="field">
+              <label class="label" style="font-size: 12px">비밀번호 확인</label>
+              <p class="control has-icons-left">
+                <input
+                  class="input"
+                  type="password"
+                  placeholder="비밀번호 확인"
+                  id="player-password-confirm"
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                  <p
+                    class="help is-danger"
+                    style="display: none"
+                    id="password-confirm-error"
+                  >
+                    비밀번호가 일치하지 않습니다.
+                  </p>
+                </span>
+              </p>
+            </div>
+            <div class="field">
+              <label class="label" style="font-size: 12px">휴대폰번호</label>
+              <p class="control has-icons-left">
+                <input
+                  class="input"
+                  type="phonenumber"
+                  placeholder="-를 포함해주세요."
+                  id="player-phone-number"
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                  <p
+                    class="help is-danger"
+                    style="display: none"
+                    id="phone-number-error"
+                  >
+                    전화번호를 다시 확인하세요.
+                  </p>
+                </span>
+              </p>
+            </div>
+            <div class="field">
+              <label class="label" style="font-size: 12px">주소</label>
+              <p class="control has-icons-left">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="상세하게 입력해주세요."
+                  id="player-address"
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                  <p
+                    class="help is-danger"
+                    style="display: none"
+                    id="address-error"
+                  >
+                    주소입력이 필요합니다.
+                  </p>
+                </span>
+              </p>
+            </div>
+
+            <div class="field">
+              <label class="label" style="font-size: 12px">신분</label>
+              <div class="select">
+                <p class="control has-icons-left">
+                  <select id="identity">
+                    <option>admin</option>
+                    <option>user</option>
+                    <option>non-user</option>
+                  </select>
+                </p>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <label class="checkbox">
+                  <input type="checkbox" id="player-agree" />
+                  I agree to the <a href="#">terms and conditions</a>
+                </label>
+                <p
+                  class="help is-danger"
+                  style="display: none"
+                  id="agree-error"
+                >
+                  회원가입 조건에 동의해주세요.
+                </p>
+              </div>
+            </div>
+            <div id="register-submit-div">
+              <button
+                class="button is-danger"
+                type="button"
+                id="register-button"
+              >
+                확인
+              </button>
+              <button class="button" type="button">취소</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer id="footer-container"></footer>
+    <script src="/registerPage/js/index.js" type="module"></script>
+  </body>
+</html>
