@@ -1,10 +1,11 @@
 import { header } from '../../headerComponent/header.js';
-import { productArray } from './product.js';
+import { getProduct } from './product.js';
 
 const productList = document.querySelector('.product-list');
 header();
-addProduct();
+
 async function addProduct() {
+  const productArray = getProduct();
   productArray.forEach(
     ({
       productNumber,
@@ -28,11 +29,11 @@ async function addProduct() {
             <span>${productSpecification.brand}</span>
         </div>
         <div class="product-button">
-            <button class="cart-button">장바구니 담기</button>
-            <button class="order-button">주문하기</button>
+
         </div>
     </div>
         `;
     }
   );
 }
+addProduct();

@@ -1,8 +1,9 @@
-import { productArray } from './product.js';
+import { getProduct } from './product.js';
 
 const orderCheckList = document.querySelector('.order-check-list-body');
 
 async function addOrderCheck() {
+  const productArray = getProduct();
   productArray.forEach(
     ({ productNumber, productName, pricePerMonth, images }) => {
       orderCheckList.innerHTML += `
@@ -13,7 +14,7 @@ async function addOrderCheck() {
       </div>
       <div class="order-check-item-body">
         <img
-          src="${images}"
+          src="${images[0]}"
           alt="${productNumber} image"
         />
         <div class="order-check-item-info">
@@ -37,4 +38,4 @@ async function addOrderCheck() {
 }
 
 // eslint-disable-next-line node/no-unsupported-features/es-syntax
-export default { addOrderCheck };
+export { addOrderCheck };
