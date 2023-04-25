@@ -5,15 +5,24 @@
  * const productId = lengthProducts();
  * console.log(productId);
  */
-const lengthProducts = () => localStorage.length;
+const lengthProducts = () => {
+  let localStorageLength = 0;
+
+  if (typeof window !== 'undefined') {
+    localStorageLength = localStorage.length;
+  } else return -1;
+  return localStorageLength;
+};
 
 /**
- * localStorage에 productId를 저장하는 함수.
- * key값은 lengthProducts() + 1로 설정
- * @param {string} productId
+ * localStorage에 상품을 저장하는 함수
+ * @param {*} productKey
+ * @param {*} productValue
  */
-const setProduct = (productId) => {
-  localStorage.setItem(productId, productId);
+const setProduct = (productKey, productValue) => {
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(productKey, productValue);
+  }
 };
 
 /**
