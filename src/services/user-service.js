@@ -1,10 +1,10 @@
-import { userModel } from '../db/index.js';
+// import { userModel } from '../db/index.js';
 
-export class userService {
-  constructor(userModel) {
-    this.userModel = userModel;
-  }
-}
+// export class UserService {
+//   constructor(userModel) {
+//     this.userModel = userModel;
+//   }
+// }
 
-const userService = new userService(userModel);
-export { userService };
+// const userService = new UserService(userModel);
+// export { userService };
