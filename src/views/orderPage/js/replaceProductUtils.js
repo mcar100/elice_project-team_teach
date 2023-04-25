@@ -2,10 +2,10 @@ import toCurrency from './utils.js';
 
 const replaceProductComponent = (productsData, productComponent) => {
   let productsHtmlForRender = '';
-  productsData.forEach((product, index) => {
+  productsData.forEach((product) => {
     productsHtmlForRender += productComponent
       .replace(/{%IMAGE_SRC%}/g, product.imageSrc)
-      .replace(/{%PRODUCT_ID%}/g, `${product.productId}-${index + 1}`)
+      .replace(/{%PRODUCT_ID%}/g, `${product.productId}`)
       .replace(/{%SELLER%}/g, product.seller)
       .replace(/{%PRODUCT_NAME%}/g, product.productName)
       .replace(/{%MODEL%}/g, `모델명 : ${product.productSpecification.model}`)

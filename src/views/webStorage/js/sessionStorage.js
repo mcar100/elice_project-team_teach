@@ -13,9 +13,16 @@ const lengthProducts = () => sessionStorage.length;
  * @param {string} productId
  */
 const setProduct = (productId) => {
-  const productKey = `product${lengthProducts() + 1}`;
+  sessionStorage.setItem(productId, productId);
+};
 
-  sessionStorage.setItem(productKey, productId);
+/**
+ *
+ * @param {string} keyName
+ * @param {object} userProductData
+ */
+const setUserProduct = (keyName, userProductData) => {
+  sessionStorage.setItem(keyName, JSON.stringify(userProductData));
 };
 
 /**
@@ -59,6 +66,7 @@ const getNameByKey = (index) => sessionStorage.key(index);
 
 export {
   setProduct,
+  setUserProduct,
   getProduct,
   deleteProduct,
   clearProducts,

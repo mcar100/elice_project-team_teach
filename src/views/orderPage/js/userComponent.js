@@ -17,6 +17,7 @@ const addressComponent = `
     name="delivery-require"
     id="{%USER_ID%}"
     placeholder="배송시 요청사항을 적어주세요."
+    value=""
   />
 </div>
 `;
