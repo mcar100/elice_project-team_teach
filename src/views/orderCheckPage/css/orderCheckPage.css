@@ -1,0 +1,162 @@
+/**==============================
+ *    Main - OrderCheckContainer
+ *================================**/
+
+#order-check-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+
+  background-color: #fff;
+}
+
+/**==============================
+ *    Main - OrderCheckList
+ *================================**/
+
+.order-check-list-container {
+  display: grid;
+  grid-template-rows: 80px auto;
+  width: 900px;
+  height: 100%;
+  background-color: #fff;
+}
+
+.order-check-list-head {
+  display: flex;
+  align-items: end;
+  height: 80px;
+  padding-bottom: 10px;
+
+  font-size: 30px;
+  font-weight: 600;
+
+  border-bottom: 3px solid #969696;
+}
+
+.order-check-list-body {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  margin-top: 10px;
+}
+
+/**============================
+ *    Main - OrderCheckItem
+ *=============================**/
+
+.order-check-item-container {
+  display: grid;
+  grid-template-rows: 18% 82%;
+
+  height: 250px;
+  width: 700px;
+
+  margin-top: 10px;
+
+  border: 1px solid #cecece;
+  border-radius: 10px;
+}
+
+.order-check-item-head {
+  display: grid;
+  grid-template-columns: 30% auto 20%;
+
+  align-items: end;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom: 2px solid #cecece;
+
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #fff;
+}
+
+.order-check-item-head > span {
+  margin: 0 10px 10px 10px;
+}
+
+.order-check-item-head > span:last-child {
+  grid-column-start: 3;
+  justify-self: end;
+}
+
+.order-check-item-body {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 2% 20% 38% 20% 20%;
+}
+
+.order-check-item-body > img {
+  grid-column-start: 2;
+}
+
+.order-check-item-info {
+  display: grid;
+  height: 100%;
+  grid-template-rows: 25% 35% 30% auto;
+}
+
+.order-check-item-info > span:first-child {
+  grid-row-start: 2;
+  font-weight: 600;
+}
+
+.order-check-item-info > span:nth-child(2) {
+  grid-row-start: 3;
+}
+
+.order-check-item-deliver {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-left: 1px solid #cecece;
+  border-right: 1px solid #cecece;
+  font-weight: 600;
+}
+
+.order-check-item-deliver > span {
+  margin: 15px 0;
+}
+
+.order-check-item-deliver-state {
+  color: red;
+}
+
+.order-check-button-box {
+  display: grid;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: 5% 30% 30% 30% 5%;
+}
+
+.order-check-button-box > button {
+  width: 80px;
+  height: 40px;
+
+  background-color: #fff;
+  border: 1px solid #cecece;
+  color: black;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+.order-check-button-box > button:first-child {
+  grid-row-start: 2;
+}
+
+.order-check-button-box > button:nth-child(2) {
+  grid-row-start: 3;
+}
+
+.order-check-button-box > button:nth-child(3) {
+  grid-row-start: 4;
+  border: 1px #ff0456 solid;
+  color: #ff0456;
+}
