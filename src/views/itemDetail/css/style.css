@@ -7,255 +7,267 @@ main {
   margin: 0 auto;
 }
 
-p {
-  font-size: 14px;
+section{
+  margin-bottom:60px;
+
 }
-#main-div {
-  display: flex;
+
+p{
+  font-size:14px;
+}
+#main-div{
+  display:flex;
   justify-content: center;
 }
 
-#item-color-div {
-  display: flex;
-  padding: 20px;
+#item-color-div{
+  display:flex;
+  padding:20px;
   padding: 10px;
 }
 
-.item-main-image-container-div {
-  display: flex;
+.item-main-image-container-div{
+  display:flex;
   flex-direction: column;
-  margin: auto auto;
-  padding: 20px;
+  margin:auto auto;
+  padding:20px;
 }
-.item-main-image-div {
-  width: 597px;
-  height: 497px;
+.item-main-image-div{
+  width:597px;
+  height:497px;
   border-radius: 10px;
+  
 }
 
-#item-sub-image-container-div {
-  width: 597px;
-  height: 140px;
+#item-sub-image-container-div{
+  width:597px;
+  height:140px;
 }
 
-#item-sub-images {
-  padding: 30px;
+#item-sub-images{
+  padding:30px;
 }
 
-#item-sub-images > img {
-  width: 60px;
-  height: 60px;
-  margin: 0 5px;
-  border: 1px solid gray;
+#item-sub-images > img{
+  width:60px;
+  height:60px;
+  margin:0 5px;
+  border:1px solid gray;
 }
 
-.item-description-div {
-  width: 643px;
-  padding: 20px;
+.item-description-div{
+  width:643px;
+  padding:20px;
 }
 
-#main-image {
-  max-width: 100%;
+#main-image{
+  max-width:100%;
   height: 500px;
 }
 
-#item-name-div {
-  display: flex;
+#item-name-div{
+  display:flex;
   padding: 10px;
   align-items: center;
 }
 
-#item-name {
+#item-name{
   flex-grow: 5;
-  padding: 0 20px;
+  padding:0 20px;
 }
 
-.item-brand-div {
+.item-brand-div{
   padding: 10px;
-  font-weight: bold;
+  font-weight:bold;
 }
 
-#item-real-price {
+#item-real-price{
   text-decoration: line-through;
+
 }
 
-.rate-div {
-  display: flex;
+.rate-div{
+  display:flex;
 }
 
-#rate-point {
+#rate-point{
+
 }
 
-#rate-number {
-  color: blue;
+#rate-number{
+  color:blue;
   padding-left: 10px;
-  font-size: 12px;
+  font-size:12px;
 }
 
-.item-price-div {
+.item-price-div{
   padding: 10px;
 }
 
-.suggest-button {
+.suggest-button{
   border-radius: 50%;
   aspect-ratio: 1 / 1;
-  width: 40px;
-  margin: 0 5px;
+  width:40px;
+  margin:0 5px;
   background-color: white;
-  border: 1px dotted gray;
+  border:1px dotted gray;
 }
 
-.share-button {
+.share-button{
   border-radius: 50%;
   aspect-ratio: 1 / 1;
-  width: 40px;
-  margin: 0 5px;
+  width:40px;
+  margin:0 5px;
   background-color: white;
-  border: 1px dotted gray;
+  border:1px dotted gray;
 }
 
-button:hover {
-  cursor: pointer;
+button:hover{
+  cursor:pointer;
+
 }
 
-.item-delivery-div {
+.item-delivery-div{
   padding: 10px;
 }
 
-.item-number-div {
-  display: flex;
+.item-number-div{
+  display:flex;
+
 }
 
-#is-free {
-  font-size: 16px;
-  color: green;
+#is-free{
+  font-size:16px;
+  color:green;
 }
 
-#item-number {
-  border-radius: 5px;
-  border: 1px solid gray;
+#item-number{
+  border-radius:5px;
+  border:1px solid gray;
 }
-.item-count-div {
-  display: flex;
+.item-count-div{
+  display:flex;
   flex-direction: column;
 }
 
-#up-button {
-  border-radius: 3px;
-  border: 1px solid gray;
+#up-button{
+  border-radius:3px;
+  border:1px solid gray;
 }
 
-#down-button {
-  border-radius: 3px;
-  border: 1px solid gray;
+#down-button{
+  border-radius:3px;
+  border:1px solid gray;
 }
 
-.rental-range-div {
-  display: flex;
+.rental-range-div{
+  display:flex;
   padding: 20px;
-  align-items: center;
+  align-items:center;
 }
 
-.rental-range-button-div {
-  display: flex;
+.rental-range-button-div{
+  display:flex;
+
 }
 
-.rental-range-button-div > button {
+.rental-range-button-div > button{
   border-radius: 30px;
   margin-left: 10px;
 }
 
-.benefits-div {
+.benefits-div{
   padding: 10px;
 }
 
-.benefits-div > p {
-  font-size: 15px;
+.benefits-div > p{
+  font-size:15px;
 }
 
-.buy-div {
-  display: flex;
+.buy-div{
+  display:flex;
   padding: 10px;
+  
 }
 
-.buy-div > button {
+.buy-div > button{
   margin-left: 10px;
 }
 
-.item-spec-div {
+.item-spec-div{
   padding: 10px;
 }
 
-.item-spec-div {
-  font-size: 12px;
+.item-spec-div{
+  font-size:12px;
 }
 
-.rate {
+.rate{
   background: url(https://aldo814.github.io/jobcloud/html/images/user/star_bg02.png)
-    no-repeat;
-  width: 121px;
-  height: 20px;
-  position: relative;
+   no-repeat;
+   width: 121px;
+   height: 20px;
+   position: relative;
 }
 
-.rate span {
+.rate span{
   position: absolute;
   background: url(https://aldo814.github.io/jobcloud/html/images/user/star02.png);
   width: auto;
   height: 20px;
 }
 
-#item-color-div {
+#item-color-div{
   align-items: center;
+
 }
 
-#item-color-selected {
-  width: 30px;
+#item-color-selected{
+  width:30px;
   border: 1px solid black;
-  border-radius: 50%;
+  border-radius:50%;
   aspect-ratio: 1 / 1;
-  margin-left: 20px;
+  margin-left:20px;
 }
 
-.color-selected {
-  background-color: yellow;
-  border: 3px solid green;
+#item-color-selected:hover{
+  cursor:pointer;
 }
 
-#item-color-selected:hover {
-  cursor: pointer;
-}
-
-#item-selected-color {
-  margin-left: auto;
-  font-size: 14px;
+#item-selected-color{
+  margin-left:auto;
+  font-size:14px;
   margin-right: 10px;
 }
 
-#item-table {
-  display: flex;
+#item-table{
+  display:flex;
   justify-content: center;
   align-items: center;
   margin-top: 60px;
 }
 
-#item-delivery-description {
-  font-size: 12px;
+#item-delivery-description{
+  font-size:12px;
+
 }
 
-td {
-  font-size: 13px;
+td{
+  font-size:13px;
 }
 
-/**======================
- *     FOOTER
- *========================**/
-
-footer {
-  width: 100%;
+#rental36month{
+color:gray;
 }
 
-.sites {
-  width: 1240px;
-  margin: 0 auto;
+#rental48month{
+color:gray;
+}
+
+#rental60month{
+color:gray;
+}
+
+.rental-option-selected{
+background-color:black;
 }
