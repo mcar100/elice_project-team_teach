@@ -165,7 +165,9 @@ label {
   font-weight: bold;
   margin-bottom: 24px;
 }
+.address-info-zip-code,
 .address-info-user-address {
+  display: inline-block;
   font-size: 17px;
   margin-bottom: 8px;
 }

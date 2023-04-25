@@ -127,7 +127,10 @@ body {
   border: 1px solid #444444;
   border-radius: 4px;
 }
-.select-all-left-container > p {
+.select-all-right-container:hover {
+  cursor: pointer;
+}
+label[for='select-all'] {
   padding-left: 14px;
   padding-top: 4px;
   color: #222222;
@@ -166,7 +169,7 @@ main {
   padding-top: 30px;
   padding-bottom: 18px;
 }
-.cart-product-seller > p {
+.cart-product-seller > label {
   padding-left: 14px;
   padding-top: 5px;
   font-size: 20px;
@@ -353,9 +356,11 @@ main {
   border-radius: 6px;
   color: #fff;
   background-color: #ff0456;
+  border: none;
 }
-.each-order-a:hover {
+.each-order-button:hover {
   border-radius: 6px;
+  cursor: pointer;
 }
 
 /**======================

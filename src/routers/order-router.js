@@ -3,28 +3,13 @@ import { orderModel } from '../db/models/order-model.js';
 
 const orderRouter = Router();
 
-
 //사용자 주문 추가(장바구니 상품 주문 진행)
-orderRouter.post('/', async(req, res, next) => {
-    try{
-        const userId = req.body.userId;
-        const address = req.body.address;
-        const totalPrice = req.body.totalPrice;
-        const productName = req.body.productName;
-        // 필요 정보 있으면 이어서 작성 후, create 안에 넣기
-
-        const order = await orderModel.create({
-            userId, 
-            address,
-            totalPrice,
-            productName,
-        });
-
-        res.status(201).json(order);
-
-    }catch(err){
-        next(err);
-    }
+orderRouter.post('/', async (req, res, next) => {
+  try {
+    res.status(201).json(order);
+  } catch (err) {
+    next(err);
+  }
 });
 
 /*
@@ -93,5 +78,4 @@ orderRouter.delete('/orders/:orderNumber', async(req, res, next) => {
 })
 */
 
-
-export default orderRouter;
+export { orderRouter };
