@@ -281,12 +281,6 @@ main {
   align-items: center;
   gap: 8px;
 }
-.order-product-quantity-minus {
-  font-size: 18px;
-}
-.order-product-quantity-plus {
-  font-size: 16px;
-}
 .order-product-quantity {
   font-size: 18px;
 }

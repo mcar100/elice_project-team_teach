@@ -13,9 +13,7 @@ const lengthProducts = () => sessionStorage.length;
  * @param {string} productId
  */
 const setProduct = (productId) => {
-  const productKey = `product${lengthProducts() + 1}`;
-
-  sessionStorage.setItem(productKey, productId);
+  sessionStorage.setItem(productId, productId);
 };
 
 /**

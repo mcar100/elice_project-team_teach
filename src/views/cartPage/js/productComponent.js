@@ -43,9 +43,7 @@ const productComponent = `<!-- component possible -->
 					<p>{%ENERGY_EFFICIENCY_RATING%}</p>
 				</div>
 				<div class="cart-product-quantity-container">
-					<span class="cart-product-quantity-minus">-</span>
-					<span class="cart-product-quantity" name="amount">3</span>
-					<span class="cart-product-quantity-plus">+</span>
+					<span class="cart-product-quantity" name="amount">1 개</span>
 				</div>
 			</div>
 
@@ -72,12 +70,10 @@ const productComponent = `<!-- component possible -->
 					<p class="cart-product-price-info-left-1">선택상품금액</p>
 					<p class="cart-product-price-info-left-2">{%ORIGINAL_PRICE%}</p>
 				</div>
-				<div class="plus-minus">+</div>
 				<div>
 					<p class="cart-product-price-info-left-1">총 배송비</p>
 					<p class="cart-product-price-info-left-2">{%DELIVERY_FEE%}</p>
 				</div>
-				<div class="plus-minus">-</div>
 				<div>
 					<p class="cart-product-price-info-left-1">할인예상금액</p>
 					<p class="cart-product-price-info-left-2 discounted-price">
