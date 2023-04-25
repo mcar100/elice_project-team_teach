@@ -1,6 +1,9 @@
 {
   "name": "techmate",
   "version": "1.0.0",
+  "engins": {
+    "node": ">=8.3.0"
+  },
   "description": "",
   "main": "index.js",
   "type": "module",
