@@ -1,44 +1,50 @@
 import cors from 'cors';
 import express from 'express';
-//import categoryRouter from './routers/category-router.js';
-//import orderRouter from './routers/order-router.js';
-//import productRouter from './routers/product-router.js';
-
 import {
-  viewsRouter,
-  userRouter,
+  viewRouter,
   categoryRouter,
   productRouter,
   orderRouter,
-  orderItemRouter,
-} from './routers';
+} from './routers/index.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const app = express();
 
+// 뷰 폴더 정적 추가
+
+//CORS 에러 방지
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// console.log(app.use(express.static('views')));
+
+// app.get('/', (req, res) => {
+//   res.sendFile('../views/mainPage/html/mainPage.html');
+// });
 //api 라우팅
 
-app.get('/', (req, res) => {
-  const data = {
-    title: '예쁜 니트입니다.',
-    description: '편하게 입을 수 있으며, 고급스러운 느낌을 줍니다.',
-    price: '18,900원',
-    image: 'clothes.jpg',
-  };
-
-  res.json(data);
-});
-
-//app.use 최상단
-//app.use('/user', userRouter); /user
-//app.use('/', indexRouter);
+app.use(viewRouter);
+//app.use('/users, mypageRouter); 아직 구성 안함 필요 시 추가 근데 필요해보임/mypage
 app.use('/categories', categoryRouter); // /api/catgories
-//app.use('/product', productRouter);
-//app.use('/order', orderRouter);
-//app.use('/mypage, mypageRouter); 아직 구성 안함 필요 시 추가 근데 필요해보임/mypage
-//app.use('/finshOrder, finshOrderRouter); 이름 새로 짓기
+app.use('/products', productRouter);
+app.use('/orders', orderRouter);
+
+/*
+function serveStatic(resource) {
+  const __dirname = path.dirname(fileURLToPath(import.meta.url));
+  const resourcePath = path.join(__dirname, `../views/${resource}`);
+  const option = { index: `${resource}.html` };
+
+  console.log('__dirname', __dirname);
+  console.log('resourcePath', resourcePath);
+  console.log('option', option);
+
+  console.log(express.static(resourcePath, option));
+
+  return express.static(resourcePath, option);
+}
+*/
 
 export { app };
