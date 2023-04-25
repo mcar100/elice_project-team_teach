@@ -56,30 +56,4 @@ viewRouter.get('/order/complete', async (req, res) => {
   );
 });
 
-//viewRouter.get('');
-
-// viewRouter.get('/', (req, res) => {
-//   const __dirname = path.dirname(fileURLToPath(import.meta.url));
-//   const resourcePath = path.join(
-//     __dirname,
-//     `../views/mainPage/html/mainPage.html`
-//   );
-// })
-//viewRouter.use('/', serveStatic('mainPage', '/'));
-// viewRouter.use('/signup', serveStatic('registerPage'));
-// viewRouter.use('/signin', serveStatic('loginPage'));
-// viewRouter.use('/mypage', serveStatic('myPage'));
-// viewRouter.use('/mypage/orders', serveStatic('orderCheckPage'));
-// viewRouter.use('/category', serveStatic('categoryPage'));
-// viewRouter.use('/product/detali', serveStatic('itemDetail'));
-// viewRouter.use('/cart', serveStatic('cartPage'));
-// viewRouter.use('/order', serveStatic('orderPage'));
-// viewRouter.use('/order/complete', serveStatic('orderCompletedPage'));
-
-// views 폴더의 최상단 파일 (사진, favicon 등) 라우팅
-//viewRouter.use('/', serveStatic(''));
-
-// views폴더 내의 ${resource} 폴더 내의 모든 파일을 웹에 띄우며,
-// 이 때 ${resource}.html 을 기본 파일로 설정함.
-
 export { viewRouter };
