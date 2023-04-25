@@ -9,7 +9,7 @@ const sortedKeys = localStorageKeys.sort();
  */
 const getDataFromServer = async () => {
   const promises = sortedKeys.map(async (keyName) => {
-    if (keyName.includes('product')) {
+    if (session.getProduct(keyName) !== 'true') {
       const response = await fetch(
         `http://localhost:3000/products/${session.getProduct(keyName)}`
       );

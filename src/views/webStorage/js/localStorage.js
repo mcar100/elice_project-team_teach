@@ -13,9 +13,7 @@ const lengthProducts = () => localStorage.length;
  * @param {string} productId
  */
 const setProduct = (productId) => {
-  const productKey = `product${lengthProducts() + 1}`;
-
-  localStorage.setItem(productKey, productId);
+  localStorage.setItem(productId, productId);
 };
 
 /**

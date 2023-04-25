@@ -13,6 +13,7 @@ const addProductMainContents = async () => {
     productComponent
   );
   mainTag.innerHTML = productsHtmlForRender;
+  return productsData;
 };
 
 export default addProductMainContents;

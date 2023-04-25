@@ -35,9 +35,7 @@ const productComponent = `
 					<p>{%ENERGY_EFFICIENCY_RATING%}</p>
         </div>
         <div class="order-product-quantity-container">
-          <span class="order-product-quantity-minus">-</span>
-          <span class="order-product-quantity" name="amount">3</span>
-          <span class="order-product-quantity-plus">+</span>
+          <span class="order-product-quantity" name="amount">1 개</span>
         </div>
       </div>
 

@@ -5,7 +5,7 @@ import { app } from './src/app.js';
 
 dotenv.config({ path: './config/.env' });
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 mongoose.connect('mongodb://127.0.0.1:27017').then(() => {
   console.log('mongo db connected!');
