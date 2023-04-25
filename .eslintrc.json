@@ -33,6 +33,12 @@
         "jsx": "always"
       }
     ],
+    "import/prefer-default-export": [
+      "off",
+      "warn",
+      "error",
+      { "target": "single" }
+    ],
     "prefer-destructuring": ["error", { "object": true, "array": false }],
     "no-unused-vars": ["error"]
   }

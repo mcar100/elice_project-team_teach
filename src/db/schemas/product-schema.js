@@ -53,6 +53,10 @@ const ProductSchema = new Schema(
       required: true,
     },
 
+    deliveryFee: {
+      type: Number,
+    },
+
     productSpecification: {
       model: {
         type: String,
