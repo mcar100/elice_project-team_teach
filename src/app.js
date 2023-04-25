@@ -18,13 +18,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// console.log(app.use(express.static('views')));
-
-// app.get('/', (req, res) => {
-//   res.sendFile('../views/mainPage/html/mainPage.html');
-// });
-//api 라우팅
-
 app.use(viewRouter);
 //app.use('/users, mypageRouter); 아직 구성 안함 필요 시 추가 근데 필요해보임/mypage
 app.use('/categories', categoryRouter); // /api/catgories
