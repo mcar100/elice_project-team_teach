@@ -1,11 +1,11 @@
-import addProductMainContents from './replaceProductComponent.js';
-import addUserMainContents from './replaceUserComponent.js';
 import totalPriceInfoFunc from './finalInfo.js';
+import renderUserProduct from './renderUserProduct.js';
+import setSessionUserProductInfo from './moveToComplete.js';
 
 const render = async () => {
-  await addUserMainContents();
-  await addProductMainContents();
+  await renderUserProduct();
   totalPriceInfoFunc();
+  setSessionUserProductInfo();
 };
 
 render();

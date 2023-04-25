@@ -9,6 +9,7 @@ const addUserMainContents = async () => {
 
   const userHtmlForRender = replaceUserComponent(userData, addressComponent);
   addressInfoTag.innerHTML = userHtmlForRender;
+  return userData;
 };
 
 export default addUserMainContents;
