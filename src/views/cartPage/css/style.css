@@ -291,6 +291,10 @@ main {
   font-size: 16px;
   font-weight: bold;
 }
+.plus-minus {
+  font-size: 22px;
+  line-height: 57px;
+}
 
 /**======================
  *   PRODUCT PRICE INFO

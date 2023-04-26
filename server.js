@@ -76,10 +76,12 @@ const winnia = {
 //     productModel.createProduct(product);
 //   });
 // }
-const products = await productModel.findAll();
-products.forEach((product) => {
-  // console.log(product.id);
-  local.setProduct(product.id, product.id);
-});
+// const products = await productModel.findAll();
+// products.forEach((product) => {
+//   // console.log(product.id);
+//   if (window !== undefined) {
+//     local.setProduct(product.id, product.id);
+//   }
+// });
 
 // productModel.deleteProductInfo('64481185287a4bbe52b76e78');

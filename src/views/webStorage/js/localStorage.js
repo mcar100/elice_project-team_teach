@@ -8,9 +8,10 @@
 const lengthProducts = () => {
   let localStorageLength = 0;
 
-  if (typeof window !== 'undefined') {
-    localStorageLength = localStorage.length;
-  } else return -1;
+  const keys = Object.keys(localStorage);
+  keys.forEach((product) => {
+    if (product.length === 24) localStorageLength++;
+  });
   return localStorageLength;
 };
 

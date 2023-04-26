@@ -17,8 +17,9 @@ const deleteProducts = () => {
   if (checkedList.length === 0) {
     alert('삭제할 상품을 선택해주세요.');
   } else if (checkedList.length < cartList.length) {
-    checkedList.forEach((product) => console.log(product.id));
+    checkedList.forEach((product) => local.deleteProduct(product.id));
     // local.removeProduct(product.id)
+    // console.log(product.id)
     console.log(checkedList);
     alert(`${checkedList.length}개의 상품이 삭제되었습니다.`);
     // alert(`${checkedList[0].id}`); // 오케이 이런식으로 삭제하면 되겠다. 오 위에 되어있네?

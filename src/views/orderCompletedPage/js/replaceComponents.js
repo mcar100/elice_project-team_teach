@@ -25,10 +25,10 @@ const replaceProductComponents = (component, data) => {
 
   Array.from(data).forEach((productData) => {
     originalPrice +=
-      productData.pricePerMonth +
-      productData.pricePerMonth * (productData.discountRate / 100);
+      productData.pricePerMonth[0] +
+      productData.pricePerMonth[0] * (productData.discountRate / 100);
     discountedPrice +=
-      productData.pricePerMonth * (productData.discountRate / 100);
+      productData.pricePerMonth[0] * (productData.discountRate / 100);
     deliveryFee += productData.deliveryFee;
   });
 

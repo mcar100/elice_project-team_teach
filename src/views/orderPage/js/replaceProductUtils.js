@@ -2,11 +2,13 @@ import toCurrency from './utils.js';
 
 const replaceProductComponent = (productsData, productComponent) => {
   let productsHtmlForRender = '';
-  productsData.forEach((product) => {
+  productsData.forEach((productObject) => {
+    const product = JSON.parse(productObject.value);
+
     productsHtmlForRender += productComponent
-      .replace(/{%IMAGE_SRC%}/g, product.imageSrc)
-      .replace(/{%PRODUCT_ID%}/g, `${product.productId}`)
-      .replace(/{%SELLER%}/g, product.seller)
+      .replace(/{%IMAGE_SRC%}/g, product.images[0])
+      .replace(/{%PRODUCT_ID%}/g, `${product._id}`)
+      .replace(/{%SELLER%}/g, product.productSpecification.brand)
       .replace(/{%PRODUCT_NAME%}/g, product.productName)
       .replace(/{%MODEL%}/g, `모델명 : ${product.productSpecification.model}`)
       .replace(/{%SIZE%}/g, `사이즈 :  ${product.productSpecification.size}`)
@@ -14,16 +16,16 @@ const replaceProductComponent = (productsData, productComponent) => {
         /{%ENERGY_EFFICIENCY_RATING%}/g,
         `에너지 효율 등급 : ${product.productSpecification.energyEfficiencyRating}`
       )
-      .replace(/{%RENTAL_PERIOD%}/g, product.rentalPeriod)
+      .replace(/{%RENTAL_PERIOD%}/g, product.rentalPeriod[2])
       .replace(
         /{%DELIVERY_FEE%}/g,
         product.deliveryFee ? `${toCurrency(product.deliveryFee)} 원` : '무료'
       )
       .replace(
         /{%PRICE_PER_MONTH%}/g,
-        `${toCurrency(product.pricePerMonth)} 원`
+        `${toCurrency(product.pricePerMonth[0])} 원`
       )
-      .replace(/{%HIDDEN_PRICE_PER_MONTH%}/g, product.pricePerMonth)
+      .replace(/{%HIDDEN_PRICE_PER_MONTH%}/g, product.pricePerMonth[0])
       .replace(/{%HIDDEN_DELIVERY_FEE%}/g, product.deliveryFee);
   });
   return productsHtmlForRender;

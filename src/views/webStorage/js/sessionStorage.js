@@ -12,8 +12,10 @@ const lengthProducts = () => sessionStorage.length;
  * key값은 lengthProducts() + 1로 설정
  * @param {string} productId
  */
-const setProduct = (productId) => {
-  sessionStorage.setItem(productId, productId);
+const setProduct = (productId, productData) => {
+  if (typeof productData === 'object')
+    productData = JSON.stringify(productData);
+  sessionStorage.setItem(productId, productData);
 };
 
 /**
@@ -22,6 +24,7 @@ const setProduct = (productId) => {
  * @param {object} userProductData
  */
 const setUserProduct = (keyName, userProductData) => {
+  console.log(userProductData);
   sessionStorage.setItem(keyName, JSON.stringify(userProductData));
 };
 

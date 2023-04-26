@@ -1,5 +1,5 @@
 import addProductMainContents from './replaceProductComponent.js';
-import addUserMainContents from './replaceUserComponent.js';
+// import addUserMainContents from './replaceUserComponent.js';
 
 const randomNumber13 = () => {
   const randomNum = Math.floor(Math.random() * 10000000000000);
@@ -11,11 +11,14 @@ const getUserProductData = (userData, productData) => {
     new Date().getMonth() + 1
   }.${new Date().getDate()}`;
   const orderNumber = randomNumber13();
-  const { username, address, mobileNumber } = userData[0];
+  const username = '임지성';
+  const address = '인천광역시 서구 가정동 123-45 101호';
+  const mobileNumber = '010-1234-5678';
   const require = '문 앞에 놔주세요';
   const productArr = [];
 
-  Array.from(productData).forEach((product) => {
+  Array.from(productData).forEach((productSessionData) => {
+    const product = JSON.parse(productSessionData.value);
     const productObj = {
       productId: product.productId,
       pricePerMonth: product.pricePerMonth,
@@ -34,15 +37,15 @@ const getUserProductData = (userData, productData) => {
     require,
     productArr,
   };
-  // console.log(`orderData: ${JSON.stringify(orderData, null, 2)}`);
+
   return orderData;
 };
 
 const renderUserProduct = async () => {
-  const userData = await addUserMainContents();
+  // const userData = await addUserMainContents();
   const productData = await addProductMainContents();
 
-  return getUserProductData(userData, productData);
+  return getUserProductData('userData', productData);
 };
 
 export default renderUserProduct;
