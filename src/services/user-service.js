@@ -97,7 +97,7 @@ export class UserService {
       return { result: 'false' };
     }
 
-    return { result: 'success' };
+    return { result: 'true' };
   }
 
   // 정보 수정 시 비밀번호 확인
