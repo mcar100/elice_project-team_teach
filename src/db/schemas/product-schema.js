@@ -48,13 +48,13 @@ const ProductSchema = new Schema(
       required: true,
     },
 
+    deliveryFee: {
+      type: Number,
+    },
+
     productDetailImages: {
       type: [String],
       required: true,
-    },
-
-    deliveryFee: {
-      type: Number,
     },
 
     productSpecification: {

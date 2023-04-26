@@ -48,6 +48,7 @@ productRouter.post('/', adminOnly, async (req, res, next) => {
       rentalPeriod,
       color,
       quantity,
+      deliveryFee,
       productDetailImages,
       productSpecification,
     } = req.body;
@@ -62,6 +63,7 @@ productRouter.post('/', adminOnly, async (req, res, next) => {
       rentalPeriod,
       color,
       quantity,
+      deliveryFee,
       productDetailImages,
       productSpecification,
     });
