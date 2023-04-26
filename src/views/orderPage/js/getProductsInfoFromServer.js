@@ -24,7 +24,11 @@ const getDataFromServer = async () => {
   for (let i = 0; i < session.lengthProducts(); i += 1) {
     const key = session.getNameByKey(i);
     const value = session.getProduct(key);
-    if (key.length === 24) sessionData.push({ key, value });
+    // Bad
+    // if (key.length === 24) sessionData.push({ key, value });
+    // if (session.getProduct(key).deliveryFee) sessionData.push({ key, value });
+    if (JSON.parse(session.getProduct(key)).deliveryFee)
+      sessionData.push({ key, value });
   }
   return sessionData;
 };

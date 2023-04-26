@@ -17,7 +17,6 @@ const getCheckedCnt = () => {
   } else {
     selectedAll.checked = false;
   }
-  console.log(checkedList.length, local.lengthProducts());
 
   Array.from(checkedList).forEach((product) => {
     checkedTotalPrice += parseInt(product.dataset.price, 10);

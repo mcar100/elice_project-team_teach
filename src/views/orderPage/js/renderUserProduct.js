@@ -18,6 +18,7 @@ const getUserProductData = (userData, productData) => {
   const productArr = [];
 
   Array.from(productData).forEach((productSessionData) => {
+    // console.log(JSON.stringify(productSessionData, null, 2));
     const product = JSON.parse(productSessionData.value);
     const productObj = {
       productId: product.productId,

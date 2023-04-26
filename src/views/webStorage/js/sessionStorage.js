@@ -5,8 +5,16 @@
  * const productId = lengthProducts();
  * console.log(productId);
  */
-const lengthProducts = () => sessionStorage.length;
+const lengthProducts = () => {
+  let sessionStorageLength = 0;
 
+  const keys = Object.keys(sessionStorage);
+  keys.forEach((product) => {
+    if (JSON.parse(sessionStorage.getItem(product)).deliveryFee)
+      sessionStorageLength++;
+  });
+  return sessionStorageLength;
+};
 /**
  * sessionStorage에 productId를 저장하는 함수.
  * key값은 lengthProducts() + 1로 설정
@@ -24,7 +32,6 @@ const setProduct = (productId, productData) => {
  * @param {object} userProductData
  */
 const setUserProduct = (keyName, userProductData) => {
-  console.log(userProductData);
   sessionStorage.setItem(keyName, JSON.stringify(userProductData));
 };
 

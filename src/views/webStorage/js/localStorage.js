@@ -10,7 +10,8 @@ const lengthProducts = () => {
 
   const keys = Object.keys(localStorage);
   keys.forEach((product) => {
-    if (product.length === 24) localStorageLength++;
+    if (JSON.parse(localStorage.getItem(product)).deliveryFee)
+      localStorageLength++;
   });
   return localStorageLength;
 };

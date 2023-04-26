@@ -1,8 +1,8 @@
 import * as local from '../../webStorage/js/localStorage.js';
 
-const localStorageKeys = Object.keys(localStorage);
+// const localStorageKeys = Object.keys(localStorage);
 // 로컬스토리지가 뒤죽박죽 된다. 순서를 보장하지 않는다. 그래서 정렬해주는 코드
-const sortedKeys = localStorageKeys.sort();
+// const sortedKeys = localStorageKeys.sort();
 
 /**
  * localStorage에 저장된 상품 정보를 가져오고

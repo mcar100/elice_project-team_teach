@@ -47,7 +47,6 @@ const setSessionChecked = () => {
       alert('선택된 상품이 없습니다.');
       return -1;
     }
-    console.log(checkedProducts);
     setSession(checkedProducts);
   };
 

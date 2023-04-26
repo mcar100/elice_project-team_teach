@@ -39,6 +39,7 @@ const productComponent = `<!-- component possible -->
 				<p class="cart-product-name">{%PRODUCT_NAME%}</p>
 				<div class="cart-product-options">
 					<p>{%MODEL%}</p>
+					<p>{%COLOR%}</p>
 					<p>{%SIZE%}</p>
 					<p>{%ENERGY_EFFICIENCY_RATING%}</p>
 				</div>
