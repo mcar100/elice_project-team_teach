@@ -22,7 +22,7 @@ viewRouter.get('/signin', async (req, res) => {
 });
 
 viewRouter.get('/mypage', async (req, res) => {
-  res.sendFile(path.join(resourcePath, '/myPage/html/mypage.html'));
+  res.sendFile(path.join(resourcePath, '/myPage/html/myPage.html'));
 });
 
 viewRouter.get('/mypage/orders', async (req, res) => {
@@ -35,12 +35,10 @@ viewRouter.get('/category', async (req, res) => {
   res.sendFile(path.join(resourcePath, '/categoryPage/html/categoryPage.html'));
 });
 
-// css 조정 필요 및 상품 이미지 적용x
 viewRouter.get('/product/detail', async (req, res) => {
   res.sendFile(path.join(resourcePath, '/itemDetail/html/index.html'));
 });
 
-// 랜더링 확인 필요?
 viewRouter.get('/cart', async (req, res) => {
   res.sendFile(path.join(resourcePath, '/cartPage/html/cartPage.html'));
 });
