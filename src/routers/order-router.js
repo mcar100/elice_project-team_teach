@@ -121,7 +121,7 @@ orderRouter.get('/users/:userId', async (req, res, next) => {
 });
 
 //사용자 특정 주문 수정(사용자 주문 정보 수정)
-orderRouter.patch('/user/:orderId', signinRequired, async (req, res, next) => {
+orderRouter.patch('/users/:orderId', signinRequired, async (req, res, next) => {
   try {
     const { orderId } = req.params;
     const { address, deliveryStatus, deliveryRequirements } = req.body;
@@ -144,7 +144,7 @@ orderRouter.patch('/user/:orderId', signinRequired, async (req, res, next) => {
 });
 
 //사용자의 특정 주문 내역 취소
-orderRouter.delete('/user/:orderId', async (req, res, next) => {
+orderRouter.delete('/users/:orderId', async (req, res, next) => {
   try {
     const { orderId } = req.params;
     const deleteOrder = await orderService.deleteOrderByOrderId(orderId);
