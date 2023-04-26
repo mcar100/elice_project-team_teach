@@ -31,6 +31,7 @@ const productComponent = `
         </p>
         <div class="order-product-options">
 					<p>{%MODEL%}</p>
+					<p>{%COLOR%}</p>
 					<p>{%SIZE%}</p>
 					<p>{%ENERGY_EFFICIENCY_RATING%}</p>
         </div>
