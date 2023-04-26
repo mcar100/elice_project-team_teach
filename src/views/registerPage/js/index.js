@@ -81,10 +81,10 @@ function checkPhoneNumber(number) {
 }
 
 async function register(id, email, password, phoneNumber, address) {
-  if (checkFlags === 0) {
-    alert('아이디 중복확인을 해주세요.');
-    return;
-  }
+  // if (checkFlags === 0) {
+  //   alert('아이디 중복확인을 해주세요.');
+  //   return;
+  // }
 
   const res = await fetch(`http://localhost:3000/users/signup`, {
     method: 'post',
