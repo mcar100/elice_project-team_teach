@@ -1,4 +1,5 @@
-import { getCategory } from './categories.js';
+import { moveToCategoryByBar } from '../moveEventCommon.js';
+import { getCategories } from './categories.js';
 
 function toggleCategoryContainer() {
   const categoryContainer = document.querySelector('.category-container');
@@ -12,8 +13,6 @@ function makeCategoryBar() {
   const headerLogo = document.querySelector('.header-logo');
   const container = document.createElement('div');
   container.classList.add('category-container');
-
-  const categories = getCategory();
 
   headerLogo.insertAdjacentHTML(
     'beforebegin',
@@ -36,20 +35,27 @@ function makeCategoryBar() {
     `
   );
 
-  categories.forEach(({ type, iconSrc }) => {
-    container.insertAdjacentHTML(
-      `beforeend`,
-      `<div class="category-item">
-              <a ref="/category">
-              <img src="${iconSrc}" alt="${type} icon"/>
-              <span>${type}</span>
-              <img src="../../mainPage/icon/free-icon-arrow-right-6423875.png" alt="arrow icon"/> 
-              </a>
-          </div>
-        `
-    );
-  });
-
+  getCategories()
+    .then((items) => {
+      items.forEach(({ _id, categoryIcon, categoryName }) => {
+        container.insertAdjacentHTML(
+          `beforeend`,
+          `<div class="category-item">
+                <a ref="/category">
+                <img src="${categoryIcon}" alt="${categoryName} icon"/>
+                <span>${categoryName}</span>
+                <img src="../../mainPage/icon/free-icon-arrow-right-6423875.png" alt="arrow icon"/> 
+                <p class="category-id box-none">${_id}</p>
+                </a>
+            </div>
+          `
+        );
+      });
+    })
+    .then(() => {
+      moveToCategoryByBar();
+    })
+    .catch((err) => console.log(err));
   headerContainer.appendChild(container);
 }
 
