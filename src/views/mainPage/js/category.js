@@ -3,7 +3,7 @@ import { addEvents } from './eventManager.js';
 const mainCategoryList = document.getElementById('main-category-container');
 
 const promises = async () => {
-  const response = await fetch(`http://localhost:8000/categories`);
+  const response = await fetch(`http://localhost:3000/categories`);
   const data = response.json();
   return data;
 };

@@ -37,7 +37,7 @@ viewRouter.get('/category', async (req, res) => {
 
 // css 조정 필요 및 상품 이미지 적용x
 viewRouter.get('/product/detail', async (req, res) => {
-  res.sendFile(path.join(resourcePath, '/itemDetail/html/index.html'));
+  res.sendFile(path.join(resourcePath, '/itemDetail/html/itemDetail.html'));
 });
 
 // 랜더링 확인 필요?

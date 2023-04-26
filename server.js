@@ -20,7 +20,7 @@ mongoose
   });
 
 app.listen(port, () => {
-  console.log(`localhost:8000 connected!`);
+  console.log(`localhost:3000 connected!`);
 });
 
 // add by jiseong

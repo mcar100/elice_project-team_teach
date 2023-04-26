@@ -16,13 +16,6 @@ export class UserService {
       const { username, email, password, mobileNumber, address, role } =
         userInfo;
 
-      // 계정 중복 검사
-      const checkEmailDuplication = await userModel.findOneByEmail(email);
-      if (checkEmailDuplication) {
-        console.log('이미 등록된 이메일입니다.');
-        throw new Error('이미 등록된 이메일입니다.');
-      }
-
       // 비밀번호 해싱
       const hashedPassword = crypto
         .createHmac('sha256', process.env.SECRET_KEY)
@@ -68,6 +61,9 @@ export class UserService {
       throw new Error('이메일 혹은 패스워드가 일치하지 않습니다.');
     }
     console.log('로그인 성공');
+    // if (typeof window !== 'undefined') {
+    //   alert();
+    // }
 
     // 로그인 성공 -> JWT 웹 토큰 생성
     const secretKey = process.env.JWT_SECRET_KEY || 'secret-key';
@@ -81,16 +77,57 @@ export class UserService {
     return { token, isAdmin };
   }
 
+  // userId 조회
+  async getUserId(req, res) {
+    const userId = req.user._id;
+    res.status(200).json(userId);
+  }
+
   // 모든 user 조회
   async getUsers() {
     const users = await this.userModel.findAll();
     return users;
   }
 
-  // 유저정보 수정, 현재 비밀번호가 있어야 수정 가능함.
+  // 회원가입 시 이메일 중복 확인
+  async checkEmailDuplication(userEmail) {
+    const checkEmail = await userModel.findOneByEmail(userEmail);
+    if (checkEmail) {
+      console.log('이미 등록된 이메일입니다.');
+      return { result: 'false' };
+    }
+
+    return { result: 'true' };
+  }
+
+  // 정보 수정 시 비밀번호 확인
+  async checkUserPassword(userId, password) {
+    // db에 이메일 확인
+    const user = await this.userModel.findById(userId);
+
+    // 비밀번호 일치 여부 확인
+    const savedPassword = user.password;
+    const inputPassword = crypto
+      .createHmac('sha256', process.env.SECRET_KEY)
+      .update(password)
+      .digest('hex');
+
+    if (inputPassword !== savedPassword) {
+      console.log('비밀번호가 일치하지 않습니다.');
+      throw new Error(
+        '비밀번호가 일치하지 않습니다. 다시 한 번 확인해 주세요.'
+      );
+    }
+    console.log('비밀번호 확인 성공');
+
+    // 비밀번호 일치함. 유저 정보 반환
+    return user;
+  }
+
+  // 유저정보 수정
   async setUser(userInfoRequired, toUpdate) {
     // 객체 destructuring
-    const { userId, inputPassword } = userInfoRequired;
+    const { userId, currentPassword } = userInfoRequired;
 
     // 우선 해당 id의 유저가 db에 있는지 확인
     let user = await this.userModel.findById(userId);
@@ -103,7 +140,7 @@ export class UserService {
     // 비밀번호 일치 여부 확인
     const savedPassword = user.password;
     let isPasswordCorrect = false;
-    if (inputPassword === savedPassword) isPasswordCorrect = true;
+    if (currentPassword === savedPassword) isPasswordCorrect = true;
 
     if (!isPasswordCorrect) {
       throw new Error(
@@ -116,11 +153,11 @@ export class UserService {
     const { password } = toUpdate;
 
     if (password) {
-      const newPasswordHash = password
+      const newPassword = password
         .createHmac('sha256', process.env.SECRET_KEY)
         .update(password)
         .digest('hex');
-      toUpdate.password = newPasswordHash;
+      toUpdate.password = newPassword;
     }
 
     // 업데이트 진행
