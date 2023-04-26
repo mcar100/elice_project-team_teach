@@ -35,7 +35,7 @@ userRouter.post('/signup', async (req, res, next) => {
   }
 });
 
-// 일반 로그인
+// 로그인
 userRouter.post('/signin', async (req, res, next) => {
   const userInfo = req.body;
 
@@ -64,15 +64,15 @@ userRouter.post('/signin', async (req, res, next) => {
   }
 });
 
-// 로그아웃 -> 서버 요청 없이 프론트에서 수행하면 됨
+// 로그아웃
 userRouter.post('/signout', signinRequired, async (req, res) => {
   // jwt 토큰 쿠키를 없앰으로써 로그아웃
   res.clearCookie('jwtToken');
-  res.redirect('/');
+  res.redirect('/signIn');
 });
 
 // 이메일 중복 조회
-userRouter.post('/signup/checkEmail', async (req, res, next) => {
+userRouter.post('/signup/check-email-duplication', async (req, res, next) => {
   try {
     const { email } = req.body;
     const checkEmailDuplicate = await userService.checkEmailDuplication(email);
@@ -176,18 +176,22 @@ userRouter.delete('/:userId', signinRequired, async (req, res, next) => {
 // ======== 관리자 기능 ========
 
 // 전체 사용자 목록 조회
-userRouter.get('/admins/user', adminOnly, async (req, res, next) => {
-  try {
-    const users = await userService.getUsers();
+userRouter.get(
+  '/admins/user-list-inquiry',
+  adminOnly,
+  async (req, res, next) => {
+    try {
+      const users = await userService.getUsers();
 
-    res.status(200).json(users);
-  } catch (error) {
-    next(error);
+      res.status(200).json(users);
+    } catch (error) {
+      next(error);
+    }
   }
-});
+);
 
 // 관리자 토큰을 가졌는지 여부를 확인함.
-userRouter.get('/admins/check', adminOnly, async (req, res, next) => {
+userRouter.get('/admins/token-check', adminOnly, async (req, res, next) => {
   try {
     // 미들웨어 adminOnly 를 통과했다는 것은, 관리자 토큰을 가진 것을 의미함.
     res.status(200).json({ result: 'success' });

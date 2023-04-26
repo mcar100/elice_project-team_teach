@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { categoryService } from '../services/category-services.js';
 import path from 'path';
+import { categoryService } from '../services/category-services.js';
 
 const categoryRouter = Router();
 const __dirname = path.resolve();
@@ -22,7 +22,7 @@ categoryRouter.get('/', async (req, res, next) => {
 //카테고리 상세 목록 조회(카테고리 클릭 시 상품들 리스트)
 categoryRouter.get('/:categoryId', async (req, res, next) => {
   try {
-    const categoryId = req.params.categoryId;
+    const { categoryId } = req.params;
     const categoryProduct = await categoryService.getProductListByCategoryId(
       categoryId
     );
@@ -68,7 +68,7 @@ categoryRouter.put('/:categoryId', async (req, res, next) => {
     //   );
     // }
 
-    const categoryId = req.params.categoryId;
+    const { categoryId } = req.params;
     const { categoryName, categoryIcon } = req.body;
 
     const updateCategory = await categoryService.updateCategoryByCategoryId(
@@ -85,7 +85,7 @@ categoryRouter.put('/:categoryId', async (req, res, next) => {
 //카테고리 삭제
 categoryRouter.delete('/:categoryId', async (req, res, next) => {
   try {
-    const categoryId = req.params.categoryId;
+    const { categoryId } = req.params;
     const deleteCategory = await categoryService.deleteCategoryByCategoryId(
       categoryId
     );

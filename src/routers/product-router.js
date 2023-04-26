@@ -33,7 +33,7 @@ productRouter.get('/:productId', async (req, res, next) => {
   }
 });
 
-productRouter.get('/user/:userId', async (req, res, next) => {
+productRouter.get('/users/:userId', async (req, res, next) => {
   try {
     const product = {
       _id: '128789471',

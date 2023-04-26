@@ -43,7 +43,7 @@ orderRouter.post('/', async (req, res, next) => {
 
 // ========= 관리자 기능
 // 사용자 전체 주문 목록 조회
-orderRouter.get('/admin', async (req, res, next) => {
+orderRouter.get('/admins', async (req, res, next) => {
   try {
     const orders = await orderService.getAllOrders();
     res.status(200).json(orders);
@@ -53,9 +53,9 @@ orderRouter.get('/admin', async (req, res, next) => {
 });
 
 //사용자의 배송 상태 수정
-orderRouter.patch('/admin/:orderId', async (req, res, next) => {
+orderRouter.patch('/admins/:orderId', async (req, res, next) => {
   try {
-    const orderId = req.params.orderId;
+    const { orderId } = req.params;
     const { deliveryStatus } = req.body;
 
     console.log(deliveryStatus);
@@ -76,9 +76,9 @@ orderRouter.patch('/admin/:orderId', async (req, res, next) => {
 });
 
 // 사용자 주문 내역 삭제
-orderRouter.delete('/admin/:orderId', async (req, res, next) => {
+orderRouter.delete('/admins/:orderId', async (req, res, next) => {
   try {
-    const orderId = req.params.orderId;
+    const { orderId } = req.params;
     const deleteOrder = await orderService.deleteOrderByOrderId(orderId);
 
     res.status(200).json(deleteOrder);
@@ -90,7 +90,7 @@ orderRouter.delete('/admin/:orderId', async (req, res, next) => {
 //특정 주문 정보 상세 조회
 orderRouter.get('/:orderId', async (req, res, next) => {
   try {
-    const orderId = req.params.orderId;
+    const { orderId } = req.params;
 
     const orderData = await orderService.getOrderDataByOrderId(orderId);
 
@@ -103,10 +103,10 @@ orderRouter.get('/:orderId', async (req, res, next) => {
 //======= 사용자 기능
 //사용자의 전체 주문정보 리스트 조회(주문 내역 조회 - 내 페이지에서)
 //사용자가 구매한 상품 전체 조회
-orderRouter.get('/user/:userId', async (req, res, next) => {
+orderRouter.get('/users/:userId', async (req, res, next) => {
   try {
     //미들웨어 처리에 따라 userId가 삭제될 수도 있을 듯
-    const userId = req.params.userId;
+    const { userId } = req.params;
 
     const userOrders = await orderService.getOrdersByUserId(userId); // service로 넘어가야 함
     res.status(200).json(userOrders);
@@ -116,9 +116,9 @@ orderRouter.get('/user/:userId', async (req, res, next) => {
 });
 
 //사용자 특정 주문 수정(주문 완료 후 배송이 시작되기 전까지 주문 정보를 수정할 수 있다. - 환불, 교환을 의미하는 듯?)
-orderRouter.patch('/user/:orderId', async (req, res, next) => {
+orderRouter.patch('/users/:orderId', async (req, res, next) => {
   try {
-    const orderId = req.params.orderId;
+    const { orderId } = req.params;
     const { address, deliveryStatus, deliveryRequirements } = req.body;
 
     const toUpdate = {
@@ -139,9 +139,9 @@ orderRouter.patch('/user/:orderId', async (req, res, next) => {
 });
 
 //사용자의 특정 주문 내역 취소
-orderRouter.delete('/user/:orderId', async (req, res, next) => {
+orderRouter.delete('/users/:orderId', async (req, res, next) => {
   try {
-    const orderId = req.params.orderId;
+    const { orderId } = req.params;
     const deleteOrder = await orderService.deleteOrderByOrderId(orderId);
 
     res.status(200).json(deleteOrder);
