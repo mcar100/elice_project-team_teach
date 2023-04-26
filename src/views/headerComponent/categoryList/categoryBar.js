@@ -1,21 +1,10 @@
-import { categories } from './categories.js';
+import { getCategory } from './categories.js';
 
-async function addCategoryBar() {
-  await makeCategoryBar();
-
-  const categoryBtn = document.getElementById('category-btn');
+function toggleCategoryContainer() {
   const categoryContainer = document.querySelector('.category-container');
-  const closeBtn = document.getElementById('category-close-btn');
 
-  categoryBtn.addEventListener('click', () => {
-    const className = 'category-container-clicked';
-    categoryContainer.classList.toggle(className);
-  });
-
-  closeBtn.addEventListener('click', () => {
-    const className = 'category-container-clicked';
-    categoryContainer.classList.toggle(className);
-  });
+  const className = 'category-container-clicked';
+  categoryContainer.classList.toggle(className);
 }
 
 function makeCategoryBar() {
@@ -23,6 +12,8 @@ function makeCategoryBar() {
   const headerLogo = document.querySelector('.header-logo');
   const container = document.createElement('div');
   container.classList.add('category-container');
+
+  const categories = getCategory();
 
   headerLogo.insertAdjacentHTML(
     'beforebegin',
@@ -45,11 +36,11 @@ function makeCategoryBar() {
     `
   );
 
-  categories.map(({ type, iconSrc }) => {
+  categories.forEach(({ type, iconSrc }) => {
     container.insertAdjacentHTML(
       `beforeend`,
       `<div class="category-item">
-              <a ref="/">
+              <a ref="/category">
               <img src="${iconSrc}" alt="${type} icon"/>
               <span>${type}</span>
               <img src="../../mainPage/icon/free-icon-arrow-right-6423875.png" alt="arrow icon"/> 
@@ -60,6 +51,16 @@ function makeCategoryBar() {
   });
 
   headerContainer.appendChild(container);
+}
+
+async function addCategoryBar() {
+  await makeCategoryBar();
+
+  const categoryBtn = document.getElementById('category-btn');
+  const closeBtn = document.getElementById('category-close-btn');
+
+  categoryBtn.addEventListener('click', toggleCategoryContainer);
+  closeBtn.addEventListener('click', toggleCategoryContainer);
 }
 
 export { addCategoryBar };

@@ -9,4 +9,5 @@ function addButtonBar() {
     </button>
     `;
 }
-export default addButtonBar;
+
+export { addButtonBar };

@@ -3,9 +3,5 @@ node_modules
 
 # Environment variables
 config/.env
-
-#.DS_Store
 .DS_Store
-
-#commonImage product Image
-views/commonImage/product/
+.vscode
