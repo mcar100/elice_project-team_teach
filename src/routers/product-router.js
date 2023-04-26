@@ -19,7 +19,7 @@ productRouter.get('/:productId', async (req, res, next) => {
 
 // 관리자 기능 ========
 // 저장된 모든 상품 정보 확인
-productRouter.get('/', adminOnly, async (req, res, next) => {
+productRouter.get('/', async (req, res, next) => {
   try {
     const products = await productService.getAllProductName();
 
