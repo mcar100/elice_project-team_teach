@@ -5,15 +5,44 @@
  * const productId = lengthProducts();
  * console.log(productId);
  */
-const lengthProducts = () => localStorage.length;
+const lengthProducts = () => {
+  let localStorageLength = 0;
+
+  const keys = Object.keys(localStorage);
+  keys.forEach((product) => {
+    if (JSON.parse(localStorage.getItem(product)).deliveryFee)
+      localStorageLength++;
+  });
+  return localStorageLength;
+};
 
 /**
- * localStorage에 productId를 저장하는 함수.
- * key값은 lengthProducts() + 1로 설정
- * @param {string} productId
+ * localStorage에 상품을 저장하는 함수
+ * @param {*} productKey
+ * @param {*} productValue
  */
-const setProduct = (productId) => {
-  localStorage.setItem(productId, productId);
+const setProduct = (productKey, productValue) => {
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(productKey, productValue);
+  }
+};
+
+/**
+ * localstorage에 product를 저장하는 함수
+ * key 값은 product 객체의 id 값으로 설정
+ * @param {object} product
+ */
+const setProductToCart = (productId, product) => {
+  localStorage.setItem(productId, product);
+};
+
+/**
+ * localStorage에서 저장된 product를 가져오는 함수
+ *
+ *  @param {string} productId
+ */
+const getProductFromCart = (productId) => {
+  localStorage.getItem(productId);
 };
 
 /**
@@ -62,4 +91,6 @@ export {
   clearProducts,
   lengthProducts,
   getNameByKey,
+  setProductToCart,
+  getProductFromCart,
 };

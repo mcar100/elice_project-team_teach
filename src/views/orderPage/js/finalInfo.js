@@ -9,7 +9,6 @@ import toCurrency from './utils.js';
  * 이렇게 함수 밖에다가 쓰면 안되고 함수 안에다가 써야함
  * 밖에다가 쓰면 0이 나옴
  */
-
 const totalPriceInfoFunc = () => {
   const totalPriceInfo = document.querySelector('.final-confirmation-price-2');
   const pricesArr = document.querySelectorAll('.hidden-price-per-month');

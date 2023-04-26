@@ -4,9 +4,7 @@ function signinRequired(req, res, next) {
   // request 헤더로부터 authorization bearer 토큰을 받음.
   const userToken =
     req.headers.authorization && req.headers.authorization.split(' ')[1];
-  console.log('req.headers: ', req.headers);
-  console.log('req.headers.authorization: ', req.headers.authorization);
-  console.log('userToken : ', userToken);
+
   // 이 토큰은 jwt 토큰 문자열이거나, 혹은 "null" 문자열이거나, undefined임.
   // 토큰이 "null" 일 경우, signin_required 가 필요한 서비스 사용을 제한함.
   if (!userToken || userToken === 'null') {
@@ -22,13 +20,9 @@ function signinRequired(req, res, next) {
 
   // 해당 token 이 정상적인 token인지 확인
   try {
-    console.log('들어왔당 들어왔당 들어왔당');
     const secretKey = process.env.JWT_SECRET_KEY || 'secret-key';
 
-    console.log('secretKey : ', secretKey);
     const jwtDecoded = jwt.verify(userToken, secretKey);
-
-    console.log('jwtDecoded : ', jwtDecoded);
 
     const { userId } = jwtDecoded;
     req.currentUserId = userId;

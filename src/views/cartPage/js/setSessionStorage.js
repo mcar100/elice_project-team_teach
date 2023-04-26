@@ -1,11 +1,13 @@
 import * as session from '../../webStorage/js/sessionStorage.js';
+import * as local from '../../webStorage/js/localStorage.js';
 
 const setSessionOne = () => {
   const orderBtn = document.querySelectorAll('.each-order-button');
   const setSessionStorage = (e) => {
     const productId = e.target.classList[1];
+    const productData = local.getProduct(productId);
 
-    session.setProduct(productId);
+    session.setProduct(productId, JSON.parse(productData));
   };
 
   Array.from(orderBtn).forEach((btn) => {
@@ -24,8 +26,8 @@ const setSessionChecked = () => {
   const cartList = document.getElementsByClassName('cart-checkbox-part');
 
   const setSession = (checkedProducts) => {
-    checkedProducts.forEach((productId) => {
-      session.setProduct(productId);
+    checkedProducts.forEach((product) => {
+      session.setProduct(product.productId, product.productInfo);
     });
   };
 
@@ -33,14 +35,18 @@ const setSessionChecked = () => {
     const checkedProducts = [];
 
     Array.from(cartList).forEach((product) => {
-      if (product.checked === true) checkedProducts.push(product.id);
+      if (product.checked === true)
+        checkedProducts.push({
+          productId: product.id,
+          productInfo: local.getProduct(product.id),
+        });
     });
+
     if (checkedProducts.length === 0) {
       e.preventDefault();
-      alert('장바구니에 상품이 없습니다.');
+      alert('선택된 상품이 없습니다.');
       return -1;
     }
-
     setSession(checkedProducts);
   };
 
