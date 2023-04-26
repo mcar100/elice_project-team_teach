@@ -1,7 +1,15 @@
+import { addEvents } from './eventManager.js';
 import { getMainCategoryData } from './category.js';
 import { header } from '../../headerComponent/header.js';
-// 헤더가 보이게 임포트
-// import header from '../header/'
+import { moveToOtherByHeader } from '../../headerComponent/moveEventCommon.js';
 
-header();
-getMainCategoryData();
+// 헤더가 보이게 임포트
+
+async function main() {
+  await getMainCategoryData();
+  await header();
+  await addEvents();
+  await moveToOtherByHeader();
+}
+
+main();

@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import is from '@sindresorhus/is';
-import { signinRequired } from '../middlewares/signin-required.js'; // export default 예시
+import { signinRequired } from '../middlewares/signin-required.js';
 import { adminOnly } from '../middlewares/admin-only.js';
 import { userService } from '../services/user-service.js';
 

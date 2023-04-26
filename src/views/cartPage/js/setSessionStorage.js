@@ -6,7 +6,6 @@ const setSessionOne = () => {
     const productId = e.target.classList[1];
 
     session.setProduct(productId);
-    // alert(productId);
   };
 
   Array.from(orderBtn).forEach((btn) => {
@@ -19,20 +18,33 @@ const setSessionOne = () => {
  * 주문하기 버튼을 누르면 checked 되어 있는 요소들을 선택해 session storage에 저장한다.
  */
 const setSessionChecked = () => {
-  const cartList = document.getElementsByClassName('cart-checkbox-part');
   const orderEntire = document.querySelector(
     '.final-confirmation-quantity-outer'
   );
-  const checkedProducts = [];
+  const cartList = document.getElementsByClassName('cart-checkbox-part');
 
-  Array.from(cartList).forEach((product) => {
-    if (product.checked === true) checkedProducts.push(product.id);
-  });
-  checkedProducts.forEach((productId) => {
-    session.setProduct(productId);
-  });
+  const setSession = (checkedProducts) => {
+    checkedProducts.forEach((productId) => {
+      session.setProduct(productId);
+    });
+  };
 
-  orderEntire.addEventListener('click', setSessionChecked);
+  const confirmChecked = (e) => {
+    const checkedProducts = [];
+
+    Array.from(cartList).forEach((product) => {
+      if (product.checked === true) checkedProducts.push(product.id);
+    });
+    if (checkedProducts.length === 0) {
+      e.preventDefault();
+      alert('장바구니에 상품이 없습니다.');
+      return -1;
+    }
+
+    setSession(checkedProducts);
+  };
+
+  orderEntire.addEventListener('click', confirmChecked);
 };
 
 export { setSessionOne, setSessionChecked };

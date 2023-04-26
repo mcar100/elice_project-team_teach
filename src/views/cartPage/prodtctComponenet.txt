@@ -1,4 +1,4 @@
-{%PRODUCT_ID} 60ff9826591d828bf80577dc
+{%PRODUCT_ID%} 60ff9826591d828bf80577dc
 {%SELLER%} LG전자
 {%IMAGE_SRC%} ../images/lg.jpg
 {%PRODUCT_NAME%} LG전자 디오스 오브제컬렉션 양문형 냉장고 메탈 832L 방문설치
@@ -12,3 +12,12 @@
 ----in front----
 {%ORIGINAL_PRICE%} 월가격에 할인율 더해주기
 {%DISCOUNTED_PRICE%} 20,000
+
+
+-------address-------
+{%RECIPIENT%}
+{%ZIP_CODE%} 
+{%ADDRESS%} 서울특별시 성동구 광나루로2길 35 (성수동2가, 성수2가제3동주민센터)
+{%PHONE_NUMBER%}
+{%PRODUCT_ID%}
+
