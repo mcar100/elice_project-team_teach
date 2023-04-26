@@ -27,6 +27,42 @@ const setProduct = (productId, productData) => {
 };
 
 /**
+ * product 객체를 storage에 저장하는 함수
+ * key 값은 product 객체의 id 값으로 설정
+ * @param {object} product
+ */
+const setProductToCart = (productId, product) => {
+  sessionStorage.setItem(productId, product);
+};
+
+/**
+ * sessionStorage에서 저장된 product를 가져오는 함수
+ *
+ *   @param {string} productId
+ */
+const getProductFromCart = (productId) => {
+  sessionStorage.getItem(productId);
+};
+
+/**
+ * token 값을 storage에 저장하는 함수
+ *
+ * @param {string} key
+ */
+const setToken = (key, value) => {
+  sessionStorage.setItem(key, value);
+};
+
+/**
+ * sessionStorage에서 저장된 token을 가져오는 함수
+ *
+ *   @param {string} key
+ */
+const getToken = (key) => {
+  sessionStorage.getItem(key);
+};
+
+/**
  *
  * @param {string} keyName
  * @param {object} userProductData
@@ -82,4 +118,8 @@ export {
   clearProducts,
   lengthProducts,
   getNameByKey,
+  setProductToCart,
+  getProductFromCart,
+  setToken,
+  getToken,
 };

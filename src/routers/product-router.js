@@ -69,7 +69,7 @@ productRouter.post('/', async (req, res, next) => {
 //상품 정보 수정
 productRouter.put('/:productId', async (req, res, next) => {
   try {
-    const { productId } = req.params;
+    const productId = req.params.productId;
     const {
       productName,
       // categoryId,
@@ -110,7 +110,7 @@ productRouter.put('/:productId', async (req, res, next) => {
 //상품 삭제
 productRouter.delete('/:productId', async (req, res, next) => {
   try {
-    const { productId } = req.params;
+    const productId = req.params.productId;
     const deleteProduct = await productService.deleteProductData(productId);
 
     res.status(200).json(deleteProduct);

@@ -28,6 +28,24 @@ const setProduct = (productKey, productValue) => {
 };
 
 /**
+ * localstorage에 product를 저장하는 함수
+ * key 값은 product 객체의 id 값으로 설정
+ * @param {object} product
+ */
+const setProductToCart = (productId, product) => {
+  localStorage.setItem(productId, product);
+};
+
+/**
+ * localStorage에서 저장된 product를 가져오는 함수
+ *
+ *  @param {string} productId
+ */
+const getProductFromCart = (productId) => {
+  localStorage.getItem(productId);
+};
+
+/**
  * localStorage에 저장된 productId를 가져오는 함수.
  *     - productId가 없으면 null을 반환
  * @param {string} productId
@@ -73,4 +91,6 @@ export {
   clearProducts,
   lengthProducts,
   getNameByKey,
+  setProductToCart,
+  getProductFromCart,
 };

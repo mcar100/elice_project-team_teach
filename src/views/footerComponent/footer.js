@@ -1,6 +1,6 @@
-const footerContainer = document.getElementById("footer-container");
-const footer = async () =>{
-    footerContainer.innerHTML = `
+const footerContainer = document.getElementById('footer-container');
+const footer = async () => {
+  footerContainer.innerHTML = `
     <div id="footer-title-container">
       <div>
         <p>15팀 소개</p>
@@ -64,7 +64,7 @@ const footer = async () =>{
         <p>E-mail : customerservice@15st.co.kr</p>
       </div>
     </div>`;
-
 };
 
-export {footer};
+// eslint-disable-next-line node/no-unsupported-features/es-syntax
+export { footer };
