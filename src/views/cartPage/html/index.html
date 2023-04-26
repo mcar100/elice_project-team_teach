@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>장바구니</title>
+  </head>
+  <body>
+    <header>
+      <h1><p>HEADER YAP 🙋🏻‍♀️</p></h1>
+    </header>
+
+    <!-- cart header -->
+    <div class="cart-header-container">
+      <div class="cart-header">
+        <div class="cart-header-title">
+          <h1>
+            장바구니
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              fill="currentColor"
+              class="bi bi-apple"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282z"
+              />
+              <path
+                d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282z"
+              />
+            </svg>
+            <span>pay</span>
+          </h1>
+        </div>
+        <div class="cart-process">
+          <div class="cart-process-now">장바구니</div>
+          <div>> 주문/결제</div>
+          <div>> 주문완료</div>
+        </div>
+      </div>
+
+      <!-- shipping address -->
+      <div class="shipping-address-container">
+        <div class="user-shipping-address">
+          <svg
+            version="1.0"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="18px"
+            height="18px"
+            viewBox="0 0 64 64"
+            enable-background="new 0 0 64 64"
+            xml:space="preserve"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                fill="#C835F0"
+                d="M32,0C18.746,0,8,10.746,8,24c0,5.219,1.711,10.008,4.555,13.93c0.051,0.094,0.059,0.199,0.117,0.289l16,24 C29.414,63.332,30.664,64,32,64s2.586-0.668,3.328-1.781l16-24c0.059-0.09,0.066-0.195,0.117-0.289C54.289,34.008,56,29.219,56,24 C56,10.746,45.254,0,32,0z M32,32c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S36.418,32,32,32z"
+              ></path>
+            </g>
+          </svg>
+          <p class="shipping-destination">배송지 : 집</p>
+          <p class="shipping-address">
+            서울특별시 성동구 성수2가제3동 광나루로6길 49
+          </p>
+        </div>
+        <div class="shipping-ment">
+          <p>배송사 일정에 따라 배송 기간이 달라질 수 있습니다.</p>
+        </div>
+      </div>
+
+      <p class="cart-line"></p>
+
+      <!-- select all & selected delete -->
+      <div class="select-all-outer-container">
+        <div class="select-all-left-container">
+          <input type="checkbox" name="select-all" id="select-all" />
+          <label for="select-all">전체 선택</label>
+        </div>
+        <div class="select-all-right-container">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-x"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+            />
+          </svg>
+          <p>선택 삭제</p>
+        </div>
+      </div>
+    </div>
+
+    <main id="main"></main>
+
+    <!-- final-confirmation -->
+    <div class="final-confirmation-outer-container">
+      <div class="final-confirmation-inner-container">
+        <div class="final-confirmation-price-outer">
+          <p class="final-confirmation-price-1">총 주문금액</p>
+          <p id="total-order-price" class="final-confirmation-price-2">0 원</p>
+        </div>
+        <a href="../../orderPage/html/index.html">
+          <div class="final-confirmation-quantity-outer">
+            <p class="final-confirmation-quantity-1">총 주문하기</p>
+            <div class="final-confirmation-quantity-2-circle">
+              <p id="selected-boxes" class="final-confirmation-quantity-2">0</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- scripts -->
+    <script src="../js/render.js" type="module"></script>
+    <script src="../js/deleteLocalStorage.js" type="module"></script>
+    <script src="../js/checkCheckedProducts.js"></script>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>주문/결제 - 테크메이트</title>
+  </head>
+  <body>
+    <header>
+      <h1><p>HEADER YAP 🙋🏻‍♀️</p></h1>
+    </header>
+
+    <!-- order header -->
+    <div class="order-header-container">
+      <div class="order-header">
+        <div class="order-header-title">
+          <h1>
+            주문/결제
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-apple"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282z"
+              />
+              <path
+                d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282z"
+              />
+            </svg>
+            <span>pay</span>
+          </h1>
+        </div>
+        <div class="order-process">
+          <div>장바구니 ></div>
+          <div class="order-process-now">주문/결제</div>
+          <div>> 주문완료</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- component possible -->
+    <!-- address info -->
+    <div class="address-info-outer">
+      <!-- address info -->
+      <div class="address-info">
+        <div class="address-info-header">
+          <p class="address-info-header-text">배송정보</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            fill="currentColor"
+            class="bi bi-box-seam"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"
+            />
+          </svg>
+        </div>
+        <div class="address-info-choice">
+          <div class="address-info-choice-radio c1">
+            <input
+              type="radio"
+              id="default-display"
+              name="address-choice"
+              value="default-display"
+              checked
+            />
+            <label for="default-display" class="address-label1"
+              >기본배송지</label
+            >
+          </div>
+
+          <div class="address-info-choice-radio c2">
+            <input
+              type="radio"
+              id="direct-input"
+              name="address-choice"
+              value="direct-input"
+            />
+            <label for="direct-input" class="address-label2">직접입력</label>
+          </div>
+        </div>
+
+        <!-- display: block -->
+        <div class="address-info-default-display"></div>
+
+        <!-- display: none -->
+        <div class="address-info-direct-none">
+          <input
+            type="text"
+            name="user-name"
+            id="user-name"
+            class="direct-input-box address-info-direct-none-user-name"
+            placeholder="받는 사람"
+          />
+          <input
+            type="text"
+            name="user-zip-code"
+            id="user-zip-code"
+            class="direct-input-box address-info-direct-none-user-zip-code"
+            placeholder="우편번호"
+          />
+          <input
+            type="text"
+            name="user-address"
+            id="user-address"
+            class="direct-input-box address-info-direct-none-user-address-default"
+            placeholder="기본 주소"
+          />
+          <input
+            type="text"
+            name="user-address-detail"
+            id="user-address-detail"
+            class="direct-input-box address-info-direct-none-user-address-detail"
+            placeholder="상세 주소 및 상세 건물명"
+          />
+          <input
+            type="tel"
+            name="user-phone-number"
+            id="user-phone-number"
+            class="direct-input-box address-info-direct-none-user-phone-number"
+            placeholder="010-0000-0000"
+          />
+          <input
+            type="text"
+            name="delivery-require"
+            id=""
+            class="direct-input-box address-info-direct-none-delivery-require"
+            placeholder="배송시 요청사항을 적어주세요."
+          />
+        </div>
+      </div>
+    </div>
+
+    <main id="main"></main>
+
+    <!-- final-confirmation -->
+    <div class="final-confirmation-outer-container">
+      <div class="final-confirmation-inner-container">
+        <div class="final-confirmation-price-outer">
+          <p class="final-confirmation-price-1">총 주문금액</p>
+          <p class="final-confirmation-price-2">0 원</p>
+        </div>
+        <a
+          href="../../orderCompletedPage/html/index.html"
+          class="move-to-completed"
+        >
+          <div class="final-confirmation-quantity-outer">
+            <div class="final-confirmation-quantity-2-circle">
+              <p class="final-confirmation-quantity-2">결제하기</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer></footer>
+
+    <!-- scripts -->
+    <script src="../js/index.js"></script>
+    <script src="../js/render.js" type="module"></script>
+  </body>
+</html>

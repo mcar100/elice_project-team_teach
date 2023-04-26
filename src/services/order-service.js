@@ -11,6 +11,19 @@ class OrderService {
   }
 
   async addOrder(orderInfo) {
+    let { orderNumber } = orderInfo;
+
+    if (!orderNumber) {
+      const timestamp = Date.now().toString();
+      const randomNumber = Math.floor(Math.random() * 10000)
+        .toString()
+        .padStart(4, '0');
+
+      orderNumber = `${timestamp}${randomNumber}`;
+    }
+
+    orderInfo.orderNumber = orderNumber;
+
     const createNewOrder = await this.orderModel.createOrder(orderInfo);
     return createNewOrder;
   }
