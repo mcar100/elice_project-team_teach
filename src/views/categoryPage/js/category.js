@@ -1,14 +1,20 @@
 import { header } from '../../headerComponent/header.js';
 import { getProduct } from './product.js';
 import { moveToOtherByHeader } from '../../headerComponent/moveEventCommon.js';
+import { getUrlParams } from './getUrlParams.js';
+import { selectBoxEvent } from './selectBox.js';
 
 async function renderPage() {
   await header();
-  setTimeout(() => {
-    moveToOtherByHeader();
-  }, 1000);
-  setTimeout(() => {
-    getProduct();
-  }, 1000);
 }
-renderPage();
+renderPage()
+  .then(() => {
+    moveToOtherByHeader();
+  })
+  .then(() => {
+    const categoryId = getUrlParams('categoryId');
+    getProduct(categoryId);
+  })
+  .then(() => {
+    selectBoxEvent();
+  });

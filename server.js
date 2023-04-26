@@ -17,10 +17,11 @@ mongoose
   )
   .then(() => {
     console.log('mongo db connected!');
+    console.log('hi');
   });
 
 app.listen(port, () => {
-  console.log(`localhost:3000 connected!`);
+  console.log(`localhost:${port} connected!`);
 });
 
 // add by jiseong

@@ -1,15 +1,10 @@
-const urlParams = new URL(location.href).searchParams;
-
 const promises = async () => {
-  const categoryId = urlParams.get('categoryId');
-  console.log(categoryId);
   const response = await fetch(`http://localhost:3000/products`);
   const data = response.json();
   return data;
 };
 
-const getProduct = () => {
-  const categoryId = urlParams.get('categoryId');
+const getProduct = (categoryId) => {
   const productList = document.querySelector('.product-list');
   promises().then((productArray) => {
     const filteredItem = productArray.filter(
