@@ -1,5 +1,7 @@
 import { getUrlParams } from './getUrlParams.js';
 import { getProduct } from './product.js';
+import { sendItemDetail } from './selectItem.js';
+
 const selectBox = document.getElementById('select-category');
 
 function initSelectBox() {
@@ -16,7 +18,14 @@ function selectCategory() {
     const productList = document.querySelector('.product-list');
     productList.innerHTML = '';
     const categoryId = selectBox.value;
-    getProduct(categoryId);
+    // 화면 전체 랜더링
+    // moveToCategoryBySelectBox(categoryId);
+
+    // 화면 부분 랜더링 -> 어느게 더 나을까?
+    getProduct(categoryId).then(() => {
+      sendItemDetail();
+      history.pushState(null, null, `category?categoryId=${categoryId}`);
+    });
   });
 }
 

@@ -4,9 +4,9 @@ const promises = async () => {
   return data;
 };
 
-const getProduct = (categoryId) => {
+const getProduct = async (categoryId) => {
   const productList = document.querySelector('.product-list');
-  promises().then((productArray) => {
+  await promises().then((productArray) => {
     const filteredItem = productArray.filter(
       (item) => item.categoryId === categoryId
     );
@@ -14,6 +14,7 @@ const getProduct = (categoryId) => {
     filteredItem.forEach((product) => {
       productList.innerHTML += `
       <div class="product-container">
+          <p class="product-id box-none">${product._id}</p>
           <div class="product-image">
               <img src="${product.images[0]}" alt="product image"/>
           </div>
