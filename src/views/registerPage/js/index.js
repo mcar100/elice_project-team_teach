@@ -10,7 +10,54 @@ const passwordConfirmBox = document.getElementById('player-password-confirm');
 const phoneNumberBox = document.getElementById('player-phone-number');
 const addressBox = document.getElementById('player-address');
 //const agreeBox = document.getElementById('player-agree');
-const identityBox = document.getElementById('identity');
+const duplicateButton = document.getElementById('duplicate-check');
+const cancelButton = document.getElementById('register-cancel');
+let checkFlags = 0;
+
+function checkFlag() {
+  checkFlags = 0;
+  console.log('check');
+}
+
+idBox.addEventListener('change', () => {
+  checkFlag();
+});
+
+async function checkDuplicate(email) {
+  const res = await fetch(
+    `http://localhost:3000/users/signup/check-email-duplication`,
+    {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email,
+      }),
+    }
+  );
+
+  const login = await res.json();
+
+  if (login.result === 'true') {
+    alert('사용 가능한 아이디입니다.');
+    checkFlags = 1;
+    emailBox.focus();
+  } else {
+    alert('중복된 아이디입니다.');
+  }
+}
+duplicateButton.addEventListener('click', async () => {
+  const id = idBox.value;
+  await checkDuplicate(id);
+});
+
+cancelButton.addEventListener('click', () => {
+  if (confirm('회원가입을 취소하시겠습니까?')) {
+    console.log('이전페이지 이동');
+    history.back();
+  }
+});
 
 header();
 footer();
@@ -33,21 +80,35 @@ function checkPhoneNumber(number) {
   return false;
 }
 
-async function register(id, email, password, phoneNumber, address, identity) {
-  const res = await fetch(`http://localhost:3000/signup`, {
+async function register(id, email, password, phoneNumber, address) {
+  if (checkFlags === 0) {
+    alert('아이디 중복확인을 해주세요.');
+    return;
+  }
+
+  const res = await fetch(`http://localhost:3000/users/signup`, {
     method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify({
       username: id,
       email: email,
       password: password,
-      phoneNumber: phoneNumber,
+      mobileNumber: phoneNumber,
       address: address,
-      identity: identity,
     }),
   });
-  const product = await res.json();
 
-  return product;
+  const login = await res.json();
+
+  if (res.status === 201) {
+    alert('회원가입이 완료되었습니다.');
+    window.location.href = 'http://localhost:3000/signin';
+  } else {
+    alert('회원가입이 실패했습니다. 정보를 다시 확인해주세요.');
+    return;
+  }
 }
 
 idBox.addEventListener('blur', () => {
@@ -124,9 +185,6 @@ registerButton.addEventListener('click', () => {
   const phoneNumber = document.getElementById('player-phone-number').value;
   const address = document.getElementById('player-address').value;
   const playerAgree = document.getElementById('player-agree').checked;
-  const identity = identityBox.options[identityBox.selectedIndex].value;
-
-  console.log(identity);
 
   if (id.length <= 0) {
     alert('아이디를 확인해주세요.');
@@ -164,5 +222,5 @@ registerButton.addEventListener('click', () => {
     return;
   }
 
-  register(id, email, password, phoneNumber, address, identity);
+  register(id, email, password, phoneNumber, address);
 });

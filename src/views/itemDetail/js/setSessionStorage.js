@@ -1,11 +1,9 @@
 import * as session from '../../webStorage/js/sessionStorage.js';
 
 const setProductToSessionStorage = (product) => {
-  const { id } = product;
+  const { _id } = product;
 
-  console.log(id);
-
-  session.setProductToCart(String(id), JSON.stringify(product));
+  session.setProductToCart(String(_id), JSON.stringify(product));
 };
 
 export { setProductToSessionStorage };

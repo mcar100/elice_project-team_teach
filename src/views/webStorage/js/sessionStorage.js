@@ -22,8 +22,6 @@ const setProduct = (productId) => {
  * @param {object} product
  */
 const setProductToCart = (productId, product) => {
-  console.log(JSON.parse(product));
-
   sessionStorage.setItem(productId, product);
 };
 
@@ -34,6 +32,24 @@ const setProductToCart = (productId, product) => {
  */
 const getProductFromCart = (productId) => {
   sessionStorage.getItem(productId);
+};
+
+/**
+ * token 값을 storage에 저장하는 함수
+ *
+ * @param {string} key
+ */
+const setToken = (key, value) => {
+  sessionStorage.setItem(key, value);
+};
+
+/**
+ * sessionStorage에서 저장된 token을 가져오는 함수
+ *
+ *   @param {string} key
+ */
+const getToken = (key) => {
+  sessionStorage.getItem(key);
 };
 
 /**
@@ -94,4 +110,6 @@ export {
   getNameByKey,
   setProductToCart,
   getProductFromCart,
+  setToken,
+  getToken,
 };

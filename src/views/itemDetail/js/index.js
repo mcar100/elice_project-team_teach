@@ -180,17 +180,19 @@ function initSetting(itemData) {
     }
 
     localBucketData = {
-      id: itemData._id,
+      _id: itemData._id,
       model: itemData.productSpecification.model,
       brand: itemData.productSpecification.brand,
       energyEfficiencyRating:
         itemData.productSpecification.energyEfficiencyRating,
       rentalPeriod: rentalPeriod,
-      priceForMonth: price,
+      pricePerMonth: price,
       deliveryFee: 3000,
       images: itemData.images,
       size: itemData.productSpecification.size,
       productName: itemData.productName,
+      color: itemData.color,
+      discountRate: itemData.discountRate,
     };
 
     setProductToLocalStorage(localBucketData);
@@ -212,17 +214,19 @@ function initSetting(itemData) {
     }
 
     localBucketData = {
-      id: itemData._id,
+      _id: itemData._id,
       model: itemData.productSpecification.model,
       brand: itemData.productSpecification.brand,
       energyEfficiencyRating:
         itemData.productSpecification.energyEfficiencyRating,
       rentalPeriod: rentalPeriod,
-      priceForMonth: price,
+      pricePerMonth: price,
       deliveryFee: 3000,
       images: itemData.images,
       size: itemData.productSpecification.size,
       productName: itemData.productName,
+      color: itemData.color,
+      discountRate: itemData.discountRate,
     };
 
     setProductToSessionStorage(localBucketData);
@@ -244,7 +248,6 @@ downButton.addEventListener('click', () => {
 });
 
 function dateFormatDay(date) {
-  console.log(date);
   return date.getMonth() + 1 + '/' + date.getDate();
 }
 
