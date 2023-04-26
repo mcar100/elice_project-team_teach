@@ -10,7 +10,13 @@ const ProductSchema = new Schema(
     categoryId: {
       type: Schema.Types.ObjectId,
       ref: 'categories',
-      required: true,
+      required: false,
+    },
+
+    sellerId: {
+      type: Schema.Types.ObjectId,
+      ref: 'users',
+      required: false,
     },
 
     pricePerMonth: {
@@ -42,13 +48,13 @@ const ProductSchema = new Schema(
       required: true,
     },
 
-    deliveryFee: {
-      type: Number,
-    },
-
     productDetailImages: {
       type: [String],
       required: true,
+    },
+
+    deliveryFee: {
+      type: Number,
     },
 
     productSpecification: {

@@ -5,7 +5,3 @@ node_modules
 config/.env
 .DS_Store
 .vscode
-
-# Zone:identifier
-src/views/commonImage/product/.Zone:identifer
-src/views/mainPage/icon/.Zone:identifer

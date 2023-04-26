@@ -1,4 +1,3 @@
-import { addEvents } from './eventManager.js';
 import { getMainCategoryData } from './category.js';
 import { header } from '../../headerComponent/header.js';
 import { moveToOtherByHeader } from '../../headerComponent/moveEventCommon.js';
@@ -8,7 +7,6 @@ import { moveToOtherByHeader } from '../../headerComponent/moveEventCommon.js';
 async function main() {
   await getMainCategoryData();
   await header();
-  await addEvents();
   await moveToOtherByHeader();
 }
 
