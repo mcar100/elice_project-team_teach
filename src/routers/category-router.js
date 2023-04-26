@@ -1,6 +1,7 @@
 import { Router } from 'express';
+import is from '@sindresorhus/is';
+import { adminOnly } from '../middlewares/admin-only.js';
 import { categoryService } from '../services/category-services.js';
-import path from 'path';
 
 const categoryRouter = Router();
 
@@ -8,7 +9,7 @@ const categoryRouter = Router();
 categoryRouter.get('/', async (req, res, next) => {
   try {
     const categories = await categoryService.getAllCategoryName();
-    console.log(categories);
+
     res.status(200).json(categories);
   } catch (err) {
     next(err);
@@ -18,7 +19,7 @@ categoryRouter.get('/', async (req, res, next) => {
 //카테고리 상세 목록 조회(카테고리 클릭 시 상품들 리스트)
 categoryRouter.get('/:categoryId', async (req, res, next) => {
   try {
-    const categoryId = req.params.categoryId;
+    const { categoryId } = req.params;
     const categoryProduct = await categoryService.getProductListByCategoryId(
       categoryId
     );
@@ -32,17 +33,15 @@ categoryRouter.get('/:categoryId', async (req, res, next) => {
 // 관리자 기능 추가
 
 //카테고리 추가
-categoryRouter.post('/', async (req, res, next) => {
+categoryRouter.post('/', adminOnly, async (req, res, next) => {
   try {
-    // if (is.emptyObject(req.body)) {
-    //   throw new Error(
-    //     'headers의 Content-Type을 application/json으로 설정해주세요'
-    //   );
-    // }
+    if (is.emptyObject(req.body)) {
+      throw new Error(
+        'headers의 Content-Type을 application/json으로 설정해주세요'
+      );
+    }
 
     const { categoryName, categoryIcon } = req.body;
-
-    console.log(categoryName, categoryIcon);
 
     const newCategory = await categoryService.addCategory({
       categoryName,
@@ -56,15 +55,15 @@ categoryRouter.post('/', async (req, res, next) => {
 });
 
 //카테고리 수정
-categoryRouter.put('/:categoryId', async (req, res, next) => {
+categoryRouter.put('/:categoryId', adminOnly, async (req, res, next) => {
   try {
-    // if (is.emptyObject(req.body)) {
-    //   throw new Error(
-    //     'headers의 Content-Type을 application/json으로 설정해주세요'
-    //   );
-    // }
+    if (is.emptyObject(req.body)) {
+      throw new Error(
+        'headers의 Content-Type을 application/json으로 설정해주세요'
+      );
+    }
 
-    const categoryId = req.params.categoryId;
+    const { categoryId } = req.params;
     const { categoryName, categoryIcon } = req.body;
 
     const updateCategory = await categoryService.updateCategoryByCategoryId(
@@ -79,9 +78,9 @@ categoryRouter.put('/:categoryId', async (req, res, next) => {
 });
 
 //카테고리 삭제
-categoryRouter.delete('/:categoryId', async (req, res, next) => {
+categoryRouter.delete('/:categoryId', adminOnly, async (req, res, next) => {
   try {
-    const categoryId = req.params.categoryId;
+    const { categoryId } = req.params;
     const deleteCategory = await categoryService.deleteCategoryByCategoryId(
       categoryId
     );

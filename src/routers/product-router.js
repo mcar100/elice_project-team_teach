@@ -2,6 +2,7 @@ import { Router } from 'express';
 import is from '@sindresorhus/is';
 import { productService } from '../services/product-service.js';
 import { categoryService } from '../services/category-services.js';
+import { adminOnly } from '../middlewares/admin-only.js';
 // import { adminOnly } from '../middlewares/admin-only.js';
 
 const productRouter = Router();
@@ -18,21 +19,7 @@ productRouter.get('/:productId', async (req, res, next) => {
   }
 });
 
-productRouter.get('/:categoryId', async (req, res, next) => {
-  try {
-    const { categoryId } = req.params;
-    const categoryProduct = await categoryService.getProductListByCategoryId({
-      categoryId,
-    });
-    res.status(200).json(categoryProduct);
-  } catch (err) {
-    next(err);
-  }
-});
-
-// 관리자 기능 ========
 // 저장된 모든 상품 정보 확인
-
 productRouter.get('/', async (req, res, next) => {
   try {
     const products = await productService.getAllProductName();
@@ -42,8 +29,9 @@ productRouter.get('/', async (req, res, next) => {
   }
 });
 
+// 관리자 기능 ========
 //상품 추가
-productRouter.post('/', async (req, res, next) => {
+productRouter.post('/', adminOnly, async (req, res, next) => {
   try {
     if (is.emptyObject(req.body)) {
       throw new Error(
@@ -88,7 +76,7 @@ productRouter.post('/', async (req, res, next) => {
 });
 
 //상품 정보 수정
-productRouter.put('/:productId', async (req, res, next) => {
+productRouter.put('/:productId', adminOnly, async (req, res, next) => {
   try {
     const { productId } = req.params;
     const {
@@ -127,7 +115,7 @@ productRouter.put('/:productId', async (req, res, next) => {
 });
 
 //상품 삭제
-productRouter.delete('/:productId', async (req, res, next) => {
+productRouter.delete('/:productId', adminOnly, async (req, res, next) => {
   try {
     const { productId } = req.params;
     const deleteProduct = await productService.deleteProductData(productId);

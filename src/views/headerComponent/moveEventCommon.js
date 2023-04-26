@@ -30,7 +30,7 @@ function moveToCart() {
   });
 }
 
-export function moveToCategoryByBar() {
+function moveToCategoryByBar() {
   const registerBtn = document.querySelectorAll('.category-item');
   registerBtn.forEach((category) => {
     category.addEventListener('click', (e) => {
@@ -41,10 +41,12 @@ export function moveToCategoryByBar() {
   });
 }
 
-export function moveToOtherByHeader() {
+function moveToOtherByHeader() {
   moveToHome();
   moveToLogin();
   moveToMyPage();
   moveToCart();
   moveToCategoryByBar();
 }
+
+export { moveToCategoryByBar, moveToOtherByHeader };
