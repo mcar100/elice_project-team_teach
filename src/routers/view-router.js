@@ -9,7 +9,6 @@ const __dirname = path.resolve();
 const resourcePath = path.join(__dirname, '/src/views');
 
 viewRouter.use(express.static(path.join(__dirname, '/src/views')));
-
 viewRouter.get('/', async (req, res) => {
   res.sendFile(path.join(resourcePath, '/mainPage/html/mainPage.html'));
 });
