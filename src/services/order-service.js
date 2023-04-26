@@ -43,6 +43,13 @@ class OrderService {
   }
 
   async updateOrderByOrderId(orderId, toUpdate) {
+    const { deliveryStatus } = toUpdate;
+
+    if (deliveryStatus !== 'preparing') {
+      throw new Error(
+        '해당 상품은 이미 배송이 진행 중이거나 도착한 상품입니다. 정보 수정이 불가능합니다.'
+      );
+    }
     const updateOrder = await this.orderModel.updateOrderInfo(
       orderId,
       toUpdate

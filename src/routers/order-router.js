@@ -1,5 +1,8 @@
 import { Router } from 'express';
 import is from '@sindresorhus/is';
+import { signinRequired } from '../middlewares/signin-required.js';
+import { adminOnly } from '../middlewares/admin-only.js';
+
 import { orderService } from '../services/order-service.js';
 
 const orderRouter = Router();
@@ -45,7 +48,7 @@ orderRouter.post('/', async (req, res, next) => {
 
 // ========= 관리자 기능
 // 사용자 전체 주문 목록 조회
-orderRouter.get('/admin', async (req, res, next) => {
+orderRouter.get('/admin', adminOnly, async (req, res, next) => {
   try {
     const orders = await orderService.getAllOrders();
     res.status(200).json(orders);
@@ -55,7 +58,7 @@ orderRouter.get('/admin', async (req, res, next) => {
 });
 
 //사용자의 배송 상태 수정
-orderRouter.patch('/admin/:orderId', async (req, res, next) => {
+orderRouter.patch('/admin/:orderId', adminOnly, async (req, res, next) => {
   try {
     const { orderId } = req.params;
     const { deliveryStatus } = req.body;
@@ -78,7 +81,7 @@ orderRouter.patch('/admin/:orderId', async (req, res, next) => {
 });
 
 // 사용자 주문 내역 삭제
-orderRouter.delete('/admin/:orderId', async (req, res, next) => {
+orderRouter.delete('/admin/:orderId', adminOnly, async (req, res, next) => {
   try {
     const { orderId } = req.params;
     const deleteOrder = await orderService.deleteOrderByOrderId(orderId);
@@ -117,8 +120,8 @@ orderRouter.get('/user/:userId', async (req, res, next) => {
   }
 });
 
-//사용자 특정 주문 수정(주문 완료 후 배송이 시작되기 전까지 주문 정보를 수정할 수 있다. - 환불, 교환을 의미하는 듯?)
-orderRouter.patch('/user/:orderId', async (req, res, next) => {
+//사용자 특정 주문 수정(사용자 주문 정보 수정)
+orderRouter.patch('/user/:orderId', signinRequired, async (req, res, next) => {
   try {
     const { orderId } = req.params;
     const { address, deliveryStatus, deliveryRequirements } = req.body;
