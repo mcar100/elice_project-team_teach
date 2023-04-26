@@ -13,12 +13,6 @@ const ProductSchema = new Schema(
       required: true,
     },
 
-    sellerId: {
-      type: Schema.Types.ObjectId,
-      ref: 'users',
-      required: true,
-    },
-
     pricePerMonth: {
       type: [Number],
       required: true,

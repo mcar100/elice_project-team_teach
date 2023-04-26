@@ -17,7 +17,6 @@ productRouter.get('/:productId', async (req, res, next) => {
   }
 });
 
-// 관리자 기능 ========
 // 저장된 모든 상품 정보 확인
 productRouter.get('/', async (req, res, next) => {
   try {
@@ -28,6 +27,8 @@ productRouter.get('/', async (req, res, next) => {
     next(err);
   }
 });
+
+// 관리자 기능 ========
 
 //상품 추가
 productRouter.post('/', adminOnly, async (req, res, next) => {
@@ -41,7 +42,6 @@ productRouter.post('/', adminOnly, async (req, res, next) => {
     const {
       productName,
       categoryId,
-      sellerId,
       pricePerMonth,
       discountRate,
       images,
@@ -56,7 +56,6 @@ productRouter.post('/', adminOnly, async (req, res, next) => {
     const newProduct = await productService.addProduct({
       productName,
       categoryId,
-      sellerId,
       pricePerMonth,
       discountRate,
       images,
@@ -86,6 +85,7 @@ productRouter.put('/:productId', adminOnly, async (req, res, next) => {
       rentalPeriod,
       color,
       quantity,
+      deliveryFee,
       productDetailImages,
       productSpecification,
     } = req.body;
@@ -98,6 +98,7 @@ productRouter.put('/:productId', adminOnly, async (req, res, next) => {
       ...(rentalPeriod && { rentalPeriod }),
       ...(color && { color }),
       ...(quantity && { quantity }),
+      ...(deliveryFee && { deliveryFee }),
       ...(productDetailImages && { productDetailImages }),
       ...(productSpecification && { productSpecification }),
     };
