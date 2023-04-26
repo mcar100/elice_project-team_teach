@@ -1,11 +1,11 @@
-import getDataFromServer from './getProductsInfoFromServer.js';
+import { getDataFromLocalStorage } from './getProductsInfoFromServer.js';
 import productComponent from './productComponent.js';
 import replaceComponentData from './replaceUtils.js';
 
 const mainTag = document.getElementById('main');
 
-const addMainContents = async () => {
-  const productsData = await getDataFromServer();
+const addMainContents = () => {
+  const productsData = getDataFromLocalStorage();
 
   const productsHtmlForRender = replaceComponentData(
     productsData,

@@ -11,8 +11,8 @@ const productComponent = `<!-- component possible -->
 				name="cart-product"
 				id="{%PRODUCT_ID%}"
 				class="cart-checkbox-part"
-				onchange="getCheckedCnt()"
-				data-price="{%INPUT_PRICE_PER_MONTH%}"
+
+				data-price="{%ORDER_PRICE_DATA%}"
 			/>
 			<label for="{%PRODUCT_ID%}">{%SELLER%}</label>
 			<svg
@@ -39,6 +39,7 @@ const productComponent = `<!-- component possible -->
 				<p class="cart-product-name">{%PRODUCT_NAME%}</p>
 				<div class="cart-product-options">
 					<p>{%MODEL%}</p>
+					<p>{%COLOR%}</p>
 					<p>{%SIZE%}</p>
 					<p>{%ENERGY_EFFICIENCY_RATING%}</p>
 				</div>
@@ -70,10 +71,12 @@ const productComponent = `<!-- component possible -->
 					<p class="cart-product-price-info-left-1">선택상품금액</p>
 					<p class="cart-product-price-info-left-2">{%ORIGINAL_PRICE%}</p>
 				</div>
+				<div class="plus-minus">+</div>
 				<div>
 					<p class="cart-product-price-info-left-1">총 배송비</p>
 					<p class="cart-product-price-info-left-2">{%DELIVERY_FEE%}</p>
 				</div>
+				<div class="plus-minus">-</div>
 				<div>
 					<p class="cart-product-price-info-left-1">할인예상금액</p>
 					<p class="cart-product-price-info-left-2 discounted-price">
@@ -84,7 +87,7 @@ const productComponent = `<!-- component possible -->
 			<div class="cart-product-price-info-right">
 				<div class="cart-product-final-price">
 					<p class="final-price-text">주문금액</p>
-					<p class="final-price">{%PRICE_PER_MONTH%}</p>
+					<p class="final-price">{%ORDER_PRICE%}</p>
 				</div>
 				<a href="../../orderPage/html/index.html" class="each-order-a">
 					<p class="each-order-button {%PRODUCT_ID%}">주문하기</p>
