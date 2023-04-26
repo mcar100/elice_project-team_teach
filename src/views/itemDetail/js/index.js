@@ -1,5 +1,7 @@
-import { header } from "../../headerComponent/header.js";
-import { footer } from "../../footerComponent/footer.js";
+import { header } from '../../headerComponent/header.js';
+import { footer } from '../../footerComponent/footer.js';
+import { setProductToLocalStorage } from './setLocalStorage.js';
+import { setProductToSessionStorage } from './setSessionStorage.js';
 
 const itemNumber = document.getElementById('item-number');
 const upButton = document.getElementById('up-button');
@@ -14,7 +16,26 @@ const itemColorDiv = document.getElementById('item-color-div');
 const itemName = document.getElementById('item-name');
 const itemMonthRentalfee = document.getElementById('item-month-rental-fee');
 const itemIsFree = document.getElementById('is-free');
-const itemData = {
+const rental36month = document.getElementById('rental36month');
+const rental48month = document.getElementById('rental48month');
+const rental60month = document.getElementById('rental60month');
+const itemSpecName = document.getElementById('item-spec-div-name');
+const itemSpecModel = document.getElementById('item-spec-div-model');
+const itemSpecBrand = document.getElementById('item-spec-div-brand');
+const itemSpecEnergy = document.getElementById('item-spec-div-energy');
+const itemTableItemName = document.getElementById('item-table-item-name');
+const itemTableItemModel = document.getElementById('item-table-item-model');
+const itemTableItemBrand = document.getElementById('item-table-item-brand');
+const itemTableItemColor = document.getElementById('item-table-item-color');
+const itemTableItemSize = document.getElementById('item-table-item-size');
+const itemTableItemEnergy = document.getElementById('item-table-item-energy');
+const itemDeliveryDay = document.getElementById('item-delivery-day');
+const addCartButton = document.getElementById('add-bucket');
+const currentBuyButton = document.getElementById('current-buy');
+let price;
+let localBucketData;
+
+/*const itemData = {
   images: ['../icon/heart.png', '../icon/elice.png'],
   name: '삼성 T76 냉장고',
   pricePerMonth: 110000,
@@ -30,19 +51,12 @@ const itemData = {
   monthRentalfee: 150000,
   deliveryfee: 30000,
   seller:"삼성의 판매자",
-};
-
-let rentalOption = 0;
+};*/
 
 header();
 footer();
 
-window.onload = () => {
-  // 해당코드는 서버로부터 데이터를 전달 받은 직후 실행시킨다.
-  initSetting();
-};
-
-function initSetting() {
+function initSetting(itemData) {
   let mainImage = document.createElement('img');
   mainImage.src = itemData.images[0];
   mainImage.setAttribute('id', 'main-image');
@@ -63,67 +77,164 @@ function initSetting() {
   }
 
   for (let i = 0; i < itemData.color.length; i++) {
-    let initColor = itemData.color[itemData.color.length - 1];
-    if (initColor === 'white') {
-      selectedColor.innerHTML = '화이트';
-    } else if (initColor === 'black') {
+    let initColor = itemData.color[i];
+    let engColor;
+
+    if (initColor === '블랙') {
       selectedColor.innerHTML = '블랙';
-    } else if (initColor === 'red') {
-      selectedColor.innerHTML = '레드';
-    } else if (initColor === 'yellow') {
-      selectedColor.innerHTML = '골드';
-    } else {
-      selectedColor.innerHTML = color;
+      engColor = 'black';
+    } else if (initColor === '화이트') {
+      selectedColor.innerHTML = '화이트';
+      engColor = 'white';
+    } else if (initColor === '실버') {
+      selectedColor.innerHTML = '실버';
+      engColor = 'silver';
     }
 
-    let colorDiv = document.createElement('div');
     let colorSelectedButton = document.createElement('button');
-    colorDiv.style.padding = '3px';
-    colorDiv.appendChild(colorSelectedButton);
     colorSelectedButton.setAttribute('id', 'item-color-selected');
-    colorSelectedButton.style.backgroundColor = itemData.color[i];
-    colorSelectedButton.addEventListener('click', (err) => {
-      colorDiv.classList.toggle('color-selected');
-      console.log(colorDiv.getAttribute('class'));
+    colorSelectedButton.style.backgroundColor = engColor;
+    colorSelectedButton.addEventListener('click', () => {
       let color = colorSelectedButton.style.backgroundColor;
       if (color === 'white') {
         selectedColor.innerHTML = '화이트';
       } else if (color === 'black') {
         selectedColor.innerHTML = '블랙';
-      } else if (color === 'red') {
-        selectedColor.innerHTML = '레드';
-      } else if (color === 'yellow') {
-        selectedColor.innerHTML = '골드';
-      } else {
-        selectedColor.innerHTML = color;
+      } else if (color === 'silver') {
+        selectedColor.innerHTML = '실버';
       }
-    });  
+    });
+
     itemColorDiv.after(colorSelectedButton);
-
-    
-
   }
 
+  price = itemData.pricePerMonth[0];
+
+  rental36month.addEventListener('click', () => {
+    itemMonthRentalfee.innerHTML = `${itemData.pricePerMonth[0]}원`;
+    price = itemData.pricePerMonth[0];
+    rental36month.classList.toggle('rental-option-selected');
+    rental48month.classList.remove('rental-option-selected');
+    rental60month.classList.remove('rental-option-selected');
+  });
+
+  rental48month.addEventListener('click', () => {
+    itemMonthRentalfee.innerHTML = `${itemData.pricePerMonth[1]}원`;
+    price = itemData.pricePerMonth[1];
+    rental36month.classList.remove('rental-option-selected');
+    rental48month.classList.toggle('rental-option-selected');
+    rental60month.classList.remove('rental-option-selected');
+  });
+
+  rental60month.addEventListener('click', () => {
+    itemMonthRentalfee.innerHTML = `${itemData.pricePerMonth[2]}원`;
+    price = itemData.pricePerMonth[2];
+    rental36month.classList.remove('rental-option-selected');
+    rental48month.classList.remove('rental-option-selected');
+    rental60month.classList.toggle('rental-option-selected');
+  });
+
   itemBrand.innerHTML = itemData.productSpecification.brand;
-  itemName.innerHTML = itemData.name;
-  itemMonthRentalfee.innerHTML = itemData.monthRentalfee;
+  itemName.innerHTML = itemData.productName;
+  itemMonthRentalfee.innerHTML = ` ${itemData.pricePerMonth[0]}원`;
 
   if (itemData.deliveryfee === 0) {
     itemIsFree.innerHTML = '무료배송';
   } else {
-    itemIsFree.innerHTML = String('배송비 : ')
-      .concat(itemData.deliveryfee.toLocaleString('ko-KR'))
-      .concat('원');
+    itemIsFree.innerHTML = `배송비 : ${String(
+      itemData.deliveryFee
+    ).toLocaleString('ko-KR')}원`;
   }
+
+  let now = new Date();
+  let deliveryDay = new Date(now.setDate(now.getDate() + 2));
+  console.log(deliveryDay);
+
+  itemDeliveryDay.innerHTML = dateFormatDay(deliveryDay);
+
+  itemSpecName.innerHTML = itemData.productName;
+  itemSpecModel.innerHTML = itemData.productSpecification.model;
+  itemSpecBrand.innerHTML = itemData.productSpecification.brand;
+  itemSpecEnergy.innerHTML =
+    itemData.productSpecification.energyEfficiencyRating;
+  itemTableItemName.innerHTML = itemData.productName;
+  itemTableItemModel.innerHTML = itemData.productSpecification.model;
+  itemTableItemBrand.innerHTML = itemData.productSpecification.brand;
+
+  itemTableItemColor.innerHTML = itemData.color;
+  itemTableItemSize.innerHTML = itemData.productSpecification.size;
+  itemTableItemEnergy.innerHTML =
+    itemData.productSpecification.energyEfficiencyRating;
+
+  addCartButton.addEventListener('click', () => {
+    let rentalPeriod;
+    if (rental36month.classList.contains('rental-option-selected')) {
+      rentalPeriod = 36;
+    } else if (rental48month.classList.contains('rental-option-selected')) {
+      rentalPeriod = 48;
+    } else if (rental60month.classList.contains('rental-option-selected')) {
+      rentalPeriod = 60;
+    } else {
+      alert('상품 렌탈기간을 선택해주세요');
+      return;
+    }
+
+    localBucketData = {
+      id: itemData._id,
+      model: itemData.productSpecification.model,
+      brand: itemData.productSpecification.brand,
+      energyEfficiencyRating:
+        itemData.productSpecification.energyEfficiencyRating,
+      rentalPeriod: rentalPeriod,
+      priceForMonth: price,
+      deliveryFee: 3000,
+      images: itemData.images,
+      size: itemData.productSpecification.size,
+      productName: itemData.productName,
+    };
+
+    setProductToLocalStorage(localBucketData);
+  });
+
+  currentBuyButton.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    let rentalPeriod;
+    if (rental36month.classList.contains('rental-option-selected')) {
+      rentalPeriod = 36;
+    } else if (rental48month.classList.contains('rental-option-selected')) {
+      rentalPeriod = 48;
+    } else if (rental60month.classList.contains('rental-option-selected')) {
+      rentalPeriod = 60;
+    } else {
+      alert('상품 렌탈기간을 선택해주세요');
+      return;
+    }
+
+    localBucketData = {
+      id: itemData._id,
+      model: itemData.productSpecification.model,
+      brand: itemData.productSpecification.brand,
+      energyEfficiencyRating:
+        itemData.productSpecification.energyEfficiencyRating,
+      rentalPeriod: rentalPeriod,
+      priceForMonth: price,
+      deliveryFee: 3000,
+      images: itemData.images,
+      size: itemData.productSpecification.size,
+      productName: itemData.productName,
+    };
+
+    setProductToSessionStorage(localBucketData);
+  });
 }
 
-
-upButton.addEventListener('click', (err) => {
+upButton.addEventListener('click', () => {
   itemNumber.value = Number(itemNumber.value) + 1;
 });
 
-downButton.addEventListener('click', (err) => {
-  let number = Number(itemNumber.value);
+downButton.addEventListener('click', () => {
+  const number = Number(itemNumber.value);
 
   if (number <= 1) {
     return;
@@ -132,64 +243,9 @@ downButton.addEventListener('click', (err) => {
   itemNumber.value = Number(itemNumber.value) - 1;
 });
 
-const rental36month = document.getElementById('rental36month');
-const rental48month = document.getElementById('rental48month');
-const rental60month = document.getElementById('rental60month');
-const itemSpecName = document.getElementById('item-spec-div-name');
-const itemSpecModel = document.getElementById('item-spec-div-model');
-const itemSpecBrand = document.getElementById('item-spec-div-brand');
-const itemSpecEnergy = document.getElementById('item-spec-div-energy');
-const itemTableItemName = document.getElementById('item-table-item-name');
-const itemTableItemModel = document.getElementById('item-table-item-model');
-const itemTableItemBrand = document.getElementById('item-table-item-brand');
-const itemTableItemCategorie = document.getElementById('item-table-item-categorie');
-const itemTableItemColor = document.getElementById('item-table-item-color');
-const itemTableItemSeller = document.getElementById('item-table-item-seller');
-const itemTableItemSize = document.getElementById('item-table-item-size');
-const itemTableItemEnergy = document.getElementById('item-table-item-energy');
-const itemDeliveryDay = document.getElementById("item-delivery-day");
-
-rental36month.addEventListener("click", (err) =>{
-  rental36month.classList.toggle("rental-option-selected");
-  rental48month.classList.remove("rental-option-selected");
-  rental60month.classList.remove("rental-option-selected");
-
-});
-
-rental48month.addEventListener("click", (err) =>{
-  rental36month.classList.remove("rental-option-selected");
-  rental48month.classList.toggle("rental-option-selected");
-  rental60month.classList.remove("rental-option-selected");
-
-});
-
-rental60month.addEventListener("click", (err) =>{
-  rental36month.classList.remove("rental-option-selected");
-  rental48month.classList.remove("rental-option-selected");
-  rental60month.classList.toggle("rental-option-selected");
-
-});
-
-let now = new Date();
-let deliveryDay = new Date(now.setDate(now.getDate() + 2));
-console.log(deliveryDay);
-
-itemDeliveryDay.innerHTML = dateFormatDay(deliveryDay) 
-itemSpecName.innerHTML = itemData.name;
-itemSpecModel.innerHTML = itemData.productSpecification.model;
-itemSpecBrand.innerHTML = itemData.productSpecification.brand;
-itemSpecEnergy.innerHTML = itemData.productSpecification.energyEfficiencyRating;
-itemTableItemName.innerHTML = itemData.name;
-itemTableItemModel.innerHTML = itemData.productSpecification.model
-itemTableItemBrand.innerHTML = itemData.productSpecification.brand;
-itemTableItemCategorie.innerHTML = "카테고리";
-itemTableItemColor.innerHTML = "color 여러 색";
-itemTableItemSeller.innerHTML = "판매자";
-itemTableItemSize.innerHTML = "사이즈";
-itemTableItemEnergy.innerHTML = "에너지효율"
-
-function dateFormatDay(date){
+function dateFormatDay(date) {
   console.log(date);
-  return (date.getMonth() + 1) + "/" + date.getDate();
-
+  return date.getMonth() + 1 + '/' + date.getDate();
 }
+
+export { initSetting };
