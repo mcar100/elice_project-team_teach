@@ -36,24 +36,6 @@ const currentBuyButton = document.getElementById('current-buy');
 let price;
 let localBucketData;
 
-/*const itemData = {
-  images: ['../icon/heart.png', '../icon/elice.png'],
-  name: '삼성 T76 냉장고',
-  pricePerMonth: 110000,
-  discountRate: 10000,
-  category: '냉장고',
-  color: ['white', 'yellow', 'black'],
-  productSpecification: {
-    model: 'M-2526',
-    brand: '삼성',
-    size: '280 * 280',
-    energyEfficiencyRating: '2등급',
-  },
-  monthRentalfee: 150000,
-  deliveryfee: 30000,
-  seller:"삼성의 판매자",
-};*/
-
 async function renderHeader() {
   await header();
   await moveToOtherByHeader();
