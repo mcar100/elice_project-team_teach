@@ -1,6 +1,6 @@
 import addMainContents from './replaceProductComponent.js';
 import * as setSession from './setSessionStorage.js';
-import * as local from '../../webStorage/js/localStorage.js';
+// import * as local from '../../webStorage/js/localStorage.js';
 
 const render = async () => {
   await addMainContents();

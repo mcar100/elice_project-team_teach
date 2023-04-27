@@ -187,6 +187,11 @@ function initSetting(itemData) {
   });
 
   currentBuyButton.addEventListener('click', (e) => {
+<<<<<<< HEAD
+=======
+    // e.preventDefault();
+
+>>>>>>> order_user_YJS
     let rentalPeriod;
     if (rental36month.classList.contains('rental-option-selected')) {
       rentalPeriod = 36;

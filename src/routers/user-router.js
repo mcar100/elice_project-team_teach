@@ -86,8 +86,13 @@ userRouter.post('/signup/check-email-duplication', async (req, res, next) => {
 //토큰 디코드(복호화)
 userRouter.post('/token-decode', async (req, res, next) => {
   try {
+<<<<<<< HEAD
     const { jwtToken } = req.cookies;
     const getTokenDecode = await userService.getDecodeToken(jwtToken);
+=======
+    const { token } = req.body;
+    const getTokenDecode = await userService.getDecodeToken(token);
+>>>>>>> order_user_YJS
 
     res.status(200).json(getTokenDecode);
   } catch (error) {

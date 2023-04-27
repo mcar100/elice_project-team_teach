@@ -1,13 +1,13 @@
 // eslint-disable-next-line node/no-unsupported-features/es-syntax
 import { initSetting } from './index.js';
 
-console.log('api.js start');
+// console.log('api.js start');
 
 const getProductFromServer = async (productId) => {
   const res = await fetch(`http://localhost:3000/products/${productId}`);
   const product = await res.json();
 
-  console.log(product);
+  // console.log(product);
   return product;
 };
 
