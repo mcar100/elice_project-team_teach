@@ -67,7 +67,8 @@ userRouter.post('/signin', async (req, res, next) => {
 // 로그아웃
 userRouter.post('/signout', signinRequired, async (req, res) => {
   // jwt 토큰 쿠키를 없앰으로써 로그아웃
-  res.clearCookie('jwtToken');
+  res.cookie('jwtToken', '', { expires: new Date(0) });
+  // res.clearCookie('jwtToken');
   res.redirect('/signIn');
 });
 
@@ -78,6 +79,18 @@ userRouter.post('/signup/check-email-duplication', async (req, res, next) => {
     const checkEmailDuplicate = await userService.checkEmailDuplication(email);
 
     res.status(200).json(checkEmailDuplicate);
+  } catch (error) {
+    next(error);
+  }
+});
+
+//토큰 디코드(복호화)
+userRouter.post('/token-decode', async (req, res, next) => {
+  try {
+    const { token } = req.body;
+    const getTokenDecode = await userService.getDecodeToken(token);
+
+    res.status(200).json(getTokenDecode);
   } catch (error) {
     next(error);
   }

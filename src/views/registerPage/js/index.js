@@ -4,7 +4,6 @@ import { footer } from '../../footerComponent/footer.js';
 
 const registerButton = document.getElementById('register-button');
 const emailBox = document.getElementById('player-email');
-const usernameBox = document.getElementById('player-username');
 const passwordBox = document.getElementById('player-password');
 const passwordConfirmBox = document.getElementById('player-password-confirm');
 const phoneNumberBox = document.getElementById('player-phone-number');
@@ -15,11 +14,6 @@ const cancelButton = document.getElementById('register-cancel');
 let checkFlags = 0;
 
 async function checkDuplicate(email) {
-  if (email.length <= 0) {
-    alert('이메일을 입력해주세요.');
-    return;
-  }
-
   const res = await fetch(
     `http://localhost:3000/users/signup/check-email-duplication`,
     {
@@ -100,7 +94,7 @@ async function register(username, email, password, phoneNumber, address) {
 
   if (res.status === 201) {
     alert('회원가입이 완료되었습니다.');
-    window.location.href = '/signin';
+    window.location.href = 'http://localhost:3000/signin';
   } else {
     alert('회원가입이 실패했습니다. 정보를 다시 확인해주세요.');
     return;
@@ -115,16 +109,6 @@ emailBox.addEventListener('blur', () => {
   } else {
     console.log('email no error');
     document.getElementById('email-error').style.display = 'none';
-  }
-});
-
-usernameBox.addEventListener('blur', () => {
-  const username = usernameBox.value;
-
-  if (username.length <= 0) {
-    document.getElementById('username-error').style.display = 'block';
-  } else {
-    document.getElementById('username-error').style.display = 'none';
   }
 });
 
@@ -172,7 +156,7 @@ addressBox.addEventListener('blur', () => {
 });
 
 registerButton.addEventListener('click', () => {
-  const username = document.getElementById('player-username').value;
+  const username = document.getElementById('player-email').value;
   const email = document.getElementById('player-email').value;
   const password = document.getElementById('player-password').value;
   const passwordConfirm = document.getElementById(
@@ -184,11 +168,6 @@ registerButton.addEventListener('click', () => {
 
   if (!checkEmail(email)) {
     alert('이메일을 확인해주세요.');
-    return;
-  }
-
-  if (username.length <= 0) {
-    alert('아이디를 입력해주세요.');
     return;
   }
 
