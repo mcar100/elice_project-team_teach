@@ -1,0 +1,287 @@
+[
+  {
+    "productName": "[LG] 휘센 에어컨 벽걸이형 6평",
+    "categoryId": "6447ef24b855ecbc696e6ced",
+    "pricePerMonth": [25900, 19900, 16900],
+    "rentalPeriod": 36,
+    "color": "무광 화이트",
+    "quantity": 1,
+    "images": ["/commonImage/product/airconditioner01.jpg"],
+    "productDetailImages": [
+      "/commonImage/product/airconditioner01_1.jpg",
+      "/commonImage/product/airconditioner01_2.jpg",
+      "/commonImage/product/airconditioner01_3.jpg"
+    ],
+    "productSpecification": {
+      "model": "SQ06BDAWBS",
+      "brand": "LG",
+      "size": "~9평",
+      "energyEfficiencyRating": "5등급"
+    },
+    "deliveryFee": 10000
+  },
+  {
+    "productName": "[삼성] 에어컨 벽걸이 6평",
+    "categoryId": "6447ef24b855ecbc696e6ced",
+    "pricePerMonth": [28900, 22900, 18900],
+    "rentalPeriod": 36,
+    "color": "화이트",
+    "quantity": 1,
+    "images": ["/commonImage/product/airconditioner02.jpg"],
+    "productDetailImages": ["/commonImage/product/airconditioner02_1.jpg"],
+    "productSpecification": {
+      "model": "AR06A1171HZS",
+      "brand": "삼성",
+      "size": "~9평",
+      "energyEfficiencyRating": "5등급"
+    },
+    "deliveryFee": 10000
+  },
+  {
+    "productName": "[위니아] 에어컨 벽걸이 6평 (빠른배송)",
+    "categoryId": "6447ef24b855ecbc696e6ced",
+    "pricePerMonth": [21900, 16900, 13900],
+    "rentalPeriod": 36,
+    "color": "화이트",
+    "quantity": 1,
+    "images": ["/commonImage/product/airconditioner02.jpg"],
+    "productDetailImages": ["/commonImage/product/airconditioner02_1.jpg"],
+    "productSpecification": {
+      "model": "WRV06GHW",
+      "brand": "위니아",
+      "size": "~9평",
+      "energyEfficiencyRating": "5등급"
+    },
+    "deliveryFee": 10000
+  },
+
+  {
+    "productName": "[삼성] 무선청소기 제트 200W SE + 청정스테이션 (빠른배송)",
+    "categoryId": "6447eed5b855ecbc696e6ce7",
+    "pricePerMonth": [20700, 16200, 13500],
+    "rentalPeriod": 36,
+    "color": "실버",
+    "quantity": 1,
+    "images": ["/commonImage/product/vacuumcleaner01.jpg"],
+    "productDetailImages": [
+      "/commonImage/product/vacuumcleaner01_1.jpg",
+      "/commonImage/product/vacuumcleaner01_2.jpg"
+    ],
+    "productSpecification": {
+      "model": "VS20T92K3QD",
+      "brand": "삼성",
+      "size": "5.0kg",
+      "energyEfficiencyRating": "200W"
+    },
+    "deliveryFee": 10000
+  },
+
+  {
+    "productName": "[로보락] 로봇청소기 Q7",
+    "categoryId": "6447eed5b855ecbc696e6ce7",
+    "pricePerMonth": [19600, 15400, 12600],
+    "rentalPeriod": 36,
+    "color": "화이트",
+    "quantity": 1,
+    "images": ["/commonImage/product/vacuumcleaner02.jpg"],
+    "productDetailImages": [
+      "/commonImage/product/vacuumcleaner02_1.jpg",
+      "/commonImage/product/vacuumcleaner02_2.jpg",
+      "/commonImage/product/vacuumcleaner02_3.jpg"
+    ],
+    "productSpecification": {
+      "model": "R-Q7",
+      "brand": "로보락",
+      "size": "5.6kg",
+      "energyEfficiencyRating": "50W"
+    },
+    "deliveryFee": 10000
+  },
+  {
+    "productName": "[삼성] 드럼 세탁기 9Kg+건조기 9Kg",
+    "categoryId": "6447ef04b855ecbc696e6cea",
+    "pricePerMonth": [48900, 37900, 31900],
+    "rentalPeriod": 36,
+    "color": "화이트",
+    "quantity": 1,
+    "images": ["/commonImage/product/washingmachine01.jpg"],
+    "productDetailImages": [
+      "/commonImage/product/washingmachine01_1.jpg",
+      "/commonImage/product/washingmachine01_2.jpg",
+      "/commonImage/product/washingmachine01_3.jpg"
+    ],
+    "productSpecification": {
+      "model": "DV90TA040KE(P)",
+      "brand": "삼성",
+      "size": "9kg",
+      "energyEfficiencyRating": "4등급"
+    },
+    "deliveryFee": 10000
+  },
+  {
+    "productName": "[삼성] 위블 세탁기 13Kg",
+    "categoryId": "6447ef04b855ecbc696e6cea",
+    "pricePerMonth": [21900, 16900, 13900],
+    "rentalPeriod": 36,
+    "color": "화이트",
+    "quantity": 1,
+    "images": ["/commonImage/product/washingmachine02.jpg"],
+    "productDetailImages": [
+      "/commonImage/product/washingmachine02_1.jpg",
+      "/commonImage/product/washingmachine02_2.jpg",
+      "/commonImage/product/washingmachine02_3.jpg"
+    ],
+    "productSpecification": {
+      "model": "WA13T5262BW",
+      "brand": "삼성",
+      "size": "13kg",
+      "energyEfficiencyRating": "2등급"
+    },
+    "deliveryFee": 10000
+  },
+  {
+    "productName": "[LG] 세탁기 통돌이 16Kg",
+    "categoryId": "6447ef04b855ecbc696e6cea",
+    "pricePerMonth": [25900, 20900, 16900],
+    "rentalPeriod": 36,
+    "color": "블랙",
+    "quantity": 1,
+    "images": ["/commonImage/product/washingmachine03.jpg"],
+    "productDetailImages": [
+      "/commonImage/product/washingmachine03_1.jpg",
+      "/commonImage/product/washingmachine03_2.jpg"
+    ],
+    "productSpecification": {
+      "model": "TR16MK2",
+      "brand": "LG",
+      "size": "14~16kg",
+      "energyEfficiencyRating": "3등급"
+    },
+    "deliveryFee": 10000
+  },
+
+  {
+    "productName": "[위니아] 냉장고 87L",
+    "categoryId": "6447eeb9b855ecbc696e6ce4",
+    "pricePerMonth": [12900, 9900, 8, 800],
+    "images": ["/commonImage/product/refrigerator01.jpg"],
+    "rentalPeriod": 36,
+    "color": "실버",
+    "quantity": 1,
+    "productDetailImages": [
+      "/commonImage/product/refrigerator01_1.jpg",
+      "/commonImage/product/refrigerator01_2.jpg"
+    ],
+    "productSpecification": {
+      "model": "WRT09DS(A)",
+      "brand": "위니아",
+      "size": "~100L",
+      "energyEfficiencyRating": "3등급 이상"
+    },
+    "deliveryFee": 10000
+  },
+  {
+    "productName": "[삼성] 냉장고 317L (빠른배송)",
+    "categoryId": "6447eeb9b855ecbc696e6ce4",
+    "pricePerMonth": [28900, 0, 0],
+    "rentalPeriod": 36,
+    "color": "실버",
+    "quantity": 1,
+    "images": ["/commonImage/product/refrigerator02.jpg"],
+    "productDetailImages": [
+      "/commonImage/product/refrigerator02_1.jpg",
+      "/commonImage/product/refrigerator02_2.jpg"
+    ],
+    "productSpecification": {
+      "model": "RT32N503HS8",
+      "brand": "삼성",
+      "size": "300~400L",
+      "energyEfficiencyRating": "1등급"
+    },
+    "deliveryFee": 10000
+  },
+  {
+    "productName": "[LG] 디오스 모던엣지 상냉장 일반냉장고 339L",
+    "categoryId": "6447eeb9b855ecbc696e6ce4",
+    "pricePerMonth": [36900, 28900, 23900],
+    "images": ["/commonImage/product/refrigerator03.jpg"],
+    "rentalPeriod": 36,
+    "color": "리파인드 이녹스",
+    "quantity": 1,
+    "productDetailImages": [
+      "/commonImage/product/refrigerator03_1.jpg",
+      "/commonImage/product/refrigerator03_2.jpg"
+    ],
+    "productSpecification": {
+      "model": "M341S43",
+      "brand": "LG",
+      "size": "300~499L",
+      "energyEfficiencyRating": "3등급 이상"
+    },
+    "deliveryFee": 10000
+  },
+  {
+    "productName": "[LG] 스탠바이미 TV 27인치 (빠른배송) 렌탈",
+    "categoryId": "6447edeab855ecbc696e6ce1",
+    "pricePerMonth": [41900, 32900, 27900],
+    "images": ["/commonImage/product/tv01.webp"],
+    "rentalPeriod": 36,
+    "color": "화이트",
+    "quantity": 1,
+    "productDetailImages": [
+      "/commonImage/product/tv01_1.webp",
+      "/commonImage/product/tv01_2.webp",
+      "/commonImage/product/tv01_3.webp"
+    ],
+    "productSpecification": {
+      "model": "27ART10AKPL",
+      "brand": "LG",
+      "size": "27인치",
+      "energyEfficiencyRating": "1등급"
+    },
+    "deliveryFee": 3000
+  },
+  {
+    "productName": "[LG] LED TV 32인치 렌탈",
+    "categoryId": "6447edeab855ecbc696e6ce1",
+    "pricePerMonth": [18900, 14900, 12900],
+    "images": ["/commonImage/product/tv02.png"],
+    "rentalPeriod": 36,
+    "color": "블랙",
+    "quantity": 1,
+    "productDetailImages": [
+      "/commonImage/product/tv02_1.png",
+      "/commonImage/product/tv02_2.png",
+      "/commonImage/product/tv02_3.png"
+    ],
+    "productSpecification": {
+      "model": "32LM581CBND",
+      "brand": "LG",
+      "size": "32인치",
+      "energyEfficiencyRating": "1등급"
+    },
+    "deliveryFee": 3000
+  },
+
+  {
+    "productName": "[삼성] QLED 4K 스마트 TV 55인치 렌탈",
+    "categoryId": "6447edeab855ecbc696e6ce1",
+    "pricePerMonth": [34900, 27900, 24900],
+    "images": ["/commonImage/product/tv03.png"],
+    "rentalPeriod": 36,
+    "color": "블랙",
+    "quantity": 1,
+    "productDetailImages": [
+      "/commonImage/product/tv03_1.png",
+      "/commonImage/product/tv03_2.png",
+      "/commonImage/product/tv03_3.png"
+    ],
+    "productSpecification": {
+      "model": "KQ55QB60AFXKR",
+      "brand": "삼성",
+      "size": "55~69인치",
+      "energyEfficiencyRating": "1등급"
+    },
+    "deliveryFee": 3000
+  }
+]

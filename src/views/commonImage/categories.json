@@ -1,0 +1,22 @@
+[
+  {
+    "categoryName": "청소기",
+    "categoryIcon": "/mainPage/icon/free-icon-vacuum-cleaner-2760060.png"
+  },
+  {
+    "categoryName": "세탁/건조기",
+    "categoryIcon": "/mainPage/icon/free-icon-smart-washing-machine-3495967.png"
+  },
+  {
+    "categoryName": "에어콘",
+    "categoryIcon": "/mainPage/icon/free-icon-air-conditioner-4991624.png"
+  },
+  {
+    "categoryName": "냉장고",
+    "categoryIcon": "/mainPage/icon/free-icon-refrigerator-333511.png"
+  },
+  {
+    "categoryName": "TV",
+    "categoryIcon": "/mainPage/icon/television.png"
+  }
+]

@@ -8,9 +8,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
     />
-    <link rel="stylesheet" href="../../mainPage/css/reset.css" />
-    <link rel="stylesheet" href="../../mainPage/css/style.css" />
-    <link rel="stylesheet" href="../css/myPage.css" />
+    <link rel="stylesheet" href="/myPage/css/myPage.css" />
     <title>my page</title>
   </head>
   <body>
@@ -27,50 +25,56 @@
     <nav>
       <div class="nav-container">
         <div>Hello Techmate</div>
-        <div>로그인/회원가입</div>
+        <div class="nav-register-btn">로그인/회원가입</div>
       </div>
     </nav>
 
     <!-- 메인 -->
     <main>
-        <div id="profile-container">
-            <div class="profile-container-head">
-                <span>내 정보</span>
-            </div>
-            <div class="profile-container-body">
-                <div>
-                    <span>내 프로필</span>
-                </div>
-                <div class="profile-input-info">
-                    <span>이름</span>
-                    <span>이메일</span>
-                    <span>전화번호</span>
-                    <span>주소</span>
-                    <span>비밀번호</span>
-                    <span>비밀번호 확인</span>
-                </div>
-                <div class="profile-input-container">
-                    <input class="input-name" type="text" placeholder="이름"/>
-                    <input class="input-email" type="email" placeholder="이메일"/>
-                    <input class="input-phonenumber" type="text" placeholder="전화번호"/>
-                    <input class="input-address" type="text" placeholder="주소"/>
-                    <input class="input-password" type="password" placeholder="비밀번호"/>
-                    <input class="input-passwordConfirm" type="password" placeholder="비밀번호 확인"/>
-                </div>
-                <div class="profile-button-container">
-                    <button class="change-btn">수정</button>
-                    <button class="change-btn">수정</button>
-                    <button class="change-btn">수정</button>
-                    <button class="change-btn">수정</button>
-                    <button class="change-btn">변경</button>
-                </div>
-                <div>
-                  <button class="button is-danger is-small">회원탈퇴</button>
-                </div>
-            </div>
-
-
+      <div id="profile-container">
+        <div class="profile-container-head">
+          <span>내 정보</span>
         </div>
+        <div class="profile-container-body">
+          <div>
+            <span>내 프로필</span>
+          </div>
+          <div class="profile-input-info">
+            <span>이름</span>
+            <span>이메일</span>
+            <span>전화번호</span>
+            <span>주소</span>
+            <span>비밀번호</span>
+            <span>비밀번호 확인</span>
+          </div>
+          <div class="profile-input-container">
+            <input class="input-name" type="text" placeholder="이름" />
+            <input class="input-email" type="email" placeholder="이메일" />
+            <input
+              class="input-phonenumber"
+              type="text"
+              placeholder="전화번호"
+            />
+            <input class="input-address" type="text" placeholder="주소" />
+            <input
+              class="input-password"
+              type="password"
+              placeholder="비밀번호"
+            />
+            <input
+              class="input-passwordConfirm"
+              type="password"
+              placeholder="비밀번호 확인"
+            />
+          </div>
+          <div class="profile-button-container">
+            <button class="change-btn">변경</button>
+          </div>
+          <div>
+            <button class="button is-danger is-small">회원탈퇴</button>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!-- 푸터 -->
@@ -121,7 +125,7 @@
 
           <div id="footer-image-container">
             <div class="footer-image">
-              <img src="../../mainPage/icon/elice.png" width="116px" alt="엘리스" />
+              <img src="/mainPage/icon/elice.png" width="116px" alt="엘리스" />
             </div>
           </div>
         </div>
@@ -142,8 +146,7 @@
       </div>
     </footer>
 
-
     <!-- 승섭 -->
-    <script src="../js/myPage.js" type="module"></script>
+    <script src="/myPage/js/myPage.js" type="module"></script>
   </body>
 </html>
