@@ -10,7 +10,7 @@ const getDataFromServer = async () => {
 
     // console.log(key);
     if (
-      key !== 'token' &&
+      key !== 'techmate_token' &&
       key.length > 23 &&
       JSON.parse(sessionStorage.getItem(key)).pricePerMonth
     )

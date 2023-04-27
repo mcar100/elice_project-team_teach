@@ -2,7 +2,7 @@ import * as getData from './getUserId.js';
 import * as session from '../../webStorage/js/sessionStorage.js';
 
 const getUserData = async () => {
-  const token = session.getProduct('token');
+  const token = session.getProduct('techmate_token');
 
   const { userId } = await getData.getUserId(token);
   const userInfo = await getData.getUserInfo(userId, token);
