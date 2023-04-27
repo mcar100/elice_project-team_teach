@@ -5,16 +5,7 @@
  * const productId = lengthProducts();
  * console.log(productId);
  */
-const lengthProducts = () => {
-  let sessionStorageLength = 0;
-
-  const keys = Object.keys(sessionStorage);
-  keys.forEach((product) => {
-    if (JSON.parse(sessionStorage.getItem(product)).deliveryFee)
-      sessionStorageLength++;
-  });
-  return sessionStorageLength;
-};
+const lengthProducts = () => sessionStorage.length;
 /**
  * sessionStorage에 productId를 저장하는 함수.
  * key값은 lengthProducts() + 1로 설정

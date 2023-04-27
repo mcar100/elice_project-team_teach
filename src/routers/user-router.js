@@ -83,6 +83,18 @@ userRouter.post('/signup/check-email-duplication', async (req, res, next) => {
   }
 });
 
+//토큰 디코드(복호화)
+userRouter.post('/token-decode', async (req, res, next) => {
+  try {
+    const { token } = req.body;
+    const getTokenDecode = await userService.getDecodeToken(token);
+
+    res.status(200).json(getTokenDecode);
+  } catch (error) {
+    next(error);
+  }
+});
+
 // userId 조회
 userRouter.get('/myId', signinRequired, userService.getUserId);
 

@@ -199,7 +199,7 @@ function initSetting(itemData) {
   });
 
   currentBuyButton.addEventListener('click', (e) => {
-    e.preventDefault();
+    // e.preventDefault();
 
     let rentalPeriod;
     if (rental36month.classList.contains('rental-option-selected')) {

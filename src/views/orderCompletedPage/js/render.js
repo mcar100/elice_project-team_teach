@@ -56,27 +56,20 @@ const createOrderInfo = async () => {
 //   deliveryRequirements, o
 //   paymentOption, x
 // } = req.body;
-fetch('http://localhost:3000/signup', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({
-    title: 'Test',
-    body: 'I am testing!',
-    userId: 1,
-  }),
-}).then((response) => console.log(response));
 
 const deleteSession = () => {
   const sessionData = Object.keys(sessionStorage);
   sessionData.forEach((data) => {
     const product = session.getProduct(data);
 
-    if (JSON.parse(product).deliveryFee) session.deleteProduct(data);
+    if (
+      (data === 'userProductInfo' || data.length === 24) &&
+      JSON.parse(product).model
+    )
+      session.deleteProduct(data);
   });
   session.deleteProduct('userProductInfo');
 };
 
-createOrderInfo();
+// createOrderInfo();
 // deleteSession();

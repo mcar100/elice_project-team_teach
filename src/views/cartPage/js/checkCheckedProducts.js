@@ -1,4 +1,4 @@
-import toCurrency from './utils.js';
+import { toCurrency } from './utils.js';
 import * as local from '../../webStorage/js/localStorage.js';
 
 const getCheckedCnt = () => {

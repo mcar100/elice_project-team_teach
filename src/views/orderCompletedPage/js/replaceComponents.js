@@ -1,4 +1,4 @@
-import toCurrency from './utils.js';
+import { toCurrency } from './utils.js';
 
 const replaceOrderInfoComponent = (component, data) => {
   const newComponent = component
@@ -9,11 +9,15 @@ const replaceOrderInfoComponent = (component, data) => {
 };
 
 const replaceUserComponent = (component, data) => {
+  console.log(data);
+  const user = data.userData.length > 1 ? data.userData[1] : data.userData[0];
+
+  console.log(user);
   const newComponent = component
-    .replace(/{%USERNAME%}/g, data.username)
-    .replace(/{%PHONE_NUMBER%}/g, data.mobileNumber)
-    .replace(/{%ADDRESS%}/g, data.address)
-    .replace(/{%REQUIRE%}/g, data.require);
+    .replace(/{%USERNAME%}/g, user.username)
+    .replace(/{%PHONE_NUMBER%}/g, user.mobileNumber)
+    .replace(/{%ADDRESS%}/g, user.address)
+    .replace(/{%REQUIRE%}/g, user.require);
 
   return newComponent;
 };
