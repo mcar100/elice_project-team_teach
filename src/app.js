@@ -8,6 +8,7 @@ import {
   productRouter,
   orderRouter,
 } from './routers/index.js';
+import cookieParser from 'cookie-parser';
 
 const app = express();
 

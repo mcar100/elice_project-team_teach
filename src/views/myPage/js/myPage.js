@@ -1,10 +1,9 @@
 import { header } from '../../headerComponent/header.js';
-import { moveToOtherByHeader } from '../../headerComponent/moveEventCommon.js';
-/* hello git-lab!!!!!!! */
+import { getUserId } from './myData.js';
+
 async function render() {
-  header().then(() => {
-    moveToOtherByHeader();
-  });
+  header();
+  getUserId();
 }
 
 render();
