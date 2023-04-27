@@ -97,14 +97,14 @@
         <div id="register-description-div">
           <form method="post" action="/">
             <div class="field">
-              <label class="label" style="font-size: 12px">아이디</label>
+              <label class="label" style="font-size: 12px">이메일</label>
               <div class="register-id-div">
                 <p class="control has-icons-left" style="flex-grow: 1">
                   <input
                     class="input"
                     type="text"
                     placeholder="사용자 아이디"
-                    id="player-id"
+                    id="player-email"
                   />
                   <span class="icon is-small is-left">
                     <i class="fas fa-lock"></i>
@@ -114,29 +114,8 @@
                   중복체크
                 </button>
               </div>
-              <p class="help is-danger" style="display: none" id="id-error">
-                아이디를 입력해주세요.
-              </p>
-            </div>
-            <div class="field">
-              <label class="label" style="font-size: 12px">이메일</label>
-              <p class="control has-icons-left">
-                <input
-                  class="input"
-                  type="email"
-                  placeholder="이메일"
-                  id="player-email"
-                />
-                <span class="icon is-small is-left">
-                  <i class="fas fa-lock"></i>
-                  <p
-                    class="help is-danger"
-                    style="display: none"
-                    id="email-error"
-                  >
-                    이메일을 다시 확인해주세요.
-                  </p>
-                </span>
+              <p class="help is-danger" style="display: none" id="email-error">
+                이메일을 입력해주세요.
               </p>
             </div>
             <div class="field">
