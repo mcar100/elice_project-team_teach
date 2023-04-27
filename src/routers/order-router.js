@@ -1,5 +1,4 @@
 import { Router } from 'express';
-import is from '@sindresorhus/is';
 import { adminOnly } from '../middlewares/admin-only.js';
 import { signinRequired } from '../middlewares/signin-required.js';
 import { orderService } from '../services/order-service.js';
@@ -9,11 +8,11 @@ const orderRouter = Router();
 //사용자 주문 추가(장바구니 상품 주문 진행)
 orderRouter.post('/', async (req, res, next) => {
   try {
-    if (is.emptyObject(req.body)) {
-      throw new Error(
-        'headers의 Content-Type을 application/json으로 설정해주세요'
-      );
-    }
+    // if (is.emptyObject(req.body)) {
+    //     throw new Error(
+    //       'headers의 Content-Type을 application/json으로 설정해주세요'
+    //     );
+    //   }
 
     const {
       userId,
@@ -58,7 +57,7 @@ orderRouter.get('/admins', adminOnly, async (req, res, next) => {
 //사용자의 배송 상태 수정
 orderRouter.patch('/admins/:orderId', adminOnly, async (req, res, next) => {
   try {
-    const { orderId } = req.params;
+    const orderId = req.params.orderId;
     const { deliveryStatus } = req.body;
 
     console.log(deliveryStatus);
@@ -81,7 +80,7 @@ orderRouter.patch('/admins/:orderId', adminOnly, async (req, res, next) => {
 // 사용자 주문 내역 삭제
 orderRouter.delete('/admins/:orderId', adminOnly, async (req, res, next) => {
   try {
-    const { orderId } = req.params;
+    const orderId = req.params.orderId;
     const deleteOrder = await orderService.deleteOrderByOrderId(orderId);
 
     res.status(200).json(deleteOrder);
@@ -93,7 +92,7 @@ orderRouter.delete('/admins/:orderId', adminOnly, async (req, res, next) => {
 //특정 주문 정보 상세 조회
 orderRouter.get('/:orderId', adminOnly, async (req, res, next) => {
   try {
-    const { orderId } = req.params;
+    const orderId = req.params.orderId;
 
     const orderData = await orderService.getOrderDataByOrderId(orderId);
 
@@ -109,7 +108,7 @@ orderRouter.get('/:orderId', adminOnly, async (req, res, next) => {
 orderRouter.get('/users/:userId', signinRequired, async (req, res, next) => {
   try {
     //미들웨어 처리에 따라 userId가 삭제될 수도 있을 듯
-    const { userId } = req.params;
+    const userId = req.params.userId;
 
     const userOrders = await orderService.getOrdersByUserId(userId); // service로 넘어가야 함
     res.status(200).json(userOrders);
@@ -121,7 +120,7 @@ orderRouter.get('/users/:userId', signinRequired, async (req, res, next) => {
 //사용자 특정 주문 수정(주문 완료 후 배송이 시작되기 전까지 주문 정보를 수정할 수 있다. - 환불, 교환을 의미하는 듯?)
 orderRouter.patch('/users/:orderId', signinRequired, async (req, res, next) => {
   try {
-    const { orderId } = req.params;
+    const orderId = req.params.orderId;
     const { address, deliveryStatus, deliveryRequirements } = req.body;
 
     const toUpdate = {
@@ -147,7 +146,7 @@ orderRouter.delete(
   signinRequired,
   async (req, res, next) => {
     try {
-      const { orderId } = req.params;
+      const orderId = req.params.orderId;
       const deleteOrder = await orderService.deleteOrderByOrderId(orderId);
 
       res.status(200).json(deleteOrder);

@@ -1,6 +1,5 @@
 import cors from 'cors';
 import express from 'express';
-import cookieParser from 'cookie-parser';
 import {
   viewRouter,
   userRouter,
@@ -8,6 +7,7 @@ import {
   productRouter,
   orderRouter,
 } from './routers/index.js';
+import cookieParser from 'cookie-parser';
 
 const app = express();
 
@@ -27,6 +27,4 @@ app.use('/categories', categoryRouter); // /api/catgories
 app.use('/products', productRouter);
 app.use('/orders', orderRouter);
 
-//미들웨어 오류처리
-//app.use(에러핸들링);
 export { app };
