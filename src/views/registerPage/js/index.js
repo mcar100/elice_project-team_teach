@@ -3,7 +3,6 @@ import { header } from '../../headerComponent/header.js';
 import { footer } from '../../footerComponent/footer.js';
 
 const registerButton = document.getElementById('register-button');
-const idBox = document.getElementById('player-id');
 const emailBox = document.getElementById('player-email');
 const passwordBox = document.getElementById('player-password');
 const passwordConfirmBox = document.getElementById('player-password-confirm');
@@ -13,15 +12,6 @@ const addressBox = document.getElementById('player-address');
 const duplicateButton = document.getElementById('duplicate-check');
 const cancelButton = document.getElementById('register-cancel');
 let checkFlags = 0;
-
-function checkFlag() {
-  checkFlags = 0;
-  console.log('check');
-}
-
-idBox.addEventListener('change', () => {
-  checkFlag();
-});
 
 async function checkDuplicate(email) {
   const res = await fetch(
@@ -38,18 +28,18 @@ async function checkDuplicate(email) {
   );
 
   const login = await res.json();
+  console.log(login);
 
   if (login.result === 'true') {
     alert('사용 가능한 아이디입니다.');
     checkFlags = 1;
-    emailBox.focus();
   } else {
     alert('중복된 아이디입니다.');
   }
 }
 duplicateButton.addEventListener('click', async () => {
-  const id = idBox.value;
-  await checkDuplicate(id);
+  const email = emailBox.value;
+  await checkDuplicate(email);
 });
 
 cancelButton.addEventListener('click', () => {
@@ -80,11 +70,11 @@ function checkPhoneNumber(number) {
   return false;
 }
 
-async function register(id, email, password, phoneNumber, address) {
-  // if (checkFlags === 0) {
-  //   alert('아이디 중복확인을 해주세요.');
-  //   return;
-  // }
+async function register(username, email, password, phoneNumber, address) {
+  if (checkFlags === 0) {
+    alert('아이디 중복확인을 해주세요.');
+    return;
+  }
 
   const res = await fetch(`http://localhost:3000/users/signup`, {
     method: 'post',
@@ -92,7 +82,7 @@ async function register(id, email, password, phoneNumber, address) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      username: id,
+      username: username,
       email: email,
       password: password,
       mobileNumber: phoneNumber,
@@ -110,16 +100,6 @@ async function register(id, email, password, phoneNumber, address) {
     return;
   }
 }
-
-idBox.addEventListener('blur', () => {
-  const id = idBox.value;
-
-  if (id.length <= 0) {
-    document.getElementById('id-error').style.display = 'block';
-  } else {
-    document.getElementById('id-error').style.display = 'none';
-  }
-});
 
 emailBox.addEventListener('blur', () => {
   const email = emailBox.value;
@@ -176,7 +156,7 @@ addressBox.addEventListener('blur', () => {
 });
 
 registerButton.addEventListener('click', () => {
-  const id = document.getElementById('player-id').value;
+  const username = document.getElementById('player-email').value;
   const email = document.getElementById('player-email').value;
   const password = document.getElementById('player-password').value;
   const passwordConfirm = document.getElementById(
@@ -185,11 +165,6 @@ registerButton.addEventListener('click', () => {
   const phoneNumber = document.getElementById('player-phone-number').value;
   const address = document.getElementById('player-address').value;
   const playerAgree = document.getElementById('player-agree').checked;
-
-  if (id.length <= 0) {
-    alert('아이디를 확인해주세요.');
-    return;
-  }
 
   if (!checkEmail(email)) {
     alert('이메일을 확인해주세요.');
@@ -222,5 +197,5 @@ registerButton.addEventListener('click', () => {
     return;
   }
 
-  register(id, email, password, phoneNumber, address);
+  register(username, email, password, phoneNumber, address);
 });
