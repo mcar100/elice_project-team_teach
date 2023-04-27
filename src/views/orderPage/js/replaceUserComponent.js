@@ -33,10 +33,7 @@ const addUserMainContents = async () => {
     directInput.mobileNumber = userPhonNumber.value;
     directInput.require = userRequire.value;
 
-    alert(JSON.stringify(userData, null, 2));
     userData.push(directInput);
-
-    alert(JSON.stringify(userData, null, 2));
   }
 
   return userData;

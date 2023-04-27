@@ -9,10 +9,8 @@ const replaceOrderInfoComponent = (component, data) => {
 };
 
 const replaceUserComponent = (component, data) => {
-  console.log(data);
   const user = data.userData.length > 1 ? data.userData[1] : data.userData[0];
 
-  console.log(user);
   const newComponent = component
     .replace(/{%USERNAME%}/g, user.username)
     .replace(/{%PHONE_NUMBER%}/g, user.mobileNumber)
