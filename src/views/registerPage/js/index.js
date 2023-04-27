@@ -15,6 +15,11 @@ const cancelButton = document.getElementById('register-cancel');
 let checkFlags = 0;
 
 async function checkDuplicate(email) {
+  if (email.length <= 0) {
+    alert('이메일을 입력해주세요.');
+    return;
+  }
+
   const res = await fetch(
     `http://localhost:3000/users/signup/check-email-duplication`,
     {
