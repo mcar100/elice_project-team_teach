@@ -10,7 +10,7 @@ import {
 import cookieParser from 'cookie-parser';
 
 const app = express();
-
+// Merge test 230428 - getDataToMyPage_SSK
 // 뷰 폴더 정적 추가
 
 //CORS 에러 방지
