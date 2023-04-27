@@ -61,9 +61,6 @@ export class UserService {
       throw new Error('이메일 혹은 패스워드가 일치하지 않습니다.');
     }
     console.log('로그인 성공');
-    // if (typeof window !== 'undefined') {
-    //   alert();
-    // }
 
     // 로그인 성공 -> JWT 웹 토큰 생성
     const secretKey = process.env.JWT_SECRET_KEY || 'secret-key';

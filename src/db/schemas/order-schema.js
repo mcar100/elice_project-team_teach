@@ -20,7 +20,7 @@ const OrderSchema = new Schema(
           address1: String,
           address2: String,
           receiverName: String,
-          receiverPhoneNumber: String,
+          receiverMobileNumber: String,
         },
         {
           _id: false,

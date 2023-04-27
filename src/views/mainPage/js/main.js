@@ -8,6 +8,8 @@ async function main() {
   await getMainCategoryData();
   await header();
   await moveToOtherByHeader();
+  const { cookie } = document;
+  console.log(cookie);
 }
 
 main();
