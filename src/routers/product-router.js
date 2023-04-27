@@ -24,7 +24,6 @@ productRouter.get('/', async (req, res, next) => {
 
   res.status(200).json(products);
 });
-
 // 관리자 기능 ========
 
 //상품 추가

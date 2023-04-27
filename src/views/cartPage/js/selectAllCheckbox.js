@@ -1,4 +1,4 @@
-import toCurrency from './utils.js';
+import { toCurrency } from './utils.js';
 
 /**
  * checkbox 전체 선택, 전체 해제 기능하다.

@@ -1,4 +1,4 @@
-import { moveToCategoryByBar } from '../../EventComponent/moveEventCommon.js';
+import { moveToCategoryByBar } from '../moveEventCommon.js';
 import { getCategories } from './categories.js';
 
 function toggleCategoryContainer() {

@@ -1,18 +1,25 @@
-const getUserData = async () => {
-  const response = await fetch(`http://localhost:3000/products/user/128789471`);
-  const data = await response.json();
-  return data;
-};
+import * as getData from './getUserId.js';
+import * as session from '../../webStorage/js/sessionStorage.js';
 
-const getUserDataFromServer = async () => {
-  const data = [];
-  const userData = await getUserData();
-  data.push(userData);
-  const userInfo = await Promise.all(data);
+const getUserData = async () => {
+  const token = session.getProduct('token');
+
+  const { userId } = await getData.getUserId(token);
+  const userInfo = await getData.getUserInfo(userId, token);
 
   return userInfo;
 };
 
-getUserDataFromServer();
+const getUserDataFromServer = async () => {
+  const inContent = document.querySelector('input[name="delivery-require"]');
+  const { value } = inContent;
+  const data = [];
+  const userData = await getUserData();
+
+  userData.require = value;
+
+  data.push(userData);
+  return data;
+};
 
 export default getUserDataFromServer;

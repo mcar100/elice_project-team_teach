@@ -1,12 +1,17 @@
+const urlParams = new URL(location.href).searchParams;
+
 const promises = async () => {
+  const categoryId = urlParams.get('categoryId');
+  console.log(categoryId);
   const response = await fetch(`http://localhost:3000/products`);
   const data = response.json();
   return data;
 };
 
-const getProduct = async (categoryId) => {
+const getProduct = () => {
+  const categoryId = urlParams.get('categoryId');
   const productList = document.querySelector('.product-list');
-  await promises().then((productArray) => {
+  promises().then((productArray) => {
     const filteredItem = productArray.filter(
       (item) => item.categoryId === categoryId
     );
@@ -14,7 +19,6 @@ const getProduct = async (categoryId) => {
     filteredItem.forEach((product) => {
       productList.innerHTML += `
       <div class="product-container">
-          <p class="product-id box-none">${product._id}</p>
           <div class="product-image">
               <img src="${product.images[0]}" alt="product image"/>
           </div>

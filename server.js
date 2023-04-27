@@ -7,14 +7,10 @@ dotenv.config({ path: './config/.env' });
 
 const port = process.env.PORT || 3000;
 
-mongoose
-  .connect(
-    'mongodb+srv://seob:jzMhgv91ByD3xTpZ@techmate.qp6i8fm.mongodb.net/techmate'
-  )
-  .then(() => {
-    console.log('mongo db connected!');
-  });
+mongoose.connect('mongodb://localhost:27017/techmate').then(() => {
+  console.log('mongo db connected!');
+});
 
 app.listen(port, () => {
-  console.log(`localhost:${port} connected!`);
+  console.log(`localhost:3000 connected!`);
 });

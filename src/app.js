@@ -7,7 +7,6 @@ import {
   productRouter,
   orderRouter,
 } from './routers/index.js';
-import cookieParser from 'cookie-parser';
 
 const app = express();
 
@@ -17,7 +16,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 
 //api 라우팅
 
