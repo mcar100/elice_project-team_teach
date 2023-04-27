@@ -4,6 +4,7 @@ import { footer } from '../../footerComponent/footer.js';
 
 const registerButton = document.getElementById('register-button');
 const emailBox = document.getElementById('player-email');
+const usernameBox = document.getElementById('player-username');
 const passwordBox = document.getElementById('player-password');
 const passwordConfirmBox = document.getElementById('player-password-confirm');
 const phoneNumberBox = document.getElementById('player-phone-number');
@@ -112,6 +113,16 @@ emailBox.addEventListener('blur', () => {
   }
 });
 
+usernameBox.addEventListener('blur', () => {
+  const username = usernameBox.value;
+
+  if (username.length <= 0) {
+    document.getElementById('username-error').style.display = 'block';
+  } else {
+    document.getElementById('username-error').style.display = 'none';
+  }
+});
+
 passwordBox.addEventListener('blur', () => {
   const password = passwordBox.value;
 
@@ -156,7 +167,7 @@ addressBox.addEventListener('blur', () => {
 });
 
 registerButton.addEventListener('click', () => {
-  const username = document.getElementById('player-email').value;
+  const username = document.getElementById('player-username').value;
   const email = document.getElementById('player-email').value;
   const password = document.getElementById('player-password').value;
   const passwordConfirm = document.getElementById(
@@ -168,6 +179,11 @@ registerButton.addEventListener('click', () => {
 
   if (!checkEmail(email)) {
     alert('이메일을 확인해주세요.');
+    return;
+  }
+
+  if (username.length <= 0) {
+    alert('아이디를 입력해주세요.');
     return;
   }
 
