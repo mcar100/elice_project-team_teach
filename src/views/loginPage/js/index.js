@@ -24,8 +24,8 @@ async function login(email, password) {
   const logins = await res.json();
 
   if (res.status === 200) {
-    setTokenToSessionStorage('token', logins.token);
-    window.location.href = 'http://localhost:3000/';
+    setTokenToSessionStorage('techmate_token', logins.token);
+    window.location.href = '/';
   }
 }
 
