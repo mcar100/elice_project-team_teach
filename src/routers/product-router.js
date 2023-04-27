@@ -1,6 +1,7 @@
 import { Router } from 'express';
-import is from '@sindresorhus/is';
 import { productService } from '../services/product-service.js';
+import is from '@sindresorhus/is';
+import { signinRequired } from '../middlewares/signin-required.js';
 import { adminOnly } from '../middlewares/admin-only.js';
 
 const productRouter = Router();
@@ -19,15 +20,10 @@ productRouter.get('/:productId', async (req, res, next) => {
 
 // 저장된 모든 상품 정보 확인
 productRouter.get('/', async (req, res, next) => {
-  try {
-    const products = await productService.getAllProductName();
+  const products = await productService.getAllProductName();
 
-    res.status(200).json(products);
-  } catch (err) {
-    next(err);
-  }
+  res.status(200).json(products);
 });
-
 // 관리자 기능 ========
 
 //상품 추가
@@ -90,8 +86,10 @@ productRouter.put('/:productId', adminOnly, async (req, res, next) => {
       productDetailImages,
       productSpecification,
     } = req.body;
-const toUpdate = {
+
+    const toUpdate = {
       ...(productName && { productName }),
+      ...(categoryId && { categoryId }),
       ...(pricePerMonth && { pricePerMonth }),
       ...(discountRate && { discountRate }),
       ...(images && { images }),

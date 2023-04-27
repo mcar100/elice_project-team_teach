@@ -1,52 +1,63 @@
 function moveToOtherPage(path) {
-  location.href = `${path}`;
+  location.href = path;
 }
 
-function moveToHome() {
+export function moveToHome() {
   const logoBtn = document.querySelector('.header-logo');
   logoBtn.addEventListener('click', () => {
     moveToOtherPage('/');
   });
 }
 
-function moveToLogin() {
+export function moveToLogin() {
   const registerBtn = document.querySelector('.nav-register-btn');
   registerBtn.addEventListener('click', () => {
     moveToOtherPage('/signin');
   });
 }
 
-function moveToMyPage() {
+export function moveToMyPage() {
   const registerBtn = document.querySelector('.user-btn');
   registerBtn.addEventListener('click', () => {
     moveToOtherPage('/mypage');
   });
 }
 
-function moveToCart() {
+export function moveToCart() {
   const registerBtn = document.querySelector('.cart-btn');
   registerBtn.addEventListener('click', () => {
     moveToOtherPage('/cart');
   });
 }
 
-function moveToCategoryByBar() {
+export function moveToItemDetail() {
+  const productContainers = document.querySelectorAll('.product-container');
+  productContainers.forEach((product) => {
+    product.addEventListener('click', () => {
+      const productId = product.querySelector('.product-id').innerText;
+      moveToOtherPage(`/product/detail?productId=${productId}`);
+    });
+  });
+}
+
+export function moveToCategoryByBar() {
   const registerBtn = document.querySelectorAll('.category-item');
   registerBtn.forEach((category) => {
-    category.addEventListener('click', (e) => {
-      const p = e.currentTarget;
-      const categoryId = p.querySelector('.category-id').innerText;
+    category.addEventListener('click', () => {
+      const categoryId = category.querySelector('.category-id').innerText;
       moveToOtherPage(`/category?categoryId=${categoryId}`);
     });
   });
 }
 
-function moveToOtherByHeader() {
+export function moveToCategoryBySelectBox(categoryId) {
+  moveToOtherPage(`/category?categoryId=${categoryId}`);
+}
+
+export function moveToOtherByHeader() {
   moveToHome();
   moveToLogin();
   moveToMyPage();
   moveToCart();
   moveToCategoryByBar();
 }
-
-export { moveToCategoryByBar, moveToOtherByHeader };

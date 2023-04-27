@@ -25,6 +25,4 @@ app.use('/categories', categoryRouter); // /api/catgories
 app.use('/products', productRouter);
 app.use('/orders', orderRouter);
 
-//미들웨어
-//app.use()
 export { app };
