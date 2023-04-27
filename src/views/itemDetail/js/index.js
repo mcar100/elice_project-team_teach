@@ -2,6 +2,7 @@ import { header } from '../../headerComponent/header.js';
 import { footer } from '../../footerComponent/footer.js';
 import { setProductToLocalStorage } from './setLocalStorage.js';
 import { setProductToSessionStorage } from './setSessionStorage.js';
+import { moveToOtherByHeader } from '../../EventComponent/moveEventCommon.js';
 
 const itemNumber = document.getElementById('item-number');
 const upButton = document.getElementById('up-button');
@@ -35,39 +36,25 @@ const currentBuyButton = document.getElementById('current-buy');
 let price;
 let localBucketData;
 
-/*const itemData = {
-  images: ['../icon/heart.png', '../icon/elice.png'],
-  name: '삼성 T76 냉장고',
-  pricePerMonth: 110000,
-  discountRate: 10000,
-  category: '냉장고',
-  color: ['white', 'yellow', 'black'],
-  productSpecification: {
-    model: 'M-2526',
-    brand: '삼성',
-    size: '280 * 280',
-    energyEfficiencyRating: '2등급',
-  },
-  monthRentalfee: 150000,
-  deliveryfee: 30000,
-  seller:"삼성의 판매자",
-};*/
-
-header();
+async function renderHeader() {
+  await header();
+  await moveToOtherByHeader();
+}
+renderHeader();
 footer();
 
 function initSetting(itemData) {
   let mainImage = document.createElement('img');
   mainImage.src = itemData.images[0];
   mainImage.setAttribute('id', 'main-image');
-  mainImage.setAttribute('alt', '메인 상품 이미지');
+  mainImage.setAttribute('alt', '메인 상품');
 
   mainImageDiv.appendChild(mainImage);
 
-  for (let i = 0; i < itemData.images.length; i++) {
+  for (let i = 0; i < itemData.productDetailImages.length; i++) {
     let subImage = document.createElement('img');
-    subImage.src = itemData.images[i];
-    subImage.setAttribute('alt', '메인 상품 이미지');
+    subImage.src = itemData.productDetailImages[i];
+    subImage.setAttribute('alt', '이미지');
 
     subImage.addEventListener('mouseover', (err) => {
       mainImage.src = subImage.src;
@@ -111,7 +98,7 @@ function initSetting(itemData) {
   price = itemData.pricePerMonth[0];
 
   rental36month.addEventListener('click', () => {
-    itemMonthRentalfee.innerHTML = `${itemData.pricePerMonth[0]}원`;
+    itemMonthRentalfee.innerHTML = ` ${itemData.pricePerMonth[0]}원`;
     price = itemData.pricePerMonth[0];
     rental36month.classList.toggle('rental-option-selected');
     rental48month.classList.remove('rental-option-selected');
@@ -119,7 +106,7 @@ function initSetting(itemData) {
   });
 
   rental48month.addEventListener('click', () => {
-    itemMonthRentalfee.innerHTML = `${itemData.pricePerMonth[1]}원`;
+    itemMonthRentalfee.innerHTML = ` ${itemData.pricePerMonth[1]}원`;
     price = itemData.pricePerMonth[1];
     rental36month.classList.remove('rental-option-selected');
     rental48month.classList.toggle('rental-option-selected');
@@ -127,7 +114,7 @@ function initSetting(itemData) {
   });
 
   rental60month.addEventListener('click', () => {
-    itemMonthRentalfee.innerHTML = `${itemData.pricePerMonth[2]}원`;
+    itemMonthRentalfee.innerHTML = ` ${itemData.pricePerMonth[2]}원`;
     price = itemData.pricePerMonth[2];
     rental36month.classList.remove('rental-option-selected');
     rental48month.classList.remove('rental-option-selected');
@@ -187,20 +174,19 @@ function initSetting(itemData) {
         itemData.productSpecification.energyEfficiencyRating,
       rentalPeriod: rentalPeriod,
       pricePerMonth: price,
-      deliveryFee: 3000,
+      deliveryFee: itemData.deliveryFee,
       images: itemData.images,
       size: itemData.productSpecification.size,
       productName: itemData.productName,
-      color: itemData.color,
-      discountRate: itemData.discountRate,
+      color: selectedColor.innerHTML,
+      discountRate: itemData.discountRate || 0,
+      quantity: Number(itemNumber.value),
     };
 
     setProductToLocalStorage(localBucketData);
   });
 
   currentBuyButton.addEventListener('click', (e) => {
-    e.preventDefault();
-
     let rentalPeriod;
     if (rental36month.classList.contains('rental-option-selected')) {
       rentalPeriod = 36;
@@ -221,13 +207,16 @@ function initSetting(itemData) {
         itemData.productSpecification.energyEfficiencyRating,
       rentalPeriod: rentalPeriod,
       pricePerMonth: price,
-      deliveryFee: 3000,
+      deliveryFee: itemData.deliveryFee,
       images: itemData.images,
       size: itemData.productSpecification.size,
       productName: itemData.productName,
-      color: itemData.color,
-      discountRate: itemData.discountRate,
+      color: selectedColor.innerHTML,
+      discountRate: itemData.discountRate || 0,
+      quantity: Number(itemNumber.value),
     };
+
+    console.log(localBucketData);
 
     setProductToSessionStorage(localBucketData);
   });

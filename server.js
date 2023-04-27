@@ -12,5 +12,5 @@ mongoose.connect('mongodb://127.0.0.1:27017').then(() => {
 });
 
 app.listen(port, () => {
-  console.log(`localhost:3000 connected!`);
+  console.log(`localhost:${port} connected!`);
 });
