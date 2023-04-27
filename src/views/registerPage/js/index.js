@@ -100,7 +100,7 @@ async function register(username, email, password, phoneNumber, address) {
 
   if (res.status === 201) {
     alert('회원가입이 완료되었습니다.');
-    window.location.href = 'http://localhost:3000/signin';
+    window.location.href = '/signin';
   } else {
     alert('회원가입이 실패했습니다. 정보를 다시 확인해주세요.');
     return;
