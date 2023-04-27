@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/orderCompletedPage/css/style.css" />
+    <title>주문완료</title>
+  </head>
+  <body>
+    <header>
+      <h1><p>HEADER YAP 🙋🏻‍♀️</p></h1>
+    </header>
+
+    <!-- order completed header -->
+    <div class="order-completed-header-container">
+      <div class="order-completed-header">
+        <div class="order-completed-header-title">
+          <h1>주문완료</h1>
+        </div>
+        <div class="order-completed-process">
+          <div class="order-completed-process-not-now">장바구니 ></div>
+          <div class="order-completed-process-not-now">주문/결제 ></div>
+          <div class="order-completed-process-now">주문완료</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- order completed main -->
+    <main>
+      <!-- order completed top -->
+      <div class="order-completed-top">
+        <div class="order-completed-text-outer">
+          <p class="order-completed-text text-emphasize">주문이 완료</p>
+          <p class="order-completed-text">되었습니다. 감사합니다!</p>
+        </div>
+        <!-- HERE -->
+        <div class="order-completed-date-number"></div>
+        <div class="order-completed-buttons">
+          <a href="" class="order-completed-mypage-a">
+            <button class="order-completed-button order-completed-mypage">
+              마이페이지로 이동
+            </button>
+          </a>
+          <a href="" class="order-completed-payment-a">
+            <button
+              class="order-completed-button order-completed-continue-shopping"
+            >
+              계속 쇼핑하기 >
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <!-- order completed info -->
+      <div class="order-completed-info">
+        <div class="order-completed-user-info">
+          <p class="order-completed-user-info-text">받는사람 정보</p>
+          <!-- HERE -->
+          <div class="recipient-table"></div>
+        </div>
+        <div class="order-completed-payment-info">
+          <p class="order-completed-payment-info-text">결제정보</p>
+          <!-- HERE -->
+          <div class="payment-table"></div>
+        </div>
+      </div>
+    </main>
+    <script src="../js/render.js" type="module"></script>
+  </body>
+</html>
