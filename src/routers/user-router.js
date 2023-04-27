@@ -67,8 +67,7 @@ userRouter.post('/signin', async (req, res, next) => {
 // 로그아웃
 userRouter.post('/signout', signinRequired, async (req, res) => {
   // jwt 토큰 쿠키를 없앰으로써 로그아웃
-  res.cookie('jwtToken', '', { expires: new Date(0) });
-  // res.clearCookie('jwtToken');
+  res.clearCookie('jwtToken');
   res.redirect('/signIn');
 });
 
