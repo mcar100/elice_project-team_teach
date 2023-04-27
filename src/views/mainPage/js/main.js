@@ -1,7 +1,13 @@
 import { getMainCategoryData } from './category.js';
 import { header } from '../../headerComponent/header.js';
-// 헤더가 보이게 임포트
-// import header from '../header/'
+import { moveToOtherByHeader } from '../../EventComponent/moveEventCommon.js';
 
-header();
-getMainCategoryData();
+// 헤더가 보이게 임포트
+
+async function main() {
+  await getMainCategoryData();
+  await header();
+  await moveToOtherByHeader();
+}
+
+main();

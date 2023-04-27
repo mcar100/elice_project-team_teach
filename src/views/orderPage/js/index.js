@@ -1,5 +1,3 @@
-/* global document */
-
 const default1 = document.querySelector('.address-info-default-display');
 const none = document.querySelector('.address-info-direct-none');
 

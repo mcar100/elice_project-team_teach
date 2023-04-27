@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/registerPage/css/style.css" />
+  </head>
+  <header>
+    <div id="header-container">
+      <span class="header-logo">TechMate</span>
+      <div id="search-container"></div>
+      <div id="button-container"></div>
+    </div>
+  </header>
+
+  <!-- header navbar 영역 -->
+  <nav>
+    <div class="nav-container">
+      <div>Hello Techmate</div>
+      <div>로그인/회원가입</div>
+    </div>
+  </nav>
+  <body>
+    <main id="main">
+      <div class="main-div">
+        <svg
+          width="100px"
+          height="123px"
+          viewBox="0 -11 70 70"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <rect
+              x="0.5"
+              y="0.5"
+              width="69"
+              height="47"
+              rx="5.5"
+              fill="white"
+              stroke="#D9D9D9"
+            ></rect>
+            <circle cx="34.87" cy="23.87" r="15.87" fill="#6481E7"></circle>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M27.9365 24.5157L35.0552 28.724V12.7036L27.9365 24.5157Z"
+              fill="white"
+            ></path>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M35.0557 12.7036V28.724L42.1744 24.5157L35.0557 12.7036Z"
+              fill="#C1CCF5"
+            ></path>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M35.0557 21.2802L27.9365 24.5155L35.0552 28.7238L42.1744 24.516L35.0557 21.2802Z"
+              fill="#8299EC"
+            ></path>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M35.0557 21.2802L27.9365 24.5155L35.0552 28.7238L35.0557 21.2802Z"
+              fill="#C1CCF5"
+            ></path>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M27.9365 25.8658L35.0552 35.8978V30.0718L27.9365 25.8658Z"
+              fill="white"
+            ></path>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M35.0557 30.0718V35.8982L42.1791 25.8658L35.0557 30.0718Z"
+              fill="#C1CCF5"
+            ></path>
+          </g>
+        </svg>
+        <span>회원가입</span>
+      </div>
+      <div id="register-main-div">
+        <div>
+          <p id="register-main-title-p">회원정보입력</p>
+        </div>
+        <div id="register-description-div">
+          <form method="post" action="/">
+            <div class="field">
+              <label class="label" style="font-size: 12px">이메일</label>
+              <div class="register-id-div">
+                <p class="control has-icons-left" style="flex-grow: 1">
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="사용자 이메일"
+                    id="player-email"
+                  />
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </p>
+                <button id="duplicate-check" type="button" class="button">
+                  중복체크
+                </button>
+              </div>
+              <p class="help is-danger" style="display: none" id="email-error">
+                이메일을 입력해주세요.
+              </p>
+            </div>
+
+            <div class="field">
+              <label class="label" style="font-size: 12px">이름</label>
+              <p class="control has-icons-left">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="사용자 이름"
+                  id="player-username"
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                  <p
+                    class="help is-danger"
+                    style="display: none"
+                    id="username-error"
+                  >
+                    이름 입력이 필요합니다.
+                  </p>
+                </span>
+              </p>
+            </div>
+
+            <div class="field">
+              <label class="label" style="font-size: 12px">비밀번호</label>
+              <p class="control has-icons-left">
+                <input
+                  class="input"
+                  type="password"
+                  placeholder="비밀번호는 8~20자"
+                  id="player-password"
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                  <p
+                    class="help is-danger"
+                    style="display: none"
+                    id="password-error"
+                  >
+                    비밀번호를 다시 확인해주세요.
+                  </p>
+                </span>
+              </p>
+            </div>
+            <div class="field">
+              <label class="label" style="font-size: 12px">비밀번호 확인</label>
+              <p class="control has-icons-left">
+                <input
+                  class="input"
+                  type="password"
+                  placeholder="비밀번호 확인"
+                  id="player-password-confirm"
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                  <p
+                    class="help is-danger"
+                    style="display: none"
+                    id="password-confirm-error"
+                  >
+                    비밀번호가 일치하지 않습니다.
+                  </p>
+                </span>
+              </p>
+            </div>
+            <div class="field">
+              <label class="label" style="font-size: 12px">휴대폰번호</label>
+              <p class="control has-icons-left">
+                <input
+                  class="input"
+                  type="phonenumber"
+                  placeholder="번호를 입력해주세요."
+                  id="player-phone-number"
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                  <p
+                    class="help is-danger"
+                    style="display: none"
+                    id="phone-number-error"
+                  >
+                    전화번호를 다시 확인하세요.
+                  </p>
+                </span>
+              </p>
+            </div>
+            <div class="field">
+              <label class="label" style="font-size: 12px">주소</label>
+              <p class="control has-icons-left">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="상세하게 입력해주세요."
+                  id="player-address"
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                  <p
+                    class="help is-danger"
+                    style="display: none"
+                    id="address-error"
+                  >
+                    주소입력이 필요합니다.
+                  </p>
+                </span>
+              </p>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <label class="checkbox">
+                  <input type="checkbox" id="player-agree" />
+                  I agree to the <a href="#">terms and conditions</a>
+                </label>
+                <p
+                  class="help is-danger"
+                  style="display: none"
+                  id="agree-error"
+                >
+                  회원가입 조건에 동의해주세요.
+                </p>
+              </div>
+            </div>
+            <div id="register-submit-div">
+              <button
+                class="button is-danger"
+                type="button"
+                id="register-button"
+              >
+                확인
+              </button>
+              <button class="button" type="button" id="register-cancel">
+                취소
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer id="footer-container"></footer>
+    <script src="/registerPage/js/index.js" type="module"></script>
+  </body>
+</html>
