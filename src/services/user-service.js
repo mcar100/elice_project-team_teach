@@ -100,6 +100,18 @@ export class UserService {
     return { result: 'true' };
   }
 
+  //토큰 복호화(디코딩)
+  async getDecodeToken(userToken) {
+    const secretKey = process.env.JWT_SECRET_KEY || 'secret-key';
+    const decodeUserToken = jwt.verify(userToken, secretKey);
+
+    if (!decodeUserToken) {
+      console.log('잘못된 정보입니다.');
+      throw new Error('잘못된 정보입니다.');
+    }
+    return decodeUserToken;
+  }
+
   // 정보 수정 시 비밀번호 확인
   async checkUserPassword(userId, password) {
     // db에 이메일 확인

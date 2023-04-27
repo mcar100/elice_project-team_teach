@@ -2,7 +2,6 @@ import { header } from '../../headerComponent/header.js';
 import { footer } from '../../footerComponent/footer.js';
 import { setProductToLocalStorage } from './setLocalStorage.js';
 import { setProductToSessionStorage } from './setSessionStorage.js';
-import { moveToOtherByHeader } from '../../EventComponent/moveEventCommon.js';
 
 const itemNumber = document.getElementById('item-number');
 const upButton = document.getElementById('up-button');
@@ -38,7 +37,6 @@ let localBucketData;
 
 async function renderHeader() {
   await header();
-  await moveToOtherByHeader();
 }
 renderHeader();
 footer();
