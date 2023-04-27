@@ -68,7 +68,7 @@ userRouter.post('/signin', async (req, res, next) => {
 userRouter.post('/signout', signinRequired, async (req, res) => {
   // jwt 토큰 쿠키를 없앰으로써 로그아웃
   res.clearCookie('jwtToken');
-  res.redirect('/signIn');
+  res.redirect('/');
 });
 
 // 이메일 중복 조회
