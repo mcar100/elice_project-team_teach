@@ -13,9 +13,10 @@ const addDefault = (userData) => {
 
 const addUserMainContents = async () => {
   const displayed = document.getElementById('default-display');
-  // const direct = document.getElementById('direct-input');
+
   const userData = await getUserDataFromServer();
 
+  if (userData === -1) return -1;
   if (displayed.checked) addDefault(userData);
   else {
     const directInput = {};
@@ -40,15 +41,3 @@ const addUserMainContents = async () => {
 };
 
 export default addUserMainContents;
-/**
- * user-name
- * user-zip-code
- * user-address
- * user-address-detail
- * user-phone-number
- * delivery-require
- *
- * 얘네 갖고 있는 추가 객체 만들고
- * completed replace에서
- * hasownproperty로 검사하자.
- */

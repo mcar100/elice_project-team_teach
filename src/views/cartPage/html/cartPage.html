@@ -9,7 +9,7 @@
   </head>
   <body>
     <header>
-      <h1><p>HEADER YAP 🙋🏻‍♀️</p></h1>
+      <h1><a href="/" class="header-logo">TechMate 🙋🏻‍♀️</a></h1>
     </header>
 
     <!-- cart header -->
@@ -70,10 +70,8 @@
               ></path>
             </g>
           </svg>
-          <p class="shipping-destination">배송지 : 집</p>
-          <p class="shipping-address">
-            서울특별시 성동구 성수2가제3동 광나루로6길 49
-          </p>
+          <p class="shipping-destination">배송지 :</p>
+          <p class="shipping-address"></p>
         </div>
         <div class="shipping-ment">
           <p>배송사 일정에 따라 배송 기간이 달라질 수 있습니다.</p>
@@ -115,7 +113,7 @@
           <p class="final-confirmation-price-1">총 주문금액</p>
           <p id="total-order-price" class="final-confirmation-price-2">0 원</p>
         </div>
-        <a href="/orderPage/html/orderPage.html">
+        <a href="/order">
           <div class="final-confirmation-quantity-outer">
             <p class="final-confirmation-quantity-1">총 주문하기</p>
             <div class="final-confirmation-quantity-2-circle">
@@ -128,6 +126,7 @@
 
     <!-- scripts -->
     <script src="/cartPage/js/render.js" type="module"></script>
+    <script src="/cartPage/js/headerUserAddress.js" type="module"></script>
     <script src="/cartPage/js/deleteLocalStorage.js" type="module"></script>
     <script src="/cartPage/js/checkCheckedProducts.js" type="module"></script>
   </body>

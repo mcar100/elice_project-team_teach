@@ -1,5 +1,5 @@
 const getUserId = async (token) => {
-  if (!token) return { userId: 0 };
+  if (!token) return -1;
   const response = await fetch('http://localhost:3000/users/token-decode', {
     method: 'POST',
     headers: {

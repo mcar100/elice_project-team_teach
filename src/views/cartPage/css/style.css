@@ -13,6 +13,19 @@ header {
 header p {
   padding-top: 36px;
 }
+.header-logo {
+  line-height: 102px;
+}
+a.header-logo {
+  cursor: pointer;
+  color: #222;
+}
+a.header-logo:visited {
+  color: #222;
+}
+a.header-logo:active {
+  color: #777;
+}
 
 /**======================
 *         COMMON

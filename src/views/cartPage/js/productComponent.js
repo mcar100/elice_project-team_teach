@@ -89,7 +89,7 @@ const productComponent = `<!-- component possible -->
 					<p class="final-price-text">주문금액</p>
 					<p class="final-price">{%ORDER_PRICE%}</p>
 				</div>
-				<a href="../../orderPage/html/index.html" class="each-order-a">
+				<a href="/order" class="each-order-a">
 					<p class="each-order-button {%PRODUCT_ID%}">주문하기</p>
 				</a>
 			</div>

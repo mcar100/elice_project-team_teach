@@ -13,8 +13,9 @@ const getDataFromServer = async () => {
       key !== 'techmate_token' &&
       key.length > 23 &&
       JSON.parse(sessionStorage.getItem(key)).pricePerMonth
-    )
+    ) {
       sessionData.push({ key, value });
+    }
   }
   return sessionData;
 };

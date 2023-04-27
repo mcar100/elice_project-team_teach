@@ -2,9 +2,6 @@ const addressComponent = `
 <div class="address-info-user">
   <p id="user-name" class="address-info-user-name">{%RECIPIENT%}</p>
   <div class="address-info-user-default">
-    <span class="address-info-zip-code">
-      ({%ZIP_CODE%})
-    </span>
     <span class="address-info-user-address">
       {%ADDRESS%}
     </span>

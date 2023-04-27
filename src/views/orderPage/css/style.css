@@ -20,6 +20,19 @@ header {
 header p {
   padding-top: 36px;
 }
+.header-logo {
+  line-height: 102px;
+}
+a.header-logo {
+  cursor: pointer;
+  color: #222;
+}
+a.header-logo:visited {
+  color: #222;
+}
+a.header-logo:active {
+  color: #777;
+}
 
 /**======================
 *      ORDER HEADER
@@ -387,4 +400,14 @@ main {
   padding-top: 3px;
   text-align: center;
   color: black;
+}
+
+/**======================
+ *       NONE USER
+ *========================**/
+.none-user-comment {
+  margin: 25px 0 40px 5px;
+  color: #777;
+  text-decoration: underline;
+  line-height: 22px;
 }
