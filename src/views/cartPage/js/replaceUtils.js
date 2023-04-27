@@ -1,4 +1,4 @@
-import toCurrency from './utils.js';
+import { toCurrency } from './utils.js';
 
 const replaceComponentData = (productsData, productComponent) => {
   let productsHtmlForRender = '';
