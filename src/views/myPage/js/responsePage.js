@@ -10,8 +10,8 @@ const getResponsePage = async (user) => {
     <span>이메일</span>
     <span>전화번호</span>
     <span>주소</span>
-    <span>비밀번호</span>
-    <span>비밀번호 확인</span>
+    <span>새 비밀번호</span>
+    <span>새 비밀번호 확인</span>
   </div>
   <div class="profile-input-container">
     <input class="input-name" type="text" placeholder="이름" value="${user.username}" disabled/>
@@ -26,12 +26,12 @@ const getResponsePage = async (user) => {
     <input
       class="input-password"
       type="password"
-      placeholder="비밀번호"
+      placeholder="새 비밀번호"
     />
     <input
       class="input-passwordConfirm"
       type="password"
-      placeholder="비밀번호 확인"
+      placeholder="새 비밀번호 확인"
     />
   </div>
   <div class="profile-button-container">
@@ -41,5 +41,6 @@ const getResponsePage = async (user) => {
     <button class="button is-danger is-small">회원탈퇴</button>
   </div>`;
 };
+
 
 export { getResponsePage };

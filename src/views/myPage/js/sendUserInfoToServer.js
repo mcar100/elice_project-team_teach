@@ -23,7 +23,7 @@ async function sendUserInfoToServer(changeInfo) {
   location.href = '/';
 }
 
-function changeUserInfo() {
+function changeUserInfo(password) {
   const changeInfoBtn = document.querySelector('.change-user-info');
   const phoneNumberInput = document.querySelector('.input-phonenumber');
   const addressInput = document.querySelector('.input-address');
@@ -31,9 +31,13 @@ function changeUserInfo() {
   const passwordConfirmInput = document.querySelector('.input-passwordConfirm');
   changeInfoBtn.addEventListener('click', async (e) => {
     e.preventDefault();
+    if (passwordInput.value !== passwordConfirmInput.value) {
+      alert('새 비밀번호와 새 비밀번호 확인을 일치하게 입력하세요. ');
+      return;
+    }
     const changeInfo = {
-      currentPassword: passwordConfirmInput.value,
-      password: passwordInput.value,
+      currentPassword: password,
+      password: passwordInput.value ? passwordInput.value : password,
       mobileNumber: phoneNumberInput.value,
       address: addressInput.value,
     };

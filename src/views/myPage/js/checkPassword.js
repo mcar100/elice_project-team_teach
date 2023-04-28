@@ -26,7 +26,7 @@ const checkPassword = async () => {
     if (ok) {
       console.log('correct');
       await getResponsePage(user);
-      await changeUserInfo();
+      await changeUserInfo(inputPassword);
     } else {
       alert('사용자의 비밀번호가 일치하지 않습니다.');
     }
