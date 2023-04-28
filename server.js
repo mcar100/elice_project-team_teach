@@ -8,9 +8,7 @@ dotenv.config({ path: './config/.env' });
 const port = process.env.PORT || 3000;
 
 mongoose
-  .connect(
-    'mongodb+srv://seob:jzMhgv91ByD3xTpZ@techmate.qp6i8fm.mongodb.net/techmate'
-  )
+  .connect(process.env.DB_URL)
   .then(() => {
     console.log('mongo db connected!');
   });
