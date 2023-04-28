@@ -4,11 +4,6 @@ import UserSchema from '../schemas/user-schema.js';
 const User = model('User', UserSchema);
 
 export class UserModel {
-  // async findByUserEmail(userEmail) {
-  //   const user = await User.findOne({ userEmail });
-  //   return user;
-  // }
-
   // CRUD 순서
 
   async create(userInfo) {

@@ -3,8 +3,6 @@ import path from 'path';
 
 const viewRouter = express.Router();
 
-//app.use('요청 경로', express.static('실제 경로'))
-
 const __dirname = path.resolve();
 const resourcePath = path.join(__dirname, '/src/views');
 
@@ -35,12 +33,10 @@ viewRouter.get('/category', async (req, res) => {
   res.sendFile(path.join(resourcePath, '/categoryPage/html/categoryPage.html'));
 });
 
-// css 조정 필요 및 상품 이미지 적용x
 viewRouter.get('/product/detail', async (req, res) => {
   res.sendFile(path.join(resourcePath, '/itemDetail/html/itemDetail.html'));
 });
 
-// 랜더링 확인 필요?
 viewRouter.get('/cart', async (req, res) => {
   res.sendFile(path.join(resourcePath, '/cartPage/html/cartPage.html'));
 });

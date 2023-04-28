@@ -43,7 +43,6 @@ export class UserService {
     const { email, password } = signInInfo;
     const user = await userModel.findOneByEmail(email);
     if (!user) {
-      console.log('이메일 혹은 패스워드가 일치하지 않습니다.');
       throw new Error('이메일 혹은 패스워드가 일치하지 않습니다.');
     }
 
@@ -57,13 +56,8 @@ export class UserService {
     const savedPassword = user.password;
 
     if (inputPassword !== savedPassword) {
-      console.log('비밀번호가 일치하지 않습니다.');
       throw new Error('이메일 혹은 패스워드가 일치하지 않습니다.');
     }
-    console.log('로그인 성공');
-    // if (typeof window !== 'undefined') {
-    //   alert();
-    // }
 
     // 로그인 성공 -> JWT 웹 토큰 생성
     const secretKey = process.env.JWT_SECRET_KEY || 'secret-key';
@@ -93,7 +87,6 @@ export class UserService {
   async checkEmailDuplication(userEmail) {
     const checkEmail = await userModel.findOneByEmail(userEmail);
     if (checkEmail) {
-      console.log('이미 등록된 이메일입니다.');
       return { result: 'false' };
     }
 
@@ -106,7 +99,6 @@ export class UserService {
     const decodeUserToken = jwt.verify(userToken, secretKey);
 
     if (!decodeUserToken) {
-      console.log('잘못된 정보입니다.');
       throw new Error('잘못된 정보입니다.');
     }
     return decodeUserToken;
@@ -125,12 +117,10 @@ export class UserService {
       .digest('hex');
 
     if (inputPassword !== savedPassword) {
-      console.log('비밀번호가 일치하지 않습니다.');
       throw new Error(
         '비밀번호가 일치하지 않습니다. 다시 한 번 확인해 주세요.'
       );
     }
-    console.log('비밀번호 확인 성공');
 
     // 비밀번호 일치함. 유저 정보 반환
     return user;
@@ -139,7 +129,6 @@ export class UserService {
   // 유저정보 수정
   async setUser(userInfoRequired, toUpdate) {
     // 객체 destructuring
-    console.log('setUser');
     let { userId, currentPassword } = userInfoRequired;
     currentPassword = crypto
       .createHmac('sha256', process.env.SECRET_KEY)
@@ -156,9 +145,8 @@ export class UserService {
     // 비밀번호 일치 여부 확인
     const savedPassword = user.password;
     let isPasswordCorrect = false;
+
     if (currentPassword === savedPassword) isPasswordCorrect = true;
-    console.log(currentPassword);
-    console.log(savedPassword);
     if (!isPasswordCorrect) {
       throw new Error(
         '현재 비밀번호가 일치하지 않습니다. 다시 한 번 확인해 주세요.'

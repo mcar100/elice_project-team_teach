@@ -15,7 +15,6 @@ class CategoryService {
 
   //선택한 카테고리의 정보 가져오기
   async getProductListByCategoryId(categoryId) {
-    //const productListByCategory = await this.categoryModel.findById(categoryId);
     const productListByCategory =
       await this.productModel.findProductByCategoryId(categoryId);
     if (!productListByCategory) {

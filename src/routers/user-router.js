@@ -54,11 +54,9 @@ userRouter.post('/signin', async (req, res, next) => {
     // db 있을 시 로그인 성공 및, 토큰 및 관리자 여부 받아오기
     const signinResult = await userService.signin({ email, password });
 
-    console.log('signinResult : ', signinResult);
     // jwt 토큰 쿠키 저장
     res.cookie('jwtToken', signinResult.token, { httpOnly: true });
     res.status(200).json(signinResult);
-    //res.redirect('/');
   } catch (error) {
     next(error);
   }
@@ -140,7 +138,6 @@ userRouter.put('/:userId', signinRequired, async (req, res, next) => {
       );
     }
     const { userId } = req.params;
-    // const user = await userService.findById(userId);
 
     const { currentPassword, password, mobileNumber, address } = req.body;
 
@@ -156,7 +153,7 @@ userRouter.put('/:userId', signinRequired, async (req, res, next) => {
       ...(address && { address }),
       ...(mobileNumber && { mobileNumber }),
     };
-    console.log('사용자 정보 들어옴');
+
     // 사용자 정보 업데이트
     const updatedUserInfo = await userService.setUser(
       userInfoRequired,

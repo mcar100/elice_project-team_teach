@@ -24,7 +24,6 @@ const checkPassword = async () => {
     });
 
     if (ok) {
-      console.log('correct');
       await getResponsePage(user);
       await changeUserInfo(inputPassword);
     } else {

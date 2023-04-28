@@ -6,6 +6,7 @@
  * console.log(productId);
  */
 const lengthProducts = () => sessionStorage.length;
+
 /**
  * sessionStorage에 productId를 저장하는 함수.
  * key값은 lengthProducts() + 1로 설정

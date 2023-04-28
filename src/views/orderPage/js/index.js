@@ -21,6 +21,6 @@ const changeDisplay = (e) => {
     displayNone.checked = true;
   }
 };
-// 아하! input의 id랑 label의 for이 같아야 하는구나!
+
 firstCheck.addEventListener('click', changeDisplay);
 secondCheck.addEventListener('click', changeDisplay);

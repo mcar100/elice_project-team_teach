@@ -61,8 +61,6 @@ orderRouter.patch('/admins/:orderId', adminOnly, async (req, res, next) => {
     const { orderId } = req.params;
     const { deliveryStatus } = req.body;
 
-    console.log(deliveryStatus);
-
     const toUpdate = {
       ...(deliveryStatus && { deliveryStatus }),
     };
@@ -111,7 +109,7 @@ orderRouter.get('/users/:userId', signinRequired, async (req, res, next) => {
     //미들웨어 처리에 따라 userId가 삭제될 수도 있을 듯
     const { userId } = req.params;
 
-    const userOrders = await orderService.getOrdersByUserId(userId); // service로 넘어가야 함
+    const userOrders = await orderService.getOrdersByUserId(userId);
     res.status(200).json(userOrders);
   } catch (err) {
     next(err);

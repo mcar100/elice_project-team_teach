@@ -14,7 +14,6 @@ const orderCheck = async () => {
     }
   );
   const data = await response.json();
-  console.log(data);
   return data;
 };
 
@@ -32,6 +31,6 @@ const orderCancel = async (orderId) => {
   );
   const data = response.json();
   alert('주문이 취소되었습니다.', data);
-  location.reload();
+  window.location.reload();
 };
 export { orderCheck, orderCancel };

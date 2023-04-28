@@ -35,8 +35,6 @@ export class OrderModel {
   async deleteOrderInfo(orderId) {
     const deleteOrder = await Order.deleteOne({ _id: orderId });
 
-    console.log('Model delete Order', deleteOrder);
-
     return deleteOrder;
   }
 

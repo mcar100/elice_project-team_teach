@@ -11,5 +11,4 @@ const replaceUserComponent = (usersData, userComponent) => {
   return usersHtmlForRender;
 };
 
-// 아마 객체 참조 부분 구조 바뀔 예정
 export default replaceUserComponent;

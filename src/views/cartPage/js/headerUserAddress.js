@@ -41,6 +41,3 @@ if (getData) {
   const userInfo = await getUserInfo(data.userId, token);
   replaceComponent(userInfo.address);
 } else replaceComponent(null);
-
-// 아하 비동기 함수에 await를 안하면 Promise로 반환되는구나
-// await하면 제대로 객체 형태로 반환됨.

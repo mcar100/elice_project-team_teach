@@ -1,5 +1,5 @@
 function moveToOtherPage(path) {
-  location.href = `${path}`;
+  window.location.href = `${path}`;
 }
 
 function moveToCategory() {

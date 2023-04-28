@@ -9,8 +9,6 @@ const downButton = document.getElementById('down-button');
 const mainImageDiv = document.querySelector('.item-main-image-div');
 const subImageDiv = document.getElementById('item-sub-images');
 const itemBrand = document.getElementById('item-brand');
-const whiteColorButton = document.getElementById('item-color-white');
-const blackColorButton = document.getElementById('item-color-black');
 const selectedColor = document.getElementById('item-selected-color');
 const itemColorDiv = document.getElementById('item-color-div');
 const itemName = document.getElementById('item-name');
@@ -42,7 +40,7 @@ renderHeader();
 footer();
 
 function initSetting(itemData) {
-  let mainImage = document.createElement('img');
+  const mainImage = document.createElement('img');
   mainImage.src = itemData.images[0];
   mainImage.setAttribute('id', 'main-image');
   mainImage.setAttribute('alt', '메인 상품');
@@ -50,7 +48,7 @@ function initSetting(itemData) {
   mainImageDiv.appendChild(mainImage);
 
   for (let i = 0; i < itemData.productDetailImages.length; i++) {
-    let subImage = document.createElement('img');
+    const subImage = document.createElement('img');
     subImage.src = itemData.productDetailImages[i];
     subImage.setAttribute('alt', '이미지');
 
@@ -62,7 +60,7 @@ function initSetting(itemData) {
   }
 
   for (let i = 0; i < itemData.color.length; i++) {
-    let initColor = itemData.color[i];
+    const initColor = itemData.color[i];
     let engColor;
 
     if (initColor === '블랙') {
@@ -76,11 +74,11 @@ function initSetting(itemData) {
       engColor = 'silver';
     }
 
-    let colorSelectedButton = document.createElement('button');
+    const colorSelectedButton = document.createElement('button');
     colorSelectedButton.setAttribute('id', 'item-color-selected');
     colorSelectedButton.style.backgroundColor = engColor;
     colorSelectedButton.addEventListener('click', () => {
-      let color = colorSelectedButton.style.backgroundColor;
+      const color = colorSelectedButton.style.backgroundColor;
       if (color === 'white') {
         selectedColor.innerHTML = '화이트';
       } else if (color === 'black') {
@@ -131,9 +129,8 @@ function initSetting(itemData) {
     ).toLocaleString('ko-KR')}원`;
   }
 
-  let now = new Date();
-  let deliveryDay = new Date(now.setDate(now.getDate() + 2));
-  console.log(deliveryDay);
+  const now = new Date();
+  const deliveryDay = new Date(now.setDate(now.getDate() + 2));
 
   itemDeliveryDay.innerHTML = dateFormatDay(deliveryDay);
 
@@ -213,8 +210,6 @@ function initSetting(itemData) {
       discountRate: itemData.discountRate || 0,
       quantity: Number(itemNumber.value),
     };
-
-    console.log(localBucketData);
 
     setProductToSessionStorage(localBucketData);
   });

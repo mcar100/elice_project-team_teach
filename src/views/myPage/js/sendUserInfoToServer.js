@@ -4,7 +4,7 @@ async function sendUserInfoToServer(changeInfo) {
   const token = sessionStorage.getItem('techmate_token');
   const { userId } = await getUserId(token);
   const { currentPassword, password, mobileNumber, address } = changeInfo;
-  const response = await fetch(`http://34.22.85.74:3000/users/${userId}`, {
+  await fetch(`http://34.22.85.74:3000/users/${userId}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -17,10 +17,9 @@ async function sendUserInfoToServer(changeInfo) {
       address,
     }),
   });
-  const data = await response.json();
-  console.log(data);
+
   alert('정보가 수정되었습니다');
-  location.href = '/';
+  window.location.href = '/';
 }
 
 function changeUserInfo(password) {

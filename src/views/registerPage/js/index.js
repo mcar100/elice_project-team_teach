@@ -9,7 +9,6 @@ const passwordBox = document.getElementById('player-password');
 const passwordConfirmBox = document.getElementById('player-password-confirm');
 const phoneNumberBox = document.getElementById('player-phone-number');
 const addressBox = document.getElementById('player-address');
-//const agreeBox = document.getElementById('player-agree');
 const duplicateButton = document.getElementById('duplicate-check');
 const cancelButton = document.getElementById('register-cancel');
 let checkFlags = 0;
@@ -34,7 +33,6 @@ async function checkDuplicate(email) {
   );
 
   const login = await res.json();
-  console.log(login);
 
   if (login.result === 'true') {
     alert('사용 가능한 아이디입니다.');
@@ -50,7 +48,6 @@ duplicateButton.addEventListener('click', async () => {
 
 cancelButton.addEventListener('click', () => {
   if (confirm('회원가입을 취소하시겠습니까?')) {
-    console.log('이전페이지 이동');
     history.back();
   }
 });
@@ -96,8 +93,6 @@ async function register(username, email, password, phoneNumber, address) {
     }),
   });
 
-  const login = await res.json();
-
   if (res.status === 201) {
     alert('회원가입이 완료되었습니다.');
     window.location.href = '/signin';
@@ -112,7 +107,6 @@ emailBox.addEventListener('blur', () => {
   if (!checkEmail(email)) {
     document.getElementById('email-error').style.display = 'block';
   } else {
-    console.log('email no error');
     document.getElementById('email-error').style.display = 'none';
   }
 });
@@ -133,7 +127,6 @@ passwordBox.addEventListener('blur', () => {
   if (password.length < 8 || password.length > 20) {
     document.getElementById('password-error').style.display = 'block';
   } else {
-    console.log('no error');
     document.getElementById('password-error').style.display = 'none';
   }
 });
@@ -145,7 +138,6 @@ passwordConfirmBox.addEventListener('blur', () => {
   if (password !== passwordConfirm) {
     document.getElementById('password-confirm-error').style.display = 'block';
   } else {
-    console.log('no error');
     document.getElementById('password-confirm-error').style.display = 'none';
   }
 });

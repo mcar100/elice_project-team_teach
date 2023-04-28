@@ -150,13 +150,6 @@ label[for='select-all'] {
   font-size: 18px;
   font-weight: bold;
 }
-/* .select-all-left-container > p {
-  padding-left: 14px;
-  padding-top: 4px;
-  color: #222222;
-  font-size: 18px;
-  font-weight: bold;
-} */
 .select-all-right-container > p {
   padding: 2px 7px 0 2px;
 }
@@ -239,8 +232,6 @@ main {
 .cart-product-name {
   padding-top: 2px;
   font-size: 15px;
-  /* 2줄일때 36px이 자연스러웠음 */
-  /* height: 36px; */
   margin-bottom: 2px;
   font-weight: bold;
 }

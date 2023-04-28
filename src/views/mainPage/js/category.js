@@ -1,5 +1,5 @@
 import { addEvents } from './eventManager.js';
-/* 메인페이지에 적용할 카테고리 */
+
 const mainCategoryList = document.getElementById('main-category-container');
 
 const port = 3000;

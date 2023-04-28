@@ -30,7 +30,6 @@ async function login(email, password) {
 }
 
 loginButton.addEventListener('click', () => {
-  console.log('login button');
   const id = idButton.value;
   const password = passwordButton.value;
 

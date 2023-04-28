@@ -68,8 +68,6 @@ class OrderService {
     }
     const deleteOrder = await this.orderModel.deleteOrderInfo(orderId);
 
-    console.log('deleteOrder', deleteOrder);
-
     if (deleteOrder.deletedCount === 0) {
       throw new Error(`${orderId} 주문의 삭제에 실패하였습니다`);
     }

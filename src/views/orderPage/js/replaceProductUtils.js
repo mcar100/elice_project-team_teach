@@ -33,20 +33,3 @@ const replaceProductComponent = (productsData, productComponent) => {
 };
 
 export default replaceProductComponent;
-
-// userInfo: [
-//   {
-//     "_id": "128789471",
-//     "username": "임지성",
-//     "address": "서울시 강남구 역삼동 123-45 101호",
-//     "mobileNumber": "010-1234-5678"
-//   }
-// ]
-
-/**
- * USERNAME - username
- * ZIP_CODE - zipCode
- * ADDRESS - address
- * PHONE_NUMBER - mobileNumber
- * USER_ID - _id
- */

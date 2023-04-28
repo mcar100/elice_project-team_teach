@@ -27,11 +27,6 @@ header {
   border: none;
 }
 
-/* #category-btn > img {
-  max-width: 25px;
-  max-height: 25px;
-} */
-
 #category-btn:hover {
   background-color: #f5f5f5;
 }
