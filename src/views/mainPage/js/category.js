@@ -18,7 +18,7 @@ const getMainCategoryData = () => {
           `<div class="main-category">
                 <a ref="/category">
                 <img src="${item.categoryIcon}" alt="${item.categoryName} icon"/>
-                ${item.categoryName}
+                <span>${item.categoryName}</span>
                 </a>
                 <p class="category-id box-none" >${item._id}</p>
           </div>`
