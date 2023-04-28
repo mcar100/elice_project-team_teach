@@ -4,12 +4,15 @@ const orderCheck = async () => {
   const token = sessionStorage.getItem('techmate_token');
   const { userId } = await getUserId(token);
 
-  const response = await fetch(`http://localhost:3000/orders/users/${userId}`, {
-    method: 'GET',
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  const response = await fetch(
+    `http://34.22.85.74:3000/orders/users/${userId}`,
+    {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
   const data = await response.json();
   console.log(data);
   return data;
@@ -19,7 +22,7 @@ const orderCancel = async (orderId) => {
   const token = sessionStorage.getItem('techmate_token');
 
   const response = await fetch(
-    `http://localhost:3000/orders/users/${orderId}`,
+    `http://34.22.85.74:3000/orders/users/${orderId}`,
     {
       method: 'DELETE',
       headers: {
@@ -32,4 +35,3 @@ const orderCancel = async (orderId) => {
   location.reload();
 };
 export { orderCheck, orderCancel };
-
