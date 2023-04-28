@@ -2,7 +2,7 @@ import { getResponsePage } from './responsePage.js';
 import { getUserId, getUserInfo } from '../../orderPage/js/getUserId.js';
 import { changeUserInfo } from './sendUserInfoToServer.js';
 
-const checkPassword = async (password) => {
+const checkPassword = async () => {
   const token = sessionStorage.getItem('techmate_token');
   const { userId } = await getUserId(token);
   const user = await getUserInfo(userId, token);
@@ -11,7 +11,19 @@ const checkPassword = async (password) => {
   const passwordCheckInput = document.querySelector('.input-password-check');
   passwordCheckBtn.addEventListener('click', async () => {
     const inputPassword = passwordCheckInput.value;
-    if (inputPassword === password) {
+    const { ok } = await fetch('http://localhost:3000/users/password-check', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        userId,
+        password: inputPassword,
+      }),
+    });
+
+    if (ok) {
       console.log('correct');
       await getResponsePage(user);
       await changeUserInfo();
