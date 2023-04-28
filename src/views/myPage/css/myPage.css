@@ -101,3 +101,14 @@ main {
   grid-row-end: 7;
   align-self: center;
 }
+/* 정보 수정 전 비밀번호 확인 css */
+
+.profile-container-body > .profile-button-container2 > button:first-child {
+  grid-row-start: 1;
+}
+
+.check-password-btn {
+  width: 60px;
+  height: 35px;
+  align-self: center;
+}

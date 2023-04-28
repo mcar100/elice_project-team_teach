@@ -125,7 +125,6 @@ userRouter.post('/password-check', signinRequired, async (req, res, next) => {
 
     // 비밀번호가 알맞는지 여부를 체크함
     const checkResult = await userService.checkUserPassword(userId, password);
-
     res.status(200).json(checkResult);
   } catch (error) {
     next(error);
@@ -141,7 +140,6 @@ userRouter.put('/:userId', signinRequired, async (req, res, next) => {
       );
     }
     const { userId } = req.params;
-
     // const user = await userService.findById(userId);
 
     const { currentPassword, password, mobileNumber, address } = req.body;
@@ -158,7 +156,7 @@ userRouter.put('/:userId', signinRequired, async (req, res, next) => {
       ...(address && { address }),
       ...(mobileNumber && { mobileNumber }),
     };
-
+    console.log('사용자 정보 들어옴');
     // 사용자 정보 업데이트
     const updatedUserInfo = await userService.setUser(
       userInfoRequired,

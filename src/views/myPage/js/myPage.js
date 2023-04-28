@@ -1,9 +1,9 @@
 import { header } from '../../headerComponent/header.js';
-import { getUserId } from './myData.js';
+import { checkPassword } from './checkPassword.js';
 
 async function render() {
   header();
-  getUserId();
+  checkPassword('11111111');
 }
 
 render();

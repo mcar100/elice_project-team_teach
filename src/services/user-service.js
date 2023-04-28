@@ -139,8 +139,12 @@ export class UserService {
   // 유저정보 수정
   async setUser(userInfoRequired, toUpdate) {
     // 객체 destructuring
-    const { userId, currentPassword } = userInfoRequired;
-
+    console.log('setUser');
+    let { userId, currentPassword } = userInfoRequired;
+    currentPassword = crypto
+      .createHmac('sha256', process.env.SECRET_KEY)
+      .update(currentPassword)
+      .digest('hex');
     // 우선 해당 id의 유저가 db에 있는지 확인
     let user = await this.userModel.findById(userId);
 
@@ -153,7 +157,8 @@ export class UserService {
     const savedPassword = user.password;
     let isPasswordCorrect = false;
     if (currentPassword === savedPassword) isPasswordCorrect = true;
-
+    console.log(currentPassword);
+    console.log(savedPassword);
     if (!isPasswordCorrect) {
       throw new Error(
         '현재 비밀번호가 일치하지 않습니다. 다시 한 번 확인해 주세요.'
@@ -165,7 +170,7 @@ export class UserService {
     const { password } = toUpdate;
 
     if (password) {
-      const newPassword = password
+      const newPassword = crypto
         .createHmac('sha256', process.env.SECRET_KEY)
         .update(password)
         .digest('hex');
