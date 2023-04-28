@@ -4,7 +4,7 @@ async function sendUserInfoToServer(changeInfo) {
   const token = sessionStorage.getItem('techmate_token');
   const { userId } = await getUserId(token);
   const { currentPassword, password, mobileNumber, address } = changeInfo;
-  const response = await fetch(`http://localhost:3000/users/${userId}`, {
+  const response = await fetch(`http://34.22.85.74/users/${userId}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',

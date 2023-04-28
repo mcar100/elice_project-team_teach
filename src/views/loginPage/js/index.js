@@ -5,7 +5,7 @@ const passwordButton = document.getElementById('player-password');
 const loginButton = document.getElementById('player-login');
 
 async function login(email, password) {
-  const res = await fetch(`http://localhost:3000/users/signin`, {
+  const res = await fetch(`http://34.22.85.74/users/signin`, {
     method: 'post',
     headers: {
       'Content-Type': 'application/json',

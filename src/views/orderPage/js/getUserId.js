@@ -1,6 +1,6 @@
 const getUserId = async (token) => {
   if (!token) return { userId: 0 };
-  const response = await fetch('http://localhost:3000/users/token-decode', {
+  const response = await fetch(`http://34.22.85.74/users/token-decode`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -13,7 +13,7 @@ const getUserId = async (token) => {
 
 const getUserInfo = async (userId, token) => {
   if (!userId || !token) return -1;
-  const response = await fetch(`http://localhost:3000/users/${userId}`, {
+  const response = await fetch(`http://34.22.85.74/users/${userId}`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,

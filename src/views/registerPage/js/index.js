@@ -21,7 +21,7 @@ async function checkDuplicate(email) {
   }
 
   const res = await fetch(
-    `http://localhost:3000/users/signup/check-email-duplication`,
+    `http://34.22.85.74/users/signup/check-email-duplication`,
     {
       method: 'post',
       headers: {
@@ -82,7 +82,7 @@ async function register(username, email, password, phoneNumber, address) {
     return;
   }
 
-  const res = await fetch(`http://localhost:3000/users/signup`, {
+  const res = await fetch(`http://34.22.85.74/users/signup`, {
     method: 'post',
     headers: {
       'Content-Type': 'application/json',

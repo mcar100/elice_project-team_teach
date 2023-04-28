@@ -15,7 +15,7 @@ const getDataFromLocalStorage = () => {
 
 const getDataFromServerOne = async (keyName) => {
   const response = await fetch(
-    `http://localhost:3000/products/${local.getProduct(keyName)}`
+    `http://34.22.85.74:3000/products/${local.getProduct(keyName)}`
   );
   const data = await response.json();
   return data;

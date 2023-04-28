@@ -1,6 +1,7 @@
 import cors from 'cors';
 import express from 'express';
 import cookieParser from 'cookie-parser';
+import dotenv from 'dotenv';
 import {
   viewRouter,
   userRouter,
