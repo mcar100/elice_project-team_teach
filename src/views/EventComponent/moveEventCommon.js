@@ -30,6 +30,13 @@ export function moveToCart() {
   });
 }
 
+export function moveToMyOrderCheck() {
+  const registerBtn = document.querySelector('.order-check-arrow');
+  registerBtn.addEventListener('click', () => {
+    moveToOtherPage('/mypage/orders');
+  });
+}
+
 export function moveToItemDetail() {
   const productContainers = document.querySelectorAll('.product-container');
   productContainers.forEach((product) => {

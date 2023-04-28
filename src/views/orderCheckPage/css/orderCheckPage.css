@@ -43,7 +43,7 @@
 .order-check-list-body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   height: 100%;
   margin-top: 10px;
   overflow: auto;
@@ -108,7 +108,7 @@
 .order-check-item-info {
   display: grid;
   height: 100%;
-  grid-template-rows: 25% 35% 30% auto;
+  grid-template-rows: 10% 35% 30% auto;
 }
 
 .order-check-item-info > span:first-child {
@@ -119,6 +119,12 @@
 .order-check-item-info > span:nth-child(2) {
   grid-row-start: 3;
 }
+
+.order-check-item-info > span:nth-child(3) {
+  grid-row-start: 4;
+  font-weight: 400;
+}
+
 
 .order-check-item-deliver {
   display: flex;
@@ -160,19 +166,14 @@
 }
 
 .order-check-button-box > button:first-child {
-  grid-row-start: 2;
-}
-
-.order-check-button-box > button:nth-child(2) {
-  grid-row-start: 3;
-}
-
-.order-check-button-box > button:nth-child(3) {
   grid-row-start: 4;
-  border: 1px #ff0456 solid;
-  color: #ff0456;
 }
 
 footer {
   margin-top: 30px;
+}
+
+.box{
+  width: 60%;
+  height: 60%;
 }
