@@ -59,16 +59,13 @@ const createOrderInfo = async () => {
   orderInfoObject.productInfo = productInfo;
   orderInfoObject.deliveryFee = deliveryFee;
 
-  const response = await fetch(
-    `http://kdt-sw-4-team15.elicecoding.com:3000/orders`,
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(orderInfoObject),
-    }
-  );
+  const response = await fetch(`http://34.22.85.74:3000/orders`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(orderInfoObject),
+  });
   return response;
 };
 
