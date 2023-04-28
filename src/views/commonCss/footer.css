@@ -28,7 +28,7 @@
 }
 
 #site-description {
-  padding: 30px;
+  margin: 100px auto 50px auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,9 +43,10 @@
 }
 
 #footer-main > p {
-  font-size: 12px;
+  font-size: 14px;
   font-family: 'Noto Sans KR', 'Helvetica Neue', 'Apple SD Gothic Neo',
     '맑은 고딕', 'Malgun Gothic', 돋움, dotum, sans-serif;
+  line-height: 16px;
 }
 
 #footer-image-container {
@@ -62,7 +63,8 @@
 }
 
 #footer-sub > p {
-  font-size: 12px;
+  font-size: 14px;
+  line-height: 16px;
   font-family: 'Noto Sans KR', 'Helvetica Neue', 'Apple SD Gothic Neo',
     '맑은 고딕', 'Malgun Gothic', 돋움, dotum, sans-serif;
 }

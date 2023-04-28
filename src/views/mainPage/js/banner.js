@@ -42,4 +42,4 @@ const changeBannerImages = () => {
   }, 300);
 };
 
-setInterval(changeBannerImages, 3000);
+setInterval(changeBannerImages, 5000);

@@ -55,7 +55,7 @@ main {
 #main-category-container {
   display: flex;
   height: 100%;
-  margin: 0 200px;
+  margin: 100px 100px;
   align-items: center;
   justify-content: space-around;
   background-color: #fff;
@@ -106,7 +106,8 @@ main {
  *======================================**/
 
 .recommended-products-outer-container {
-  margin-bottom: 30vh;
+  margin-bottom: 17vh;
+  padding-top: 90px;
 }
 
 .recommended-products-letter {

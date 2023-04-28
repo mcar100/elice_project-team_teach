@@ -71,9 +71,12 @@ p {
 
 #item-name {
   flex-grow: 5;
-  padding: 0 20px;
+  padding: 0 10px;
+  font-size: 14px;
 }
-
+#item-brand {
+  margin-bottom: 6px;
+}
 .item-brand-div {
   padding: 10px;
   font-weight: bold;
@@ -86,14 +89,19 @@ p {
 .rate-div {
   display: flex;
 }
-
+#rate {
+  height: ;
+}
 #rate-point {
+  display: inline-block;
+  width: 10px;
 }
 
 #rate-number {
   color: blue;
-  padding-left: 10px;
-  font-size: 12px;
+  padding-left: 6px;
+  padding-bottom: 3px;
+  font-size: 8px;
 }
 
 .item-price-div {
@@ -133,6 +141,7 @@ button:hover {
 #is-free {
   font-size: 16px;
   color: green;
+  margin-bottom: 5px;
 }
 
 #item-number {
@@ -156,7 +165,7 @@ button:hover {
 
 .rental-range-div {
   display: flex;
-  padding: 20px;
+  margin: 20px 0 20px 10px;
   align-items: center;
 }
 
@@ -174,12 +183,15 @@ button:hover {
 }
 
 .benefits-div > p {
-  font-size: 15px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #777;
 }
 
 .buy-div {
   display: flex;
   padding: 10px;
+  margin: 5px 0;
 }
 
 .buy-div > button {
@@ -188,10 +200,9 @@ button:hover {
 
 .item-spec-div {
   padding: 10px;
-}
-
-.item-spec-div {
-  font-size: 12px;
+  font-size: 10px;
+  line-height: 17px;
+  color: #777;
 }
 
 .rate {
@@ -248,16 +259,26 @@ td {
 
 #rental36month {
   color: gray;
+  width: 80px;
+  height: 30px;
 }
 
 #rental48month {
   color: gray;
+  width: 80px;
+  height: 30px;
 }
 
 #rental60month {
   color: gray;
+  width: 80px;
+  height: 30px;
 }
 
 .rental-option-selected {
   background-color: black;
+  color: #fff;
+}
+.main-section {
+  margin-bottom: 100px;
 }
