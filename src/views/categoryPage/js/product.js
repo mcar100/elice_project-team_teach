@@ -1,5 +1,5 @@
 const promises = async () => {
-  const response = await fetch(`http://34.22.85.74/products`);
+  const response = await fetch(`http://34.22.85.74:3000/products`);
   const data = response.json();
   return data;
 };

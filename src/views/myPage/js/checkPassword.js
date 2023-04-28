@@ -11,7 +11,7 @@ const checkPassword = async () => {
   const passwordCheckInput = document.querySelector('.input-password-check');
   passwordCheckBtn.addEventListener('click', async () => {
     const inputPassword = passwordCheckInput.value;
-    const { ok } = await fetch(`http://34.22.85.74/users/password-check`, {
+    const { ok } = await fetch(`http://34.22.85.74:3000/users/password-check`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

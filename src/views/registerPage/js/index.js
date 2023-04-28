@@ -21,7 +21,7 @@ async function checkDuplicate(email) {
   }
 
   const res = await fetch(
-    `http://34.22.85.74/users/signup/check-email-duplication`,
+    `http://34.22.85.74:3000/users/signup/check-email-duplication`,
     {
       method: 'post',
       headers: {
@@ -82,7 +82,7 @@ async function register(username, email, password, phoneNumber, address) {
     return;
   }
 
-  const res = await fetch(`http://34.22.85.74/users/signup`, {
+  const res = await fetch(`http://34.22.85.74:3000/users/signup`, {
     method: 'post',
     headers: {
       'Content-Type': 'application/json',
@@ -103,7 +103,6 @@ async function register(username, email, password, phoneNumber, address) {
     window.location.href = '/signin';
   } else {
     alert('회원가입이 실패했습니다. 정보를 다시 확인해주세요.');
-    return;
   }
 }
 
