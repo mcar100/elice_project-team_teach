@@ -120,7 +120,7 @@ userRouter.post('/password-check', signinRequired, async (req, res, next) => {
     }
 
     // req (request) 에서 데이터 가져오기
-    const { userId } = req;
+    const { userId } = req.body;
     const { password } = req.body;
 
     // 비밀번호가 알맞는지 여부를 체크함

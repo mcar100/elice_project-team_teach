@@ -3,7 +3,7 @@ import { checkPassword } from './checkPassword.js';
 
 async function render() {
   header();
-  checkPassword('11111111');
+  checkPassword();
 }
 
 render();
