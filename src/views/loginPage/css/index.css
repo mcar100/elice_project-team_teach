@@ -4,6 +4,8 @@ body {
 }
 
 #login-header-div {
+  display: flex;
+  justify-content: center;
   padding-top: 40px;
 }
 

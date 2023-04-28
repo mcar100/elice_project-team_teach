@@ -28,7 +28,7 @@ const footer = async () => {
         <p style="font-size: 14px">15팀(주)</p>
         <br />
         <p>
-          대표직원 : ***, ***, ***, ***, ***, 주소 : 대한민국 엘리스
+          대표직원 : 나는야 송현수 새 나라의 어린이, 주소 : 대한민국 엘리스
           Tel:2627-4744
         </p>
         <p>
@@ -45,13 +45,7 @@ const footer = async () => {
 
         <div id="footer-image-container">
           <div class="footer-image">
-          <svg
-          width="70px"
-          height="50px"
-          viewBox="0 -11 70 70"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+          <img src="/loginPage/images/techmate.png" alt="15팀 로고" width="150" height="175" />
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
           <g
             id="SVGRepo_tracerCarrier"
