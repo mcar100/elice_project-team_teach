@@ -1,69 +1,79 @@
-body{
-    width:440px;
-    margin:0 auto;
+body {
+  width: 440px;
+  margin: 0 auto;
 }
 
-#login-header-div{
-   padding-top:40px;
+#login-header-div {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
 }
 
-#login-header-div > img{
-    width:160px;
-    height:80px;
-    margin:auto;
-    display:block;
+#login-header-div > svg {
+  width: 150px;
+  height: 180px;
+  margin: auto;
+  display: block;
 }
 
-main{
-    margin-top: 30px;
-
+main {
+  margin-top: 30px;
 }
-input[type=password], [type=text]{
-    height:56px;
-
-}
-
-#login-option{
-    display:flex;
-    justify-content: cemnter;
-    align-items: center;
+input[type='password'],
+[type='text'] {
+  height: 56px;
 }
 
-.login-social-div{
-    height:67px;
-    font-size:13px;
-    text-align:center;
-    margin-top:43px;
+#login-option {
+  display: flex;
+  justify-content: cemnter;
+  align-items: center;
 }
 
-.login-social-div-images > img{
-    width:40px;
-    margin:10px;
-
+.login-social-div {
+  height: 67px;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 43px;
 }
 
-.login-social-div-images > img:hover{
-    cursor:pointer;
+.login-social-div-images > svg {
+  width: 40px;
+  margin: 10px;
 }
 
-#login-guest-div{
-    margin-top:35px;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.login-social-div-images > img:hover {
+  cursor: pointer;
 }
 
-#guest-check{
-    width:162px;
-    border: 1px dotted gray;
-}
-p{
-    font-weight:bold;
+#login-guest-div {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#login-copyrights{
-    margin-top: 20px;
-    font-size:12px;
-    text-align: center;
+#guest-check {
+  width: 162px;
+  border: 1px dotted gray;
+}
+p {
+  font-weight: bold;
+}
+
+#login-copyrights {
+  margin-top: 20px;
+  font-size: 12px;
+  text-align: center;
+}
+
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+  text-decoration: none;
 }

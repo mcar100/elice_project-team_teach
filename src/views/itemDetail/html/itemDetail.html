@@ -1,0 +1,222 @@
+r<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/itemDetail/css/style.css" />
+    <title>상세페이지</title>
+  </head>
+  <body>
+    <header>
+      <div id="header-container">
+        <span class="header-logo">TechMate</span>
+        <div id="search-container"></div>
+        <div id="button-container"></div>
+      </div>
+    </header>
+
+    <!-- header navbar 영역 -->
+    <nav>
+      <div class="nav-container">
+        <div>Hello Techmate</div>
+        <div class="nav-register-btn .nav-login-btn">로그인/회원가입</div>
+      </div>
+    </nav>
+
+    <main class="main">
+      <section class="main-section">
+        <div id="main-div">
+          <div class="item-main-image-container-div">
+            <div class="item-main-image-div"></div>
+            <div id="item-sub-image-container-div">
+              <div id="item-sub-images"></div>
+            </div>
+          </div>
+          <div class="item-description-div">
+            <div class="item-brand-div">
+              <p id="item-brand"></p>
+              <div class="rate-div">
+                <div class="rate">
+                  <span id="rate-point" style="width: 80%"></span>
+                </div>
+                <span id="rate-number">230</span>
+              </div>
+            </div>
+            <div id="item-color-div">
+              <span style="font-weight: bold">색상선택</span>
+              <span
+                id="item-selected-color"
+                style="font-size: 16px; font-weight: bold"
+              ></span>
+            </div>
+            <div id="item-name-div">
+              <span style="font-weight: bold">상품명</span>
+              <p id="item-name"></p>
+              <button class="suggest-button">
+                <svg
+                  width="30px"
+                  height="30px"
+                  version="1.0"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="64px"
+                  height="64px"
+                  viewBox="0 0 64 64"
+                  enable-background="new 0 0 64 64"
+                  xml:space="preserve"
+                  fill="#000000"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <g>
+                      <path
+                        fill="#231F20"
+                        d="M48,6c-4.418,0-8.418,1.791-11.313,4.687l-3.979,3.961c-0.391,0.391-1.023,0.391-1.414,0 c0,0-3.971-3.97-3.979-3.961C24.418,7.791,20.418,6,16,6C7.163,6,0,13.163,0,22c0,3.338,1.024,6.436,2.773,9 c0,0,0.734,1.164,1.602,2.031s24.797,24.797,24.797,24.797C29.953,58.609,30.977,59,32,59s2.047-0.391,2.828-1.172 c0,0,23.93-23.93,24.797-24.797S61.227,31,61.227,31C62.976,28.436,64,25.338,64,22C64,13.163,56.837,6,48,6z M58.714,30.977 c0,0-0.612,0.75-1.823,1.961S33.414,56.414,33.414,56.414C33.023,56.805,32.512,57,32,57s-1.023-0.195-1.414-0.586 c0,0-22.266-22.266-23.477-23.477s-1.823-1.961-1.823-1.961C3.245,28.545,2,25.424,2,22C2,14.268,8.268,8,16,8 c3.866,0,7.366,1.566,9.899,4.101l0.009-0.009l4.678,4.677c0.781,0.781,2.047,0.781,2.828,0l4.678-4.677l0.009,0.009 C40.634,9.566,44.134,8,48,8c7.732,0,14,6.268,14,14C62,25.424,60.755,28.545,58.714,30.977z"
+                      ></path>
+                      <path
+                        fill="#231F20"
+                        d="M48,12c-0.553,0-1,0.447-1,1s0.447,1,1,1c4.418,0,8,3.582,8,8c0,0.553,0.447,1,1,1s1-0.447,1-1 C58,16.478,53.522,12,48,12z"
+                      ></path>
+                    </g>
+                  </g>
+                </svg>
+              </button>
+              <button class="share-button">
+                <svg
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M8.68439 10.6578L15.3125 7.34375M15.3156 16.6578L8.6938 13.3469M21 6C21 7.65685 19.6569 9 18 9C16.3431 9 15 7.65685 15 6C15 4.34315 16.3431 3 18 3C19.6569 3 21 4.34315 21 6ZM9 12C9 13.6569 7.65685 15 6 15C4.34315 15 3 13.6569 3 12C3 10.3431 4.34315 9 6 9C7.65685 9 9 10.3431 9 12ZM21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15C19.6569 15 21 16.3431 21 18Z"
+                      stroke="#000000"
+                      stroke-width="1.5"
+                    ></path>
+                  </g>
+                </svg>
+              </button>
+            </div>
+            <div class="item-price-div">
+              <p id="item-intstallments-price">
+                <span style="font-weight: bold; font-size: 16px"
+                  >월 렌탈 판매가 :</span
+                ><span id="item-month-rental-fee" style="color: red"></span>
+              </p>
+            </div>
+            <div class="item-delivery-div">
+              <p id="is-free"></p>
+              <p id="item-delivery-description">
+                2일 후 <span id="item-delivery-day">4/20</span> 새벽 7시 전 도착
+                보장 (밤 12시 전 주문시)
+              </p>
+            </div>
+            <div class="rental-range-div">
+              <p style="font-weight: bold">렌탈 기간</p>
+              <div class="rental-range-button-div">
+                <button
+                  id="rental36month"
+                  class="button is-rounded rental-option-selected"
+                >
+                  36개월
+                </button>
+                <button id="rental48month" class="button is-rounded">
+                  48개월
+                </button>
+                <button id="rental60month" class="button is-rounded">
+                  60개월
+                </button>
+              </div>
+            </div>
+            <div class="benefits-div">
+              <p>15팀 결제시 99 % 적립</p>
+              <p>[엘리스를 통한] 결제 시 50% 적립</p>
+              <p>[쿠팡 + 11번가] 결제 시 20% 추가적립</p>
+            </div>
+            <div class="buy-div">
+              <div class="item-number-div">
+                <label for="item-count-label"></label>
+                <input
+                  type="text"
+                  value="1"
+                  size="3"
+                  maxlength="4"
+                  id="item-number"
+                  readonly
+                />
+                <div class="item-count-div">
+                  <button type="button" id="up-button">+</button>
+                  <button type="button" id="down-button">-</button>
+                </div>
+              </div>
+              <a href="/cart">
+              <button id="add-bucket" class="button is-success is-outlined" style="margin-left:5px">
+                장바구니 담기
+              </button>
+              <a href="/order">
+                <button id="current-buy" class="button is-success is-outlined" style="margin-left:5px">
+                  바로 구매하기
+                </button>
+              </a>
+            </div>
+            <div class="item-spec-div">
+              <p>상품명 :<span id="item-spec-div-name"></span></p>
+              <p>모델명 :<span id="item-spec-div-model"></span></p>
+              <p>브랜드 :<span id="item-spec-div-brand"></span></p>
+              <p>에너지효율등급 : <span id="item-spec-div-energy"></span></p>
+            </div>
+          </div>
+        </div>
+
+        <div id="item-table">
+          <table class="table is-fullwidth">
+            <th style="font-size: 18px" colspan="4">상품 세부 정보</th>
+            <tr>
+              <td style="font-weight: bold">상품명</td>
+              <td id="item-table-item-name"></td>
+              <td style="font-weight: bold">색상</td>
+              <td id="item-table-item-color"></td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold">모델명</td>
+              <td id="item-table-item-model"></td>
+              <td style="font-weight: bold">에너지효율등급</td>
+              <td id="item-table-item-energy"></td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold">브랜드</td>
+              <td id="item-table-item-brand"></td>
+              <td style="font-weight: bold">사이즈</td>
+              <td id="item-table-item-size"></td>
+            </tr>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer-container"></footer>
+
+    <script type="module" src="/itemDetail/js/setLocalStorage.js"></script>
+    <script type="module" src="/itemDetail/js/api.js"></script>
+    <script type="module" src="/itemDetail/js/index.js"></script>
+  </body>
+</html>
