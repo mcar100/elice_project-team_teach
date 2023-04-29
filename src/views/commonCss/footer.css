@@ -1,0 +1,78 @@
+/**======================
+ *    FOOTER
+ *========================**/
+
+.footer-container {
+  width: 100%;
+}
+
+.sites {
+  width: 1240px;
+  margin: 0 auto;
+}
+
+#footer-title-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+#footer-title-container > div > p {
+  font-size: 14px;
+  font-family: 'Noto Sans KR', 'Helvetica Neue', 'Apple SD Gothic Neo',
+    '맑은 고딕', 'Malgun Gothic', 돋움, dotum, sans-serif;
+}
+
+#site-description {
+  margin: 100px auto 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/**======================
+ *    FOOTER - 왼쪽 칸
+ *========================**/
+
+#footer-main {
+  padding: 0 50px;
+}
+
+#footer-main > p {
+  font-size: 14px;
+  font-family: 'Noto Sans KR', 'Helvetica Neue', 'Apple SD Gothic Neo',
+    '맑은 고딕', 'Malgun Gothic', 돋움, dotum, sans-serif;
+  line-height: 16px;
+}
+
+#footer-image-container {
+  display: flex;
+  align-items: center;
+}
+
+/**======================
+ *    FOOTER - 오른쪽 칸
+ *========================**/
+
+#footer-sub {
+  padding: 0 50px;
+}
+
+#footer-sub > p {
+  font-size: 14px;
+  line-height: 16px;
+  font-family: 'Noto Sans KR', 'Helvetica Neue', 'Apple SD Gothic Neo',
+    '맑은 고딕', 'Malgun Gothic', 돋움, dotum, sans-serif;
+}
+
+/**======================
+ *    FOOTER - 로고 이미지
+ *========================**/
+
+.footer-image {
+  padding-top: 20px;
+}
