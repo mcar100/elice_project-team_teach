@@ -28,7 +28,7 @@
 | 김승섭 | Back-End | |
 | 송현수 | Back-End | |
 | 이민우 | Front-End | 🔊발표, |
-| 이해인 | Front-End |  |
+| 이해인 | Front-End | 💻 사용자 카테고리·상품·주문 조회, 주문/결제, 관리자 카테고리·상품·주문정보 수정 및 삭제 |
 
 ### 폴더 구조
 
@@ -131,10 +131,10 @@ master -----dev
 
 ## 기타 사항
 **[techmate/config/.env 설정]**<br>
-PORT = 3000<br>
-SECRET_KEY = techMate<br>
-JWT_SECRET_KEY = TechMate<br>
-DB_URL = ‘mongodb+srv://seob:jzMhgv91ByD3xTpZ@techmate.qp6i8fm.mongodb.net/techmate’<br>
+PORT<br>
+SECRET_KEY<br>
+JWT_SECRET_KEY<br>
+DB_URL<br>
 <br>
 
 **[사이트 테스트 계정]**<br>
