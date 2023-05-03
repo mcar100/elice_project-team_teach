@@ -1,8 +1,18 @@
 import { getUrlParams } from './getUrlParams.js';
 import { getProduct } from './product.js';
 import { sendItemDetail } from './selectItem.js';
+import { getCategories } from '../../headerComponent/categoryList/categories.js';
 
 const selectBox = document.getElementById('select-category');
+
+function addOptionToSelectBox() {
+  const categories = getCategories();
+  categories.then((items) => {
+    items.forEach(({ _id, categoryName }) => {
+      selectBox.innerHTML += `<option value="${_id}">${categoryName}</option>`;
+    });
+  });
+}
 
 function initSelectBox() {
   const optionList = document.querySelectorAll('option');
@@ -27,6 +37,7 @@ function selectCategory() {
 }
 
 const selectBoxEvent = () => {
+  addOptionToSelectBox();
   initSelectBox();
   selectCategory();
 };
